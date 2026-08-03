@@ -200,6 +200,24 @@
       ]
     },
     {
+      "name": "organizing-frontend-components",
+      "positive_zh": [
+        "把这个订单页面统一改成组件名目录、index 入口和递归 components 结构。"
+      ],
+      "positive_en": [
+        "Refactor this React page using component colocation and clear ownership boundaries."
+      ],
+      "positive_mixed": [
+        "帮我设计 Vue 页面统一 index.vue 入口和递归 components 子组件目录。"
+      ],
+      "negative": [
+        "修复这个组件点击保存后没有提示的问题。"
+      ],
+      "explicit": [
+        "$organizing-frontend-components 重构这个页面的组件目录与共享边界。"
+      ]
+    },
+    {
       "name": "prototype",
       "positive_zh": [
         "做一个一次性原型验证这个状态模型是否可行。"
