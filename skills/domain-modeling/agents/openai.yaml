@@ -1,0 +1,7 @@
+interface:
+  display_name: "领域建模"
+  short_description: "建立统一的 domain model、领域术语与架构决策记录"
+  default_prompt: "使用 $domain-modeling 帮我完善这个项目的领域模型。"
+
+policy:
+  allow_implicit_invocation: true

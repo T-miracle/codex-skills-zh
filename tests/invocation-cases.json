@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "ask-matt",
+      "positive_zh": [
+        "我不确定这个需求应该使用哪个技能或工作流程。"
+      ],
+      "positive_en": [
+        "Which skill or workflow fits this task?"
+      ],
+      "positive_mixed": [
+        "帮我选择适合这次 code review 的 skill。"
+      ],
+      "negative": [
+        "直接修复登录页面的报错。"
+      ],
+      "explicit": [
+        "$ask-matt 帮我选择下一步应该采用的工作流。"
+      ]
+    },
+    {
+      "name": "codebase-design",
+      "positive_zh": [
+        "帮我重新设计这个模块接口，让它更容易测试和理解。"
+      ],
+      "positive_en": [
+        "Find deepening opportunities in this module boundary."
+      ],
+      "positive_mixed": [
+        "这个 service 的 seam 应该放在哪里？"
+      ],
+      "negative": [
+        "把按钮的背景颜色改成蓝色。"
+      ],
+      "explicit": [
+        "$codebase-design 帮我深化这个模块的接口设计。"
+      ]
+    },
+    {
+      "name": "code-review",
+      "positive_zh": [
+        "审查当前分支相对 main 的改动是否符合规范和需求。"
+      ],
+      "positive_en": [
+        "Review this branch since main against both standards and spec."
+      ],
+      "positive_mixed": [
+        "请 review 当前 PR 是否符合原始 PRD。"
+      ],
+      "negative": [
+        "按照这个需求直接实现一个新页面。"
+      ],
+      "explicit": [
+        "$code-review 审查当前分支相对 main 的全部变更。"
+      ]
+    },
+    {
+      "name": "diagnosing-bugs",
+      "positive_zh": [
+        "这个功能偶尔失败，请诊断根本原因。"
+      ],
+      "positive_en": [
+        "Debug this intermittent performance regression."
+      ],
+      "positive_mixed": [
+        "页面最近变 slow 了，帮我 diagnose。"
+      ],
+      "negative": [
+        "给用户列表增加一个导出按钮。"
+      ],
+      "explicit": [
+        "$diagnosing-bugs 分析这个偶发错误为什么会发生。"
+      ]
+    },
+    {
+      "name": "domain-modeling",
+      "positive_zh": [
+        "帮我统一订单领域里的术语并补充架构决策。"
+      ],
+      "positive_en": [
+        "Sharpen the ubiquitous language for this domain model."
+      ],
+      "positive_mixed": [
+        "为支付 domain 补充 ADR 和领域术语。"
+      ],
+      "negative": [
+        "运行项目现有的单元测试。"
+      ],
+      "explicit": [
+        "$domain-modeling 帮我完善这个项目的领域模型。"
+      ]
+    },
+    {
+      "name": "grilling",
+      "positive_zh": [
+        "在开始开发前，逐项压力测试我的设计方案。"
+      ],
+      "positive_en": [
+        "Grill this plan relentlessly before we build it."
+      ],
+      "positive_mixed": [
+        "请对这个 architecture plan 做 stress-test。"
+      ],
+      "negative": [
+        "根据已经确认的方案直接开始编码。"
+      ],
+      "explicit": [
+        "$grilling 逐项追问并压力测试这个计划。"
+      ]
+    },
+    {
+      "name": "grill-me",
+      "positive_zh": [
+        "通过连续访谈帮我把这个计划打磨清楚。"
+      ],
+      "positive_en": [
+        "Run a relentless interview to sharpen my design."
+      ],
+      "positive_mixed": [
+        "对这个 plan 做一次深入 interview。"
+      ],
+      "negative": [
+        "总结这个计划的主要内容。"
+      ],
+      "explicit": [
+        "$grill-me 逐项追问并打磨我的计划。"
+      ]
+    },
+    {
+      "name": "grill-with-docs",
+      "positive_zh": [
+        "一边深入追问方案，一边记录架构决策和术语。"
+      ],
+      "positive_en": [
+        "Grill this design while maintaining the ADR and glossary."
+      ],
+      "positive_mixed": [
+        "访谈这个 design，并同步更新 ADR。"
+      ],
+      "negative": [
+        "只把现有ADR翻译成中文。"
+      ],
+      "explicit": [
+        "$grill-with-docs 追问这个设计并同步创建ADR。"
+      ]
+    },
+    {
+      "name": "handoff",
+      "positive_zh": [
+        "把当前长对话整理成交给下一位代理的交接文档。"
+      ],
+      "positive_en": [
+        "Compact this conversation into a handoff for another agent."
+      ],
+      "positive_mixed": [
+        "生成一份 session handoff，方便下个 agent 接手。"
+      ],
+      "negative": [
+        "总结这个文件的主要内容。"
+      ],
+      "explicit": [
+        "$handoff 为下一次会话生成完整交接文档。"
+      ]
+    },
+    {
+      "name": "implement",
+      "positive_zh": [
+        "按照已经确认的规格和工单完成实现。"
+      ],
+      "positive_en": [
+        "Implement the work described by these tickets."
+      ],
+      "positive_mixed": [
+        "根据这个 spec 开始 implementation。"
+      ],
+      "negative": [
+        "帮我判断这个设计是否合理，但不要实施。"
+      ],
+      "explicit": [
+        "$implement 按照已经确认的spec完成实现。"
+      ]
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "positive_zh": [
+        "扫描整个代码库，找出可以深化模块边界的机会。"
+      ],
+      "positive_en": [
+        "Create a visual report of codebase deepening opportunities."
+      ],
+      "positive_mixed": [
+        "分析这个 codebase 的 architecture deepening 机会。"
+      ],
+      "negative": [
+        "只修复这个函数中的拼写错误。"
+      ],
+      "explicit": [
+        "$improve-codebase-architecture 扫描并评估当前代码库架构。"
+      ]
+    },
+    {
+      "name": "prototype",
+      "positive_zh": [
+        "做一个一次性原型验证这个状态模型是否可行。"
+      ],
+      "positive_en": [
+        "Build a throwaway prototype to test this interaction model."
+      ],
+      "positive_mixed": [
+        "用 prototype 快速探索这个 UI 应该长什么样。"
+      ],
+      "negative": [
+        "把已经确定的原型完整实现为生产功能。"
+      ],
+      "explicit": [
+        "$prototype 构建一次性原型验证这个设计问题。"
+      ]
+    },
+    {
+      "name": "research",
+      "positive_zh": [
+        "调查官方一手资料并把结论写成带引用的研究记录。"
+      ],
+      "positive_en": [
+        "Research this question using high-trust primary sources."
+      ],
+      "positive_mixed": [
+        "查阅 API docs 和 primary sources，记录结论。"
+      ],
+      "negative": [
+        "根据当前文件直接修改这个函数。"
+      ],
+      "explicit": [
+        "$research 调查这个问题并记录带引用的一手资料结论。"
+      ]
+    },
+    {
+      "name": "resolving-merge-conflicts",
+      "positive_zh": [
+        "当前rebase发生冲突，请理解双方意图后解决。"
+      ],
+      "positive_en": [
+        "Resolve the in-progress Git merge conflicts."
+      ],
+      "positive_mixed": [
+        "这个 merge conflict 应该怎样合并双方修改？"
+      ],
+      "negative": [
+        "比较两个普通文本文件的差异。"
+      ],
+      "explicit": [
+        "$resolving-merge-conflicts 解决当前rebase冲突。"
+      ]
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "positive_zh": [
+        "第一次使用工程技能，请初始化项目的问题追踪与领域文档。"
+      ],
+      "positive_en": [
+        "Configure this repository for the engineering skills."
+      ],
+      "positive_mixed": [
+        "初始化 issue tracker、triage labels 和 domain docs。"
+      ],
+      "negative": [
+        "查看当前仓库已有的Git配置。"
+      ],
+      "explicit": [
+        "$setup-matt-pocock-skills 初始化当前仓库的工程技能配置。"
+      ]
+    },
+    {
+      "name": "tdd",
+      "positive_zh": [
+        "用测试驱动开发的方式修复这个缺陷。"
+      ],
+      "positive_en": [
+        "Implement this feature test-first with red-green-refactor."
+      ],
+      "positive_mixed": [
+        "请用 TDD 补充这个 integration test。"
+      ],
+      "negative": [
+        "只解释这个函数当前做了什么，不要修改。"
+      ],
+      "explicit": [
+        "$tdd 以test-first方式实现这个功能。"
+      ]
+    },
+    {
+      "name": "teach",
+      "positive_zh": [
+        "在这个工作区里一步一步教我理解领域驱动设计。"
+      ],
+      "positive_en": [
+        "Teach me this concept progressively within the workspace."
+      ],
+      "positive_mixed": [
+        "在当前 workspace 里教我学习 Flutter。"
+      ],
+      "negative": [
+        "直接替我完成这道练习题。"
+      ],
+      "explicit": [
+        "$teach 在当前工作区教我学习测试驱动开发。"
+      ]
+    },
+    {
+      "name": "to-spec",
+      "positive_zh": [
+        "把我们已经讨论的内容整理成规格并发布到问题追踪器。"
+      ],
+      "positive_en": [
+        "Turn this conversation into a spec without another interview."
+      ],
+      "positive_mixed": [
+        "把当前 discussion 综合成 spec。"
+      ],
+      "negative": [
+        "先继续采访我，把需求中的问题问清楚。"
+      ],
+      "explicit": [
+        "$to-spec 把当前对话整理成项目规格。"
+      ]
+    },
+    {
+      "name": "to-tickets",
+      "positive_zh": [
+        "把这个规格拆成声明阻塞关系的可执行工单。"
+      ],
+      "positive_en": [
+        "Break this plan into tracer-bullet tickets with blocking edges."
+      ],
+      "positive_mixed": [
+        "把 spec 拆成 tickets，并标记 blocking dependencies。"
+      ],
+      "negative": [
+        "把所有需求合并成一个大工单。"
+      ],
+      "explicit": [
+        "$to-tickets 把这个spec拆成tracer-bullet工单。"
+      ]
+    },
+    {
+      "name": "triage",
+      "positive_zh": [
+        "对当前问题和外部PR进行分类、验证并形成代理简报。"
+      ],
+      "positive_en": [
+        "Triage these issues through the role state machine."
+      ],
+      "positive_mixed": [
+        "对这些 issues 和 external PR 做 triage。"
+      ],
+      "negative": [
+        "直接关闭所有尚未处理的问题。"
+      ],
+      "explicit": [
+        "$triage 分诊当前待处理的issues和外部PR。"
+      ]
+    },
+    {
+      "name": "wayfinder",
+      "positive_zh": [
+        "这个目标超过单次会话容量，请建立调查工单地图。"
+      ],
+      "positive_en": [
+        "Map this multi-session effort into investigation tickets."
+      ],
+      "positive_mixed": [
+        "为这个 huge project 建立 investigation map。"
+      ],
+      "negative": [
+        "修复一个已经定位的单行错误。"
+      ],
+      "explicit": [
+        "$wayfinder 为这个大型目标建立调查工单地图。"
+      ]
+    },
+    {
+      "name": "writing-great-skills",
+      "positive_zh": [
+        "用可预测性原则审查这个技能的描述和工作流。"
+      ],
+      "positive_en": [
+        "Review this skill for predictable invocation and execution."
+      ],
+      "positive_mixed": [
+        "检查这个 skill 的 context load 和 leading words。"
+      ],
+      "negative": [
+        "使用这个技能去完成它定义的业务任务。"
+      ],
+      "explicit": [
+        "$writing-great-skills 审查并改进这个skill。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "测试驱动开发"
+  short_description: "遵循 red-green 循环以 test-first 方式开发或修复"
+  default_prompt: "使用 $tdd 以 test-first 方式实现这个功能。"
+
+policy:
+  allow_implicit_invocation: true

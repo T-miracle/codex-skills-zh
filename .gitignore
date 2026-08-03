@@ -1,0 +1,7 @@
+# Local editor, operating-system, and test artifacts.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tmp
+*.log

@@ -1,0 +1,231 @@
+{
+  "schema_version": 2,
+  "repository": "T-miracle/codex-skills-zh",
+  "collection": {
+    "purpose": "A personal, Chinese-first collection of self-authored and externally sourced Codex skills.",
+    "default_language": "zh-CN",
+    "note": "Each skill records its own source. External skills retain provenance, license, and a reviewed baseline; self-authored skills use the local source."
+  },
+  "sources": [
+    {
+      "id": "local",
+      "kind": "local",
+      "label": "Self-authored skills in this collection"
+    },
+    {
+      "id": "mattpocock-skills",
+      "kind": "github",
+      "repository": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "default_ref": "main",
+      "license": "MIT",
+      "license_file": "THIRD_PARTY_LICENSES/mattpocock-skills-LICENSE",
+      "baseline": {
+        "type": "local-installation-snapshot",
+        "captured_on": "2026-07-31",
+        "commit": null,
+        "note": "The initial import was translated without upgrading the captured source-language snapshot."
+      }
+    }
+  ],
+  "skills": [
+    {
+      "name": "ask-matt",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/ask-matt",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["flow", "main flow", "on-ramps", "smart zone", "blocking edges"],
+      "baseline_skill_sha256": "4465bad6bb9f7426743c1013d88740594da34e0f9934d375d93bbf981d5317b5"
+    },
+    {
+      "name": "codebase-design",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/codebase-design",
+      "translation_contract": true,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["deep modules", "Module", "Interface", "Depth", "Seam", "Adapter", "Leverage", "Locality"],
+      "baseline_skill_sha256": "a8d50abac5a4018f60e1d911d4b6f4e36454ca14d6c390c0695a578c7de65dad"
+    },
+    {
+      "name": "code-review",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/code-review",
+      "translation_contract": true,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["fixed point", "Standards", "Spec", "parallel sub-agents", "smell baseline"],
+      "baseline_skill_sha256": "6a65cc61114f96db07ec41e3920e67c9c5bf70dd6e0901eb9460ebcb2bdc209f"
+    },
+    {
+      "name": "diagnosing-bugs",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/diagnosing-bugs",
+      "translation_contract": true,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["feedback loop", "red-capable", "falsifiable", "regression test", "post-mortem"],
+      "baseline_skill_sha256": "7a0779480f323a66d109404646bcc1a14bf0232b45b3e3ea93b652a035718acb"
+    },
+    {
+      "name": "domain-modeling",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/domain-modeling",
+      "translation_contract": true,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["domain model", "canonical term", "stress-test", "Hard to reverse", "Real trade-off"],
+      "baseline_skill_sha256": "152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579"
+    },
+    {
+      "name": "grilling",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/productivity/grilling",
+      "translation_contract": true,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["interview", "shared understanding", "design tree", "fact", "decisions"],
+      "baseline_skill_sha256": "5a35925d03a391bcfa46940868b649b72dba89ec9c19525e785bbb6bd3a7f478"
+    },
+    {
+      "name": "grill-me",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/productivity/grill-me",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["/grilling"],
+      "baseline_skill_sha256": "6189dfceb7304a6e5558f75d87e68fa3bc7fcf7ba120e44f21f8a61fe01eba54"
+    },
+    {
+      "name": "grill-with-docs",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/grill-with-docs",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["/grilling", "/domain-modeling"],
+      "baseline_skill_sha256": "610d091047bcfb9db0f75c057d15538481a721111579fc5ec7f83ad9131a2165"
+    },
+    {
+      "name": "handoff",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/productivity/handoff",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["handoff document", "fresh agent", "artifacts", "redact"],
+      "baseline_skill_sha256": "57c9f1f392d7352cdc85b1e39ca49eddc70ce1dc278bd9653fb4f23dfc2560fc"
+    },
+    {
+      "name": "implement",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/implement",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["spec", "tickets", "seams", "typechecking", "full test suite", "code review", "commit"],
+      "baseline_skill_sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/improve-codebase-architecture",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["deepening opportunities", "shallow modules", "deep modules", "testability", "AI-navigability"],
+      "baseline_skill_sha256": "0026900866ed2a542af0559cef11dd7ae707633b75cc6f668c2e7c0a33e35032"
+    },
+    {
+      "name": "prototype",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/prototype",
+      "translation_contract": true,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["Prototype", "throwaway code", "state machine", "no persistence", "primary source"],
+      "baseline_skill_sha256": "03074862d4b6e4eaf472aa75146e1d193dd9e3bba0e4303a9b2425562d1d44cc"
+    },
+    {
+      "name": "research",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/research",
+      "translation_contract": true,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["background agent", "primary sources", "first-party APIs"],
+      "baseline_skill_sha256": "af378829f015775a3bcd65ff466826722e99359017ae6bae227ca4c9bd14049c"
+    },
+    {
+      "name": "resolving-merge-conflicts",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/resolving-merge-conflicts",
+      "translation_contract": true,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["merge/rebase", "primary sources", "hunk", "automated checks", "stage", "commit"],
+      "baseline_skill_sha256": "c7c9ba81362a786aac05d2223123bf1bd2f8a99c3243a72882ede9c68bedfb24"
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/setup-matt-pocock-skills",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["per-repo configuration", "Issue tracker", "Triage labels", "Domain docs", "single-context", "multi-context"],
+      "baseline_skill_sha256": "def265a8b15ffb8afc3f335d69e175ba9a7fe3991218984b0e49e8345cde3b20"
+    },
+    {
+      "name": "tdd",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/tdd",
+      "translation_contract": true,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["Test-Driven Development", "red → green loop", "seam", "anti-patterns", "vertical slices", "tracer bullet"],
+      "baseline_skill_sha256": "5363bb2775679fe9311fbb67947f95359169c6e7f1fac77c0f25e190bca6cf2f"
+    },
+    {
+      "name": "teach",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/productivity/teach",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["stateful request", "Knowledge", "Skills", "Wisdom", "zone of proximal development", "feedback loop"],
+      "baseline_skill_sha256": "6d2dbe5e03084cf26fef66b535127b36cd1bcbe9478e26b0626029cd51dc2259"
+    },
+    {
+      "name": "to-spec",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/to-spec",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["spec", "PRD", "issue tracker", "seams", "domain glossary", "API contracts"],
+      "baseline_skill_sha256": "267638edd513b5918de626ad5605d261952abb7428cb308869c663ca924e93e7"
+    },
+    {
+      "name": "to-tickets",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/to-tickets",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["tracer-bullet vertical slices", "blocking edges", "wide refactors", "expand–contract", "frontier"],
+      "baseline_skill_sha256": "1846d215e24ec1219b199a708329ca915db93138d4f3675af29db4d32ee41391"
+    },
+    {
+      "name": "triage",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/triage",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["triage roles", "request surface", "state transitions", "agent briefs", "Quick state override"],
+      "baseline_skill_sha256": "d45827c299c021f77b0f146fefa3ee679b13f99e9a2ffdf48e8de2347adeefe1"
+    },
+    {
+      "name": "wayfinder",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/engineering/wayfinder",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["destination", "wayfinding", "shared map", "frontier", "fog of war", "HITL", "AFK"],
+      "baseline_skill_sha256": "bef437de697fb6984a8a90b7fd82f128609148d6e02f635ce419d03555b351e1"
+    },
+    {
+      "name": "writing-great-skills",
+      "source_id": "mattpocock-skills",
+      "source_path": "skills/productivity/writing-great-skills",
+      "translation_contract": true,
+      "allow_implicit_invocation": false,
+      "required_english_terms": ["Predictability", "context load", "cognitive load", "information hierarchy", "Progressive disclosure", "single source of truth", "leading word", "Failure modes"],
+      "baseline_skill_sha256": "4d6ccbc3760b1bd4107c495a79872286ea69494003f3b0a719fc95b147457061"
+    }
+  ]
+}

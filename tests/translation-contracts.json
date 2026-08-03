@@ -1,0 +1,2823 @@
+{
+    "schema_version":  1,
+    "purpose":  "Protect behavior-sensitive Markdown while translating skill instructions and reference files.",
+    "source_language":  "en",
+    "target_language":  "zh-CN",
+    "skills":  [
+                   {
+                       "name":  "ask-matt",
+                       "source_body_sha256":  "26052be5532a532e4e92479ab2a81a0cc597c4ef76c29b9f4f91599ddc77e84a",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "/grill-with-docs",
+                                           "CONTEXT.md",
+                                           "/grill-me",
+                                           "/grilling",
+                                           "grill-with-docs",
+                                           "/handoff",
+                                           "/handoff",
+                                           "/prototype",
+                                           "/handoff",
+                                           "/to-spec",
+                                           "/to-tickets",
+                                           ".scratch/\u003cfeature\u003e/issues/",
+                                           "/implement",
+                                           "/implement",
+                                           "/implement",
+                                           "/tdd",
+                                           "/code-review",
+                                           "/tdd",
+                                           "/code-review",
+                                           "/to-tickets",
+                                           "/implement",
+                                           "/to-tickets",
+                                           "/handoff",
+                                           "/triage",
+                                           "/implement",
+                                           "/to-tickets",
+                                           "/diagnosing-bugs",
+                                           "/improve-codebase-architecture",
+                                           "/wayfinder",
+                                           "/to-spec",
+                                           "/implement",
+                                           "/grill-with-docs",
+                                           "/improve-codebase-architecture",
+                                           "/grill-with-docs",
+                                           "/codebase-design",
+                                           "/domain-modeling",
+                                           "/grill-with-docs",
+                                           "CONTEXT.md",
+                                           "/codebase-design",
+                                           "/tdd",
+                                           "/improve-codebase-architecture",
+                                           "/handoff",
+                                           "/prototype",
+                                           "/compact",
+                                           "/handoff",
+                                           "/compact",
+                                           "/grill-me",
+                                           "/grill-with-docs",
+                                           "CONTEXT.md",
+                                           "/prototype",
+                                           "/research",
+                                           "/grill-with-docs",
+                                           "/teach",
+                                           "/writing-great-skills",
+                                           "/setup-matt-pocock-skills"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/grill-with-docs",
+                                                 "/grill-me",
+                                                 "/grilling",
+                                                 "/handoff",
+                                                 "/handoff",
+                                                 "/prototype",
+                                                 "/handoff",
+                                                 "/to-spec",
+                                                 "/to-tickets",
+                                                 "/issues",
+                                                 "/implement",
+                                                 "/implement",
+                                                 "/implement",
+                                                 "/tdd",
+                                                 "/code-review",
+                                                 "/tdd",
+                                                 "/code-review",
+                                                 "/to-tickets",
+                                                 "/implement",
+                                                 "/to-tickets",
+                                                 "/handoff",
+                                                 "/triage",
+                                                 "/implement",
+                                                 "/to-tickets",
+                                                 "/diagnosing-bugs",
+                                                 "/improve-codebase-architecture",
+                                                 "/wayfinder",
+                                                 "/to-spec",
+                                                 "/implement",
+                                                 "/grill-with-docs",
+                                                 "/improve-codebase-architecture",
+                                                 "/grill-with-docs",
+                                                 "/codebase-design",
+                                                 "/domain-modeling",
+                                                 "/grill-with-docs",
+                                                 "/codebase-design",
+                                                 "/tdd",
+                                                 "/improve-codebase-architecture",
+                                                 "/handoff",
+                                                 "/prototype",
+                                                 "/compact",
+                                                 "/handoff",
+                                                 "/compact",
+                                                 "/grill-me",
+                                                 "/grill-with-docs",
+                                                 "/prototype",
+                                                 "/research",
+                                                 "/grill-with-docs",
+                                                 "/teach",
+                                                 "/writing-great-skills",
+                                                 "/setup-matt-pocock-skills"
+                                             ],
+                       "link_targets":  [
+                                            "https://www.aihero.dev/ai-coding-dictionary/smart-zone"
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              3,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "1.",
+                                            "2.",
+                                            "   -",
+                                            "   -",
+                                            "   -",
+                                            "3.",
+                                            "   -",
+                                            "   -",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003cfeature\u003e"
+                                     ],
+                       "strong_marker_count":  128,
+                       "italic_marker_count":  1,
+                       "italic_asterisk_count":  5
+                   },
+                   {
+                       "name":  "codebase-design",
+                       "source_body_sha256":  "7c8f03094e1e8fceb74865b802da0592ddfa8a9b2daaa921c46f59b47e47a0cf",
+                       "fenced_code_sha256":  [
+                                                  "eae39e7ab85863c7da4a5e994cfe51939722b682bea031f510c4af3a0af9e5f3",
+                                                  "9c73da36d6b44caba49e2afb5bbd0a90c673b861de411ed406e03b390ef8cf2e",
+                                                  "41d805d2d61c8710981d48911af607bda275b35f1ce3d00387bcacfe0e1594c0",
+                                                  "9b00d297284debb3c7fa13ceef7b30b6b89a44834495f1358a01b971398f2265"
+                                              ],
+                       "inline_code":  [
+                                           "interface"
+                                       ],
+                       "skill_invocations":  [
+
+                                             ],
+                       "link_targets":  [
+                                            "DEEPENING.md",
+                                            "DESIGN-IT-TWICE.md"
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  88,
+                       "italic_marker_count":  4,
+                       "italic_asterisk_count":  3
+                   },
+                   {
+                       "name":  "code-review",
+                       "source_body_sha256":  "b9bc185c1804f5616140fd84fa92dacaecc822e75f50923d55f2d603fcb5efdb",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "HEAD",
+                                           "/setup-matt-pocock-skills",
+                                           "docs/agents/issue-tracker.md",
+                                           "main",
+                                           "HEAD~5",
+                                           "git diff \u003cfixed-point\u003e...HEAD",
+                                           "git log \u003cfixed-point\u003e..HEAD --oneline",
+                                           "git rev-parse \u003cfixed-point\u003e",
+                                           "#123",
+                                           "Closes #45",
+                                           "!67",
+                                           "docs/agents/issue-tracker.md",
+                                           "docs/",
+                                           "specs/",
+                                           ".scratch/",
+                                           "CODING_STANDARDS.md",
+                                           "CONTRIBUTING.md",
+                                           "switch",
+                                           "if",
+                                           "a.b().c().d()",
+                                           "Agent",
+                                           "general-purpose",
+                                           "## Standards",
+                                           "## Spec"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/setup-matt-pocock-skills"
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+                                              2,
+                                              3,
+                                              3,
+                                              3,
+                                              3,
+                                              3,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "4.",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003cfixed-point\u003e",
+                                         "\u003cfixed-point\u003e",
+                                         "\u003cfixed-point\u003e"
+                                     ],
+                       "strong_marker_count":  50,
+                       "italic_marker_count":  3,
+                       "italic_asterisk_count":  2
+                   },
+                   {
+                       "name":  "diagnosing-bugs",
+                       "source_body_sha256":  "d6b500136d2f26fcaab0b0b9288ea2d7834cb1eed01f4d9b42c2c796301d1f4d",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "CONTEXT.md",
+                                           "git bisect run",
+                                           "scripts/hitl-loop.template.sh",
+                                           "scripts/hitl-loop.template.sh",
+                                           "[DEBUG-a4f2]",
+                                           "performance.now()",
+                                           "[DEBUG-...]",
+                                           "grep",
+                                           "/improve-codebase-architecture"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/improve-codebase-architecture"
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              3,
+                                              3,
+                                              3,
+                                              3,
+                                              3,
+                                              2,
+                                              3,
+                                              2,
+                                              2,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "4.",
+                                            "5.",
+                                            "6.",
+                                            "7.",
+                                            "8.",
+                                            "9.",
+                                            "10.",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "4.",
+                                            "5.",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003cX\u003e",
+                                         "\u003cchanging Y\u003e",
+                                         "\u003cchanging Z\u003e"
+                                     ],
+                       "strong_marker_count":  90,
+                       "italic_marker_count":  4,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "domain-modeling",
+                       "source_body_sha256":  "6e49118599619a407f89024b4fc6435883f13728c95707a32136eacf8fe887ca",
+                       "fenced_code_sha256":  [
+                                                  "81267296ed12c5037486e615c5b9b94169f98a45d1de1b18ace1b8355997bf73",
+                                                  "a50b51bb338efeee69474b2cf1aeb05566933801e46df884824c16d7119dd72c"
+                                              ],
+                       "inline_code":  [
+                                           "CONTEXT.md",
+                                           "CONTEXT-MAP.md",
+                                           "CONTEXT.md",
+                                           "docs/adr/",
+                                           "CONTEXT.md",
+                                           "CONTEXT.md",
+                                           "CONTEXT.md",
+                                           "CONTEXT.md"
+                                       ],
+                       "skill_invocations":  [
+
+                                             ],
+                       "link_targets":  [
+                                            "./CONTEXT-FORMAT.md",
+                                            "./ADR-FORMAT.md"
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              2,
+                                              3,
+                                              3,
+                                              3,
+                                              3,
+                                              3,
+                                              3
+                                          ],
+                       "list_markers":  [
+                                            "1.",
+                                            "2.",
+                                            "3."
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  6,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  2
+                   },
+                   {
+                       "name":  "grilling",
+                       "source_body_sha256":  "f7ea26905fe83984402f9765f3ebbc33927328123549ed9f66096f26c3c877b1",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+
+                                       ],
+                       "skill_invocations":  [
+
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+
+                                          ],
+                       "list_markers":  [
+
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  0,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  2
+                   },
+                   {
+                       "name":  "grill-me",
+                       "source_body_sha256":  "69698a24328741d985bacfbda0b656f4ef4fd4a410244720a8482af4660d571c",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "/grilling"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/grilling"
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+
+                                          ],
+                       "list_markers":  [
+
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  0,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "grill-with-docs",
+                       "source_body_sha256":  "0e445978f13023581c4cda81d8b115388dfa38242b80a10d8e588a464d8162bd",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "/grilling",
+                                           "/domain-modeling"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/grilling",
+                                                 "/domain-modeling"
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+
+                                          ],
+                       "list_markers":  [
+
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  0,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "handoff",
+                       "source_body_sha256":  "db7c0bee351b5712f809f5f4a0a561748348ca852f07a870745560a41eb5fcc6",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+
+                                       ],
+                       "skill_invocations":  [
+
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+
+                                          ],
+                       "list_markers":  [
+
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  0,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "implement",
+                       "source_body_sha256":  "a554cb2567e97279ec125d87f334c54e7cc3cab2695df25ae1bcd19e3cfe0790",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+
+                                       ],
+                       "skill_invocations":  [
+                                                 "/tdd",
+                                                 "/code-review"
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+
+                                          ],
+                       "list_markers":  [
+
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  0,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "improve-codebase-architecture",
+                       "source_body_sha256":  "07b7de8a238c4fb9ecc39751b7575de8f17952f67ad0bb536d5163671374eb08",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "/codebase-design",
+                                           "CONTEXT.md",
+                                           "docs/adr/",
+                                           "CONTEXT.md",
+                                           "subagent_type=Explore",
+                                           "$TMPDIR",
+                                           "/tmp",
+                                           "%TEMP%",
+                                           "\u003ctmpdir\u003e/architecture-review-\u003ctimestamp\u003e.html",
+                                           "xdg-open \u003cpath\u003e",
+                                           "open \u003cpath\u003e",
+                                           "start \u003cpath\u003e",
+                                           "Strong",
+                                           "Worth exploring",
+                                           "Speculative",
+                                           "/codebase-design",
+                                           "CONTEXT.md",
+                                           "/grilling",
+                                           "/domain-modeling",
+                                           "CONTEXT.md",
+                                           "CONTEXT.md",
+                                           "CONTEXT.md",
+                                           "/codebase-design"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/codebase-design",
+                                                 "/tmp",
+                                                 "/architecture-review-",
+                                                 "/codebase-design",
+                                                 "/grilling",
+                                                 "/domain-modeling",
+                                                 "/codebase-design"
+                                             ],
+                       "link_targets":  [
+                                            "HTML-REPORT.md"
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              3,
+                                              3,
+                                              3
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003ctmpdir\u003e",
+                                         "\u003ctimestamp\u003e",
+                                         "\u003cpath\u003e",
+                                         "\u003cpath\u003e",
+                                         "\u003cpath\u003e"
+                                     ],
+                       "strong_marker_count":  54,
+                       "italic_marker_count":  3,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "prototype",
+                       "source_body_sha256":  "fd4217c6afc2ca9ba6c15f1512276ebfc76fbf6d1da35a07eb13ee27f0392b4f",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "pnpm \u003cname\u003e",
+                                           "python \u003cpath\u003e",
+                                           "bun \u003cpath\u003e"
+                                       ],
+                       "skill_invocations":  [
+
+                                             ],
+                       "link_targets":  [
+                                            "LOGIC.md",
+                                            "UI.md"
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "4.",
+                                            "5.",
+                                            "6."
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003cname\u003e",
+                                         "\u003cpath\u003e",
+                                         "\u003cpath\u003e"
+                                     ],
+                       "strong_marker_count":  20,
+                       "italic_marker_count":  2,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "research",
+                       "source_body_sha256":  "24cb65267a1843d108622609ac6b623d024a80d12de62fe0a22a90b17d7c78f0",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+
+                                       ],
+                       "skill_invocations":  [
+
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+
+                                          ],
+                       "list_markers":  [
+                                            "1.",
+                                            "2.",
+                                            "3."
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  4,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "resolving-merge-conflicts",
+                       "source_body_sha256":  "d520ac6919dd38c7ab9bd97cdd7cd4d8da649f34e2fb64a5bf8eab95f119263c",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "--abort"
+                                       ],
+                       "skill_invocations":  [
+
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+
+                                          ],
+                       "list_markers":  [
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "4.",
+                                            "5."
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  12,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "setup-matt-pocock-skills",
+                       "source_body_sha256":  "abcf60ae8391992efa75954138b2f5c360cbb20badee2d4e7f1149a1a408a410",
+                       "fenced_code_sha256":  [
+                                                  "78ee94e82a22f721b85a893670ec72e2d6a5618d0d0cb42fbb93eef787dd8db2"
+                                              ],
+                       "inline_code":  [
+                                           "CONTEXT.md",
+                                           "git remote -v",
+                                           ".git/config",
+                                           "AGENTS.md",
+                                           "CLAUDE.md",
+                                           "## Agent skills",
+                                           "CONTEXT.md",
+                                           "CONTEXT-MAP.md",
+                                           "docs/adr/",
+                                           "src/*/docs/adr/",
+                                           "docs/agents/",
+                                           ".scratch/",
+                                           "triage",
+                                           "triage",
+                                           "triage",
+                                           "pnpm-workspace.yaml",
+                                           "workspaces",
+                                           "package.json",
+                                           "packages/*",
+                                           "src/",
+                                           "triage",
+                                           "to-tickets",
+                                           "triage",
+                                           "to-spec",
+                                           "qa",
+                                           "gh issue create",
+                                           ".scratch/",
+                                           "git remote",
+                                           "git remote",
+                                           "gitlab.com",
+                                           "gh",
+                                           "glab",
+                                           ".scratch/\u003cfeature\u003e/",
+                                           "docs/agents/issue-tracker.md",
+                                           "triage",
+                                           "needs-triage",
+                                           "needs-info",
+                                           "ready-for-agent",
+                                           "ready-for-human",
+                                           "wontfix",
+                                           "bug:triage",
+                                           "needs-triage",
+                                           "triage",
+                                           "CONTEXT.md",
+                                           "docs/adr/",
+                                           "CONTEXT-MAP.md",
+                                           "CONTEXT.md",
+                                           "## Agent skills",
+                                           "CLAUDE.md",
+                                           "AGENTS.md",
+                                           "docs/agents/issue-tracker.md",
+                                           "docs/agents/domain.md",
+                                           "docs/agents/triage-labels.md",
+                                           "triage",
+                                           "CLAUDE.md",
+                                           "AGENTS.md",
+                                           "AGENTS.md",
+                                           "CLAUDE.md",
+                                           "## Agent skills",
+                                           "### Triage labels",
+                                           "docs/agents/triage-labels.md",
+                                           "triage",
+                                           "triage",
+                                           "docs/agents/issue-tracker.md",
+                                           "docs/agents/*.md"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/docs",
+                                                 "/issue-tracker-github",
+                                                 "/issue-tracker-gitlab",
+                                                 "/issue-tracker-local",
+                                                 "/triage-labels",
+                                                 "/domain"
+                                             ],
+                       "link_targets":  [
+                                            "https://gitlab.com/gitlab-org/cli",
+                                            "./issue-tracker-github.md",
+                                            "./issue-tracker-gitlab.md",
+                                            "./issue-tracker-local.md",
+                                            "./triage-labels.md",
+                                            "./domain.md"
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              3,
+                                              3,
+                                              3,
+                                              3,
+                                              3
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003cfeature\u003e"
+                                     ],
+                       "strong_marker_count":  32,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "tdd",
+                       "source_body_sha256":  "9a457febf1d3137006eaa78dce1d32ed264e5e9855b3e685adb9c41eb977a811",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "CONTEXT.md",
+                                           "expect(add(a, b)).toBe(a + b)",
+                                           "code-review"
+                                       ],
+                       "skill_invocations":  [
+
+                                             ],
+                       "link_targets":  [
+                                            "tests.md",
+                                            "mocking.md"
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              2,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  20,
+                       "italic_marker_count":  2,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "teach",
+                       "source_body_sha256":  "7ac488b9edb252ab8169ca87ab9015677f9fb8f7c3521e81808e726a63765b4c",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "MISSION.md",
+                                           "./reference/*.html",
+                                           "RESOURCES.md",
+                                           "./learning-records/*.md",
+                                           "0001-\u003cdash-case-name\u003e.md",
+                                           "./lessons/*.html",
+                                           "./assets/*",
+                                           "NOTES.md",
+                                           "RESOURCES.md",
+                                           "./lessons/",
+                                           "0001-\u003cdash-case-name\u003e.html",
+                                           "./assets/",
+                                           "./assets/",
+                                           "./assets/",
+                                           "MISSION.md",
+                                           "MISSION.md",
+                                           "learning-records",
+                                           "RESOURCES.md",
+                                           "NOTES.md"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/reference",
+                                                 "/learning-records",
+                                                 "/lessons",
+                                                 "/assets",
+                                                 "/lessons",
+                                                 "/assets",
+                                                 "/assets",
+                                                 "/assets"
+                                             ],
+                       "link_targets":  [
+                                            "./MISSION-FORMAT.md",
+                                            "./RESOURCES-FORMAT.md",
+                                            "./LEARNING-RECORD-FORMAT.md",
+                                            "#assets"
+                                        ],
+                       "heading_levels":  [
+                                              2,
+                                              2,
+                                              3,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003cdash-case-name\u003e",
+                                         "\u003cdash-case-name\u003e"
+                                     ],
+                       "strong_marker_count":  22,
+                       "italic_marker_count":  1,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "to-spec",
+                       "source_body_sha256":  "da1118b9cdb270797e537fe322edaecf3a2ebd03fad40808ebc733f4c607df67",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "/setup-matt-pocock-skills",
+                                           "ready-for-agent"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/setup-matt-pocock-skills",
+                                                 "/user-story-example",
+                                                 "/spec-template"
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "1.",
+                                            "1.",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003cspec-template\u003e",
+                                         "\u003cactor\u003e",
+                                         "\u003cfeature\u003e",
+                                         "\u003cbenefit\u003e",
+                                         "\u003cuser-story-example\u003e",
+                                         "\u003c/user-story-example\u003e",
+                                         "\u003c/spec-template\u003e"
+                                     ],
+                       "strong_marker_count":  0,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "to-tickets",
+                       "source_body_sha256":  "d8b98639ca4bd450760548e7c67e15ce87b20cbde0bffe7b39b51ed20eadcc4a",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "/setup-matt-pocock-skills",
+                                           "/setup-matt-pocock-skills",
+                                           ".scratch/\u003cfeature-slug\u003e/issues/\u003cNN\u003e-\u003cslug\u003e.md",
+                                           "01",
+                                           "ready-for-agent",
+                                           "/implement"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/setup-matt-pocock-skills",
+                                                 "/vertical-slice-rules",
+                                                 "/setup-matt-pocock-skills",
+                                                 "/issues",
+                                                 "/local-ticket-template",
+                                                 "/issue-template",
+                                                 "/implement"
+                                             ],
+                       "link_targets":  [
+
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              3,
+                                              3,
+                                              3,
+                                              3,
+                                              3,
+                                              1,
+                                              2,
+                                              2,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003cvertical-slice-rules\u003e",
+                                         "\u003c/vertical-slice-rules\u003e",
+                                         "\u003cfeature-slug\u003e",
+                                         "\u003cNN\u003e",
+                                         "\u003cslug\u003e",
+                                         "\u003clocal-ticket-template\u003e",
+                                         "\u003cNN\u003e",
+                                         "\u003cTicket title\u003e",
+                                         "\u003c/local-ticket-template\u003e",
+                                         "\u003cissue-template\u003e",
+                                         "\u003c/issue-template\u003e"
+                                     ],
+                       "strong_marker_count":  36,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  0
+                   },
+                   {
+                       "name":  "triage",
+                       "source_body_sha256":  "6ddbab56918b7f6164f13bb6e9d800eb3d6c3abba5d7d6c001bc9a9d434c1320",
+                       "fenced_code_sha256":  [
+                                                  "4e39483bb32cf96d12997c11f2eb6a37f51a9b0c48cff58b78eaffc948a42064",
+                                                  "ec1d247a1c1f7de105d9ab55ffbfeb2c768ab75e381fece07789be735bbc329e"
+                                              ],
+                       "inline_code":  [
+                                           "#42",
+                                           ".out-of-scope/",
+                                           "bug",
+                                           "enhancement",
+                                           "needs-triage",
+                                           "needs-info",
+                                           "ready-for-agent",
+                                           "ready-for-human",
+                                           "wontfix",
+                                           "ready-for-agent",
+                                           "ready-for-human",
+                                           "/setup-matt-pocock-skills",
+                                           "needs-triage",
+                                           "needs-info",
+                                           "ready-for-agent",
+                                           "ready-for-human",
+                                           "wontfix",
+                                           "needs-info",
+                                           "needs-triage",
+                                           "/triage",
+                                           "needs-triage",
+                                           "needs-info",
+                                           "[PR]",
+                                           "[issue]",
+                                           "wontfix",
+                                           ".out-of-scope/*.md",
+                                           "needs-info",
+                                           "/grilling",
+                                           "/domain-modeling",
+                                           "CONTEXT.md",
+                                           "ready-for-agent",
+                                           "ready-for-human",
+                                           "needs-info",
+                                           "wontfix",
+                                           ".out-of-scope/",
+                                           ".out-of-scope/",
+                                           "needs-triage",
+                                           "ready-for-agent"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/setup-matt-pocock-skills",
+                                                 "/triage",
+                                                 "/grilling",
+                                                 "/domain-modeling"
+                                             ],
+                       "link_targets":  [
+                                            "AGENT-BRIEF.md",
+                                            "OUT-OF-SCOPE.md",
+                                            "AGENT-BRIEF.md",
+                                            "OUT-OF-SCOPE.md"
+                                        ],
+                       "heading_levels":  [
+                                              1,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "4.",
+                                            "5.",
+                                            "   -",
+                                            "   -",
+                                            "   -",
+                                            "   -",
+                                            "     -",
+                                            "     -",
+                                            "     -",
+                                            "   -"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  36,
+                       "italic_marker_count":  0,
+                       "italic_asterisk_count":  3
+                   },
+                   {
+                       "name":  "wayfinder",
+                       "source_body_sha256":  "dcd9c8fcb081477766b4e904cb158ae03c4600791a815abf0447fab0b087156e",
+                       "fenced_code_sha256":  [
+                                                  "f09e114d419ab447ce46bdfd4bba319a94c9ff7d11736982bab71d0961a31a94",
+                                                  "8ba951a7eb6f0f41edec177a53f870c35ffb7fd107de754e17cb9d3d77f9d7b8"
+                                              ],
+                       "inline_code":  [
+                                           "#42, #43, #44",
+                                           "wayfinder:map",
+                                           "/setup-matt-pocock-skills",
+                                           "wayfinder:\u003ctype\u003e",
+                                           "research",
+                                           "prototype",
+                                           "grilling",
+                                           "task",
+                                           "/grilling",
+                                           "/domain-modeling",
+                                           "wayfinder:map",
+                                           "## Notes",
+                                           "/grilling",
+                                           "/domain-modeling"
+                                       ],
+                       "skill_invocations":  [
+                                                 "/setup-matt-pocock-skills",
+                                                 "/prototype",
+                                                 "/grilling",
+                                                 "/domain-modeling",
+                                                 "/grilling",
+                                                 "/domain-modeling",
+                                                 "/grilling",
+                                                 "/domain-modeling"
+                                             ],
+                       "link_targets":  [
+                                            "#ticket-types",
+                                            "#work-through-the-map"
+                                        ],
+                       "heading_levels":  [
+                                              2,
+                                              2,
+                                              2,
+                                              3,
+                                              3,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              3,
+                                              3
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "4.",
+                                            "5.",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "4.",
+                                            "5."
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+                                         "\u003ctype\u003e"
+                                     ],
+                       "strong_marker_count":  102,
+                       "italic_marker_count":  8,
+                       "italic_asterisk_count":  4
+                   },
+                   {
+                       "name":  "writing-great-skills",
+                       "source_body_sha256":  "1e3c50dbd6aab88f926d01a137aa76c61c39a22328c4cf7af8c820cb1b423dd3",
+                       "fenced_code_sha256":  [
+
+                                              ],
+                       "inline_code":  [
+                                           "GLOSSARY.md",
+                                           "disable-model-invocation",
+                                           "disable-model-invocation: true",
+                                           "description",
+                                           "SKILL.md",
+                                           "SKILL.md",
+                                           "SKILL.md",
+                                           "GLOSSARY.md",
+                                           "SKILL.md",
+                                           ".md",
+                                           "GLOSSARY.md"
+                                       ],
+                       "skill_invocations":  [
+
+                                             ],
+                       "link_targets":  [
+                                            "GLOSSARY.md"
+                                        ],
+                       "heading_levels":  [
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2,
+                                              2
+                                          ],
+                       "list_markers":  [
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "1.",
+                                            "2.",
+                                            "3.",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-",
+                                            "-"
+                                        ],
+                       "html_comments":  [
+
+                                         ],
+                       "html_tags":  [
+
+                                     ],
+                       "strong_marker_count":  112,
+                       "italic_marker_count":  25,
+                       "italic_asterisk_count":  0
+                   }
+               ],
+    "reference_files":  [
+                            {
+                                "path":  "codebase-design/DEEPENING.md",
+                                "source_body_sha256":  "125e6b77413ad2bc7cf7a772bc74336d580a50f9e797db2178ed133d62333d06",
+                                "fenced_code_sha256":  [
+
+                                                       ],
+                                "inline_code":  [
+
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+                                                     "SKILL.md"
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  18,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  1
+                            },
+                            {
+                                "path":  "codebase-design/DESIGN-IT-TWICE.md",
+                                "source_body_sha256":  "21c3264953bd30ee87b181a3ccaf0e70649f461e5ffd7dc654acee4ba1788b31",
+                                "fenced_code_sha256":  [
+
+                                                       ],
+                                "inline_code":  [
+
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+                                                     "SKILL.md",
+                                                     "DEEPENING.md",
+                                                     "DEEPENING.md",
+                                                     "SKILL.md",
+                                                     "DEEPENING.md"
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "1.",
+                                                     "2.",
+                                                     "3.",
+                                                     "4.",
+                                                     "5."
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  18,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "domain-modeling/ADR-FORMAT.md",
+                                "source_body_sha256":  "f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2",
+                                "fenced_code_sha256":  [
+                                                           "e3d34c5babc6b1bf126af37ad7928e2c3183ed1ea37445f49fddec52f0c328d0"
+                                                       ],
+                                "inline_code":  [
+                                                    "docs/adr/",
+                                                    "0001-slug.md",
+                                                    "0002-slug.md",
+                                                    "docs/adr/",
+                                                    "proposed | accepted | deprecated | superseded by ADR-NNNN",
+                                                    "docs/adr/"
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       3
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "1.",
+                                                     "2.",
+                                                     "3.",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  26,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  2
+                            },
+                            {
+                                "path":  "domain-modeling/CONTEXT-FORMAT.md",
+                                "source_body_sha256":  "b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597",
+                                "fenced_code_sha256":  [
+                                                           "e6192b2fe1ce792ed40d9830e04d97c643d1311577b96046d01fc596b826561b",
+                                                           "5fdc11d3f9d1c47fe7261e10ec103d9ea12913074453e7ad96ab5ae511e734fc"
+                                                       ],
+                                "inline_code":  [
+                                                    "_Avoid_",
+                                                    "CONTEXT.md",
+                                                    "CONTEXT-MAP.md",
+                                                    "CONTEXT-MAP.md",
+                                                    "CONTEXT.md",
+                                                    "CONTEXT.md"
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  12,
+                                "italic_marker_count":  1,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "improve-codebase-architecture/HTML-REPORT.md",
+                                "source_body_sha256":  "0b0936104158abeef7246ff6cbabefa4dc055f17589f2833f2d93001421910a1",
+                                "fenced_code_sha256":  [
+                                                           "1b52b8a8f91e89ee1e2ec4fe2f534f9b9278b17f1f0549ab8c3a1d0dddb01aa7",
+                                                           "ef3aa47f284f5289b4697f4283448605fbc3b0eafb33af9933091a4babf83312"
+                                                       ],
+                                "inline_code":  [
+                                                    "/codebase-design",
+                                                    "\u003carticle\u003e",
+                                                    "Strong",
+                                                    "Worth exploring",
+                                                    "Speculative",
+                                                    "in-process",
+                                                    "local-substitutable",
+                                                    "ports \u0026 adapters",
+                                                    "mock",
+                                                    "font-mono text-sm",
+                                                    "flowchart",
+                                                    "graph",
+                                                    "\u003cdiv\u003e",
+                                                    "\u003cline\u003e",
+                                                    "\u003cpath\u003e",
+                                                    "h-12 border-l-4",
+                                                    "font-serif",
+                                                    "text-xs uppercase tracking-wider",
+                                                    "/codebase-design",
+                                                    "/codebase-design"
+                                                ],
+                                "skill_invocations":  [
+                                                          "/codebase-design",
+                                                          "/codebase-design",
+                                                          "/codebase-design"
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       2,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+                                                  "\u003carticle\u003e",
+                                                  "\u003cdiv\u003e",
+                                                  "\u003cline\u003e",
+                                                  "\u003cpath\u003e"
+                                              ],
+                                "strong_marker_count":  24,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  5
+                            },
+                            {
+                                "path":  "prototype/LOGIC.md",
+                                "source_body_sha256":  "cf372862bccd3db7f18ea57abd76d6c32e6adf65b9e7f46c73d433e107567a5c",
+                                "fenced_code_sha256":  [
+
+                                                       ],
+                                "inline_code":  [
+                                                    "(state, action) =\u003e state",
+                                                    "console.log",
+                                                    "console.clear()",
+                                                    "print(\"\\033[2J\\033[H\")",
+                                                    "\\x1b[1m",
+                                                    "\\x1b[2m",
+                                                    "\\x1b[0m",
+                                                    "[a] add user  [d] delete user  [t] tick clock  [q] quit",
+                                                    "package.json",
+                                                    "Makefile",
+                                                    "justfile",
+                                                    "pyproject.toml",
+                                                    "pnpm run \u003cprototype-name\u003e",
+                                                    "console.log"
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+                                                     "UI.md",
+                                                     "SKILL.md"
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "1.",
+                                                     "2.",
+                                                     "1.",
+                                                     "2.",
+                                                     "3.",
+                                                     "4.",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+                                                  "\u003cprototype-name\u003e"
+                                              ],
+                                "strong_marker_count":  40,
+                                "italic_marker_count":  1,
+                                "italic_asterisk_count":  1
+                            },
+                            {
+                                "path":  "prototype/UI.md",
+                                "source_body_sha256":  "e2ca04434be54acdee2f5df582ef8038fadf582bbcc99be0d2e27737ff8ed096",
+                                "fenced_code_sha256":  [
+                                                           "3d9cd7f3637cbbdc7eee7e6c711fedebf930da01cf8b14d4517f85541e4dd046"
+                                                       ],
+                                "inline_code":  [
+                                                    "?variant=",
+                                                    "prototype",
+                                                    "?variant=",
+                                                    "?variant=",
+                                                    "/settings",
+                                                    "VariantA",
+                                                    "VariantB",
+                                                    "VariantC",
+                                                    "/prototype/\u003cname\u003e",
+                                                    "B — Sidebar layout",
+                                                    "router.replace",
+                                                    "navigate",
+                                                    "←",
+                                                    "→",
+                                                    "\u003cinput\u003e",
+                                                    "\u003ctextarea\u003e",
+                                                    "[contenteditable]",
+                                                    "process.env.NODE_ENV !== \u0027production\u0027",
+                                                    "?variant=",
+                                                    "\u003cHeader\u003e",
+                                                    "\u003cLayout\u003e"
+                                                ],
+                                "skill_invocations":  [
+                                                          "/settings",
+                                                          "/prototype"
+                                                      ],
+                                "link_targets":  [
+                                                     "LOGIC.md",
+                                                     "SKILL.md"
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+                                                  "\u003cname\u003e",
+                                                  "\u003cinput\u003e",
+                                                  "\u003ctextarea\u003e",
+                                                  "\u003cHeader\u003e",
+                                                  "\u003cLayout\u003e"
+                                              ],
+                                "strong_marker_count":  32,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  1
+                            },
+                            {
+                                "path":  "setup-matt-pocock-skills/domain.md",
+                                "source_body_sha256":  "25be404b58798b3cb2d51c93dba2ab052fc3a425632185726ac3f5fcff193b99",
+                                "fenced_code_sha256":  [
+                                                           "bc86cbf714e37a042afeb95dab9679e59d427aa18a618b6f621c7a461e6fc430",
+                                                           "2e94b27cb1203ffa1eea91c81380993fbc109b5770d0215030ae5ae1f1a2c84d"
+                                                       ],
+                                "inline_code":  [
+                                                    "CONTEXT.md",
+                                                    "CONTEXT-MAP.md",
+                                                    "CONTEXT.md",
+                                                    "docs/adr/",
+                                                    "src/\u003ccontext\u003e/docs/adr/",
+                                                    "/domain-modeling",
+                                                    "/grill-with-docs",
+                                                    "/improve-codebase-architecture",
+                                                    "CONTEXT-MAP.md",
+                                                    "CONTEXT.md",
+                                                    "/domain-modeling"
+                                                ],
+                                "skill_invocations":  [
+                                                          "/docs",
+                                                          "/domain-modeling",
+                                                          "/grill-with-docs",
+                                                          "/improve-codebase-architecture",
+                                                          "/domain-modeling"
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+                                                  "\u003ccontext\u003e"
+                                              ],
+                                "strong_marker_count":  8,
+                                "italic_marker_count":  1,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "setup-matt-pocock-skills/issue-tracker-github.md",
+                                "source_body_sha256":  "52e9f9f1ec0f6d47c6785ac500708ac0521f34abb4cc5475b5dc747165dab17e",
+                                "fenced_code_sha256":  [
+
+                                                       ],
+                                "inline_code":  [
+                                                    "gh",
+                                                    "gh issue create --title \"...\" --body \"...\"",
+                                                    "gh issue view \u003cnumber\u003e --comments",
+                                                    "jq",
+                                                    "gh issue list --state open --json number,title,body,labels,comments --jq \u0027[.[] | {number, title, body, labels: [.labels[].name], comments: [.comments[].body]}]\u0027",
+                                                    "--label",
+                                                    "--state",
+                                                    "gh issue comment \u003cnumber\u003e --body \"...\"",
+                                                    "gh issue edit \u003cnumber\u003e --add-label \"...\"",
+                                                    "--remove-label \"...\"",
+                                                    "gh issue close \u003cnumber\u003e --comment \"...\"",
+                                                    "git remote -v",
+                                                    "gh",
+                                                    "yes",
+                                                    "/triage",
+                                                    "yes",
+                                                    "gh pr",
+                                                    "gh pr view \u003cnumber\u003e --comments",
+                                                    "gh pr diff \u003cnumber\u003e",
+                                                    "gh pr list --state open --json number,title,body,labels,author,authorAssociation,comments",
+                                                    "authorAssociation",
+                                                    "CONTRIBUTOR",
+                                                    "FIRST_TIME_CONTRIBUTOR",
+                                                    "NONE",
+                                                    "OWNER",
+                                                    "MEMBER",
+                                                    "COLLABORATOR",
+                                                    "gh pr comment",
+                                                    "gh pr edit --add-label",
+                                                    "--remove-label",
+                                                    "gh pr close",
+                                                    "#42",
+                                                    "gh pr view 42",
+                                                    "gh issue view 42",
+                                                    "gh issue view \u003cnumber\u003e --comments",
+                                                    "/wayfinder",
+                                                    "wayfinder:map",
+                                                    "gh issue create --label wayfinder:map",
+                                                    "gh api",
+                                                    "Part of #\u003cmap\u003e",
+                                                    "wayfinder:\u003ctype\u003e",
+                                                    "research",
+                                                    "prototype",
+                                                    "grilling",
+                                                    "task",
+                                                    "gh api --method POST repos/\u003cowner\u003e/\u003crepo\u003e/issues/\u003cchild\u003e/dependencies/blocked_by -F issue_id=\u003cblocker-db-id\u003e",
+                                                    "\u003cblocker-db-id\u003e",
+                                                    "gh api repos/\u003cowner\u003e/\u003crepo\u003e/issues/\u003cn\u003e --jq .id",
+                                                    "#number",
+                                                    "node_id",
+                                                    "issue_dependencies_summary.blocked_by",
+                                                    "Blocked by: #\u003cn\u003e, #\u003cn\u003e",
+                                                    "gh issue list --state open",
+                                                    "issue_dependencies_summary.blocked_by \u003e 0",
+                                                    "Blocked by",
+                                                    "gh issue edit \u003cn\u003e --add-assignee @me",
+                                                    "gh issue comment \u003cn\u003e --body \"\u003canswer\u003e\"",
+                                                    "gh issue close \u003cn\u003e"
+                                                ],
+                                "skill_invocations":  [
+                                                          "/triage",
+                                                          "/wayfinder",
+                                                          "/issues",
+                                                          "/dependencies",
+                                                          "/issues"
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cmap\u003e",
+                                                  "\u003ctype\u003e",
+                                                  "\u003cowner\u003e",
+                                                  "\u003crepo\u003e",
+                                                  "\u003cchild\u003e",
+                                                  "\u003cblocker-db-id\u003e",
+                                                  "\u003cblocker-db-id\u003e",
+                                                  "\u003cowner\u003e",
+                                                  "\u003crepo\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003canswer\u003e",
+                                                  "\u003cn\u003e"
+                                              ],
+                                "strong_marker_count":  40,
+                                "italic_marker_count":  7,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "setup-matt-pocock-skills/issue-tracker-gitlab.md",
+                                "source_body_sha256":  "4470f2f64d015fba01af877233296b401bb0d44b5acb9572ffc3ff6b30e8de88",
+                                "fenced_code_sha256":  [
+
+                                                       ],
+                                "inline_code":  [
+                                                    "glab",
+                                                    "glab issue create --title \"...\" --description \"...\"",
+                                                    "--description -",
+                                                    "glab issue view \u003cnumber\u003e --comments",
+                                                    "-F json",
+                                                    "glab issue list -F json",
+                                                    "--label",
+                                                    "glab issue note \u003cnumber\u003e --message \"...\"",
+                                                    "glab issue update \u003cnumber\u003e --label \"...\"",
+                                                    "--unlabel \"...\"",
+                                                    "glab issue close \u003cnumber\u003e",
+                                                    "glab issue close",
+                                                    "glab issue note \u003cnumber\u003e --message \"...\"",
+                                                    "glab mr create",
+                                                    "glab mr view",
+                                                    "glab mr note",
+                                                    "gh pr ...",
+                                                    "mr",
+                                                    "pr",
+                                                    "note",
+                                                    "--message",
+                                                    "comment",
+                                                    "--body",
+                                                    "git remote -v",
+                                                    "glab",
+                                                    "yes",
+                                                    "/triage",
+                                                    "yes",
+                                                    "glab mr",
+                                                    "glab mr view \u003cnumber\u003e --comments",
+                                                    "glab mr diff \u003cnumber\u003e",
+                                                    "glab mr list -F json",
+                                                    "glab mr note",
+                                                    "glab mr update --label",
+                                                    "--unlabel",
+                                                    "glab mr close",
+                                                    "#42",
+                                                    "glab issue view \u003cnumber\u003e --comments",
+                                                    "/wayfinder",
+                                                    "wayfinder:map",
+                                                    "glab issue create --label wayfinder:map",
+                                                    "Part of #\u003cmap\u003e",
+                                                    "wayfinder:\u003ctype\u003e",
+                                                    "research",
+                                                    "prototype",
+                                                    "grilling",
+                                                    "task",
+                                                    "/blocked_by #\u003cn\u003e",
+                                                    "glab issue note \u003cchild\u003e --message \"/blocked_by #\u003cblocker\u003e\"",
+                                                    "Blocked by: #\u003cn\u003e, #\u003cn\u003e",
+                                                    "glab issue list -F json",
+                                                    "blocked_by",
+                                                    "glab api projects/:id/issues/:iid/links",
+                                                    "Blocked by",
+                                                    "glab issue update \u003cn\u003e --assignee @me",
+                                                    "glab issue note \u003cn\u003e --message \"\u003canswer\u003e\"",
+                                                    "glab issue close \u003cn\u003e"
+                                                ],
+                                "skill_invocations":  [
+                                                          "/triage",
+                                                          "/wayfinder",
+                                                          "/blocked",
+                                                          "/blocked"
+                                                      ],
+                                "link_targets":  [
+                                                     "https://gitlab.com/gitlab-org/cli"
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cnumber\u003e",
+                                                  "\u003cmap\u003e",
+                                                  "\u003ctype\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003cchild\u003e",
+                                                  "\u003cblocker\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003cn\u003e",
+                                                  "\u003canswer\u003e",
+                                                  "\u003cn\u003e"
+                                              ],
+                                "strong_marker_count":  40,
+                                "italic_marker_count":  2,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "setup-matt-pocock-skills/issue-tracker-local.md",
+                                "source_body_sha256":  "ed6add9fe3cdcd2d1ebb2a463cf0eb6a1a86df500f4922b31a1ab50f15b3a705",
+                                "fenced_code_sha256":  [
+
+                                                       ],
+                                "inline_code":  [
+                                                    ".scratch/",
+                                                    ".scratch/\u003cfeature-slug\u003e/",
+                                                    ".scratch/\u003cfeature-slug\u003e/spec.md",
+                                                    ".scratch/\u003cfeature-slug\u003e/issues/\u003cNN\u003e-\u003cslug\u003e.md",
+                                                    "01",
+                                                    "Status:",
+                                                    "triage-labels.md",
+                                                    "## Comments",
+                                                    ".scratch/\u003cfeature-slug\u003e/",
+                                                    "/wayfinder",
+                                                    ".scratch/\u003ceffort\u003e/map.md",
+                                                    ".scratch/\u003ceffort\u003e/issues/NN-\u003cslug\u003e.md",
+                                                    "01",
+                                                    "Type:",
+                                                    "research",
+                                                    "prototype",
+                                                    "grilling",
+                                                    "task",
+                                                    "Status:",
+                                                    "claimed",
+                                                    "resolved",
+                                                    "Blocked by: NN, NN",
+                                                    "resolved",
+                                                    ".scratch/\u003ceffort\u003e/issues/",
+                                                    "Status: claimed",
+                                                    "## Answer",
+                                                    "Status: resolved",
+                                                    "map.md"
+                                                ],
+                                "skill_invocations":  [
+                                                          "/spec",
+                                                          "/issues",
+                                                          "/wayfinder",
+                                                          "/map",
+                                                          "/issues",
+                                                          "/issues"
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+                                                  "\u003cfeature-slug\u003e",
+                                                  "\u003cfeature-slug\u003e",
+                                                  "\u003cfeature-slug\u003e",
+                                                  "\u003cNN\u003e",
+                                                  "\u003cslug\u003e",
+                                                  "\u003cfeature-slug\u003e",
+                                                  "\u003ceffort\u003e",
+                                                  "\u003ceffort\u003e",
+                                                  "\u003cslug\u003e",
+                                                  "\u003ceffort\u003e"
+                                              ],
+                                "strong_marker_count":  16,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "setup-matt-pocock-skills/triage-labels.md",
+                                "source_body_sha256":  "4f53c9b40ce2651e3611aa090eaedbd6dbc9b71ef8c5f7e65eac0d8263190d0d",
+                                "fenced_code_sha256":  [
+
+                                                       ],
+                                "inline_code":  [
+                                                    "needs-triage",
+                                                    "needs-triage",
+                                                    "needs-info",
+                                                    "needs-info",
+                                                    "ready-for-agent",
+                                                    "ready-for-agent",
+                                                    "ready-for-human",
+                                                    "ready-for-human",
+                                                    "wontfix",
+                                                    "wontfix"
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1
+                                                   ],
+                                "list_markers":  [
+
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  0,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "tdd/mocking.md",
+                                "source_body_sha256":  "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
+                                "fenced_code_sha256":  [
+                                                           "dd465351e0c8491617982d40a34a85eaa6f11fe20cd5aed77e69a6e847c77801",
+                                                           "cbf847fa319a3d52d84bd9762a4dfe6535684a2e0a8f6ae04d3bc00c7d6b46d6"
+                                                       ],
+                                "inline_code":  [
+
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  6,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "tdd/tests.md",
+                                "source_body_sha256":  "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a",
+                                "fenced_code_sha256":  [
+                                                           "026088f68ddf333d9fdb908f92b0e660d548fd34b5ba2447b9648dacd99fb735",
+                                                           "a8d3f8e7f088a5a090f2b7cd2f05cc31418b00ba5d199e6fa54def3079ca9449",
+                                                           "5d94462f40c99198387dccc3ff0ae7630bd411cfb063697e75dca6b543e81aba",
+                                                           "2c4d6c57c78cb9238b2583b42b1708cdaee31678df923ab67a78439854047127"
+                                                       ],
+                                "inline_code":  [
+
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  6,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "teach/GLOSSARY-FORMAT.md",
+                                "source_body_sha256":  "d177def491519d97873291f2e860d8f1d60ead78feecb82eee022177958069c6",
+                                "fenced_code_sha256":  [
+                                                           "1a709538c29f6b32da9de3dae80449c44eb38d0ee66a33d699cd32533975fe84"
+                                                       ],
+                                "inline_code":  [
+                                                    "GLOSSARY.md",
+                                                    "## Anatomy",
+                                                    "## Programming"
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  14,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "teach/LEARNING-RECORD-FORMAT.md",
+                                "source_body_sha256":  "855f81017625256584bbf62bd5edb9b0c86605c4cc1139c56acc36b802595d17",
+                                "fenced_code_sha256":  [
+                                                           "761079940528f401b280dbc95305fe97a77ee35993f1bee790da65306558e369"
+                                                       ],
+                                "inline_code":  [
+                                                    "./learning-records/",
+                                                    "0001-slug.md",
+                                                    "0002-slug.md",
+                                                    "active | superseded by LR-NNNN",
+                                                    "./learning-records/",
+                                                    "Status: superseded by LR-NNNN"
+                                                ],
+                                "skill_invocations":  [
+                                                          "/learning-records",
+                                                          "/learning-records"
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       3,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "1.",
+                                                     "2.",
+                                                     "3.",
+                                                     "4.",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  14,
+                                "italic_marker_count":  4,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "teach/MISSION-FORMAT.md",
+                                "source_body_sha256":  "8da6d3ac84eb2eb19f17c260b6acf01c560d3ac7a4501c415eea0e985602f4d7",
+                                "fenced_code_sha256":  [
+                                                           "1985df23502717f5391367cfa59bf55961af01b9960c90701a4636cd73090e07"
+                                                       ],
+                                "inline_code":  [
+                                                    "MISSION.md",
+                                                    "MISSION.md"
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  10,
+                                "italic_marker_count":  1,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "teach/RESOURCES-FORMAT.md",
+                                "source_body_sha256":  "2bc634a64b0d0daa10904f9222e7aa0d361420dfacabbf092fbe3a72222edc08",
+                                "fenced_code_sha256":  [
+                                                           "f023079733f27c8fabd33cece1c7278fade345cbf73a9b9b1162d5a4b2ff8fde"
+                                                       ],
+                                "inline_code":  [
+                                                    "RESOURCES.md",
+                                                    "## Gaps"
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+                                                     "./SKILL.md"
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  12,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  0
+                            },
+                            {
+                                "path":  "triage/AGENT-BRIEF.md",
+                                "source_body_sha256":  "5b78d347cc53f6bcf7b875106005ccf5315055fa4cf75eb28d41e96ee426d27b",
+                                "fenced_code_sha256":  [
+                                                           "5ed0d937d89c44076ba2123dda0079ca749b905389213e12c744cdac58f94455",
+                                                           "95272d930024e93abbd4cc95745da1cc203e826f8c0d88f9f7fa52948d18a91e",
+                                                           "8b5648880948d64224ffe82a464a3f64c043fdbaedfa0ac9c1712c3efb2cc4c0",
+                                                           "6875f1fe03991e54ea2e917de966d3821884e42281553a191da9186719195ea0",
+                                                           "2ec738fb817f19159f329ab6f0f24e80229686991c71a8dd3b609011881fde7c"
+                                                       ],
+                                "inline_code":  [
+                                                    "ready-for-agent",
+                                                    "ready-for-agent",
+                                                    "SkillConfig",
+                                                    "schedule",
+                                                    "CronExpression",
+                                                    "/triage",
+                                                    "gh issue list --label needs-triage"
+                                                ],
+                                "skill_invocations":  [
+                                                          "/triage"
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       2,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  28,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  1
+                            },
+                            {
+                                "path":  "triage/OUT-OF-SCOPE.md",
+                                "source_body_sha256":  "2526f998fd7ca5e956d3f6f234bcc2431a5971ee769f1148ddc60b92f04d5914",
+                                "fenced_code_sha256":  [
+                                                           "cbe96f613b28a837b5d7423ab619bd8ec9e70c0bc14d53ea6e8be1e346a166be",
+                                                           "ab5b814e6fa16914a35aa145cc05c8cfc92f96cd1a6237bd7de2a9f3c65f66cc"
+                                                       ],
+                                "inline_code":  [
+                                                    ".out-of-scope/",
+                                                    "dark-mode.md",
+                                                    "plugin-system.md",
+                                                    "graphql-api.md",
+                                                    ".out-of-scope/",
+                                                    ".out-of-scope/",
+                                                    "dark-mode.md",
+                                                    ".out-of-scope/dark-mode.md",
+                                                    ".out-of-scope/",
+                                                    "wontfix",
+                                                    "wontfix",
+                                                    ".out-of-scope/",
+                                                    ".out-of-scope/",
+                                                    "wontfix",
+                                                    ".out-of-scope/"
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       2,
+                                                       2,
+                                                       2
+                                                   ],
+                                "list_markers":  [
+                                                     "1.",
+                                                     "2.",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "-",
+                                                     "1.",
+                                                     "2.",
+                                                     "3.",
+                                                     "4.",
+                                                     "5.",
+                                                     "6.",
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  18,
+                                "italic_marker_count":  0,
+                                "italic_asterisk_count":  1
+                            },
+                            {
+                                "path":  "writing-great-skills/GLOSSARY.md",
+                                "source_body_sha256":  "cccd684c73fb7a06f523497b0121765f92d2b33d6ef9c51602294849233451d6",
+                                "fenced_code_sha256":  [
+
+                                                       ],
+                                "inline_code":  [
+                                                    "writing-great-skills",
+                                                    "tdd"
+                                                ],
+                                "skill_invocations":  [
+
+                                                      ],
+                                "link_targets":  [
+                                                     "SKILL.md"
+                                                 ],
+                                "heading_levels":  [
+                                                       1,
+                                                       2,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       2,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3,
+                                                       3
+                                                   ],
+                                "list_markers":  [
+                                                     "-",
+                                                     "-",
+                                                     "-"
+                                                 ],
+                                "html_comments":  [
+
+                                                  ],
+                                "html_tags":  [
+
+                                              ],
+                                "strong_marker_count":  192,
+                                "italic_marker_count":  65,
+                                "italic_asterisk_count":  0
+                            }
+                        ]
+}

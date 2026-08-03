@@ -1,0 +1,7 @@
+interface:
+  display_name: "缺陷与性能诊断"
+  short_description: "以证据循环诊断棘手缺陷、异常失败、性能回退和偶发问题"
+  default_prompt: "使用 $diagnosing-bugs 诊断这个偶发失败的根本原因。"
+
+policy:
+  allow_implicit_invocation: true

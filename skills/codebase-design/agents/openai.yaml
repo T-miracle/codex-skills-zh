@@ -1,0 +1,7 @@
+interface:
+  display_name: "深模块设计"
+  short_description: "使用 deep module 词汇设计更深、更可测试的模块接口"
+  default_prompt: "使用 $codebase-design 帮我设计或深化这个模块的接口。"
+
+policy:
+  allow_implicit_invocation: true

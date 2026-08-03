@@ -1,0 +1,7 @@
+interface:
+  display_name: "工作区教学"
+  short_description: "在当前 workspace 中以渐进课程教授新的技能或概念"
+  default_prompt: "使用 $teach 在当前工作区教我学习……"
+
+policy:
+  allow_implicit_invocation: false

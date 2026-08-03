@@ -1,0 +1,7 @@
+interface:
+  display_name: "Issue 与 PR 分诊"
+  short_description: "以 triage roles 分类验证 issues 和外部 PR 并形成 agent brief"
+  default_prompt: "使用 $triage 分诊当前待处理的 issues 和外部 PR。"
+
+policy:
+  allow_implicit_invocation: false

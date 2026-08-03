@@ -1,0 +1,7 @@
+interface:
+  display_name: "代码库架构深化"
+  short_description: "扫描 codebase 深化机会并生成可视化 HTML 评估报告"
+  default_prompt: "使用 $improve-codebase-architecture 扫描并评估这个代码库的架构深化机会。"
+
+policy:
+  allow_implicit_invocation: false

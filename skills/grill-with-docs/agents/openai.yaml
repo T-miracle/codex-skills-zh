@@ -1,0 +1,7 @@
+interface:
+  display_name: "带文档的方案访谈"
+  short_description: "在深度访谈中同步维护 ADR、glossary 与领域模型"
+  default_prompt: "使用 $grill-with-docs 追问这个设计并同步记录 ADR。"
+
+policy:
+  allow_implicit_invocation: false

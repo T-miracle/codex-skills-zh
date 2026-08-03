@@ -1,0 +1,7 @@
+interface:
+  display_name: "方案压力追问"
+  short_description: "逐项追问并 stress-test 尚未实施的计划或设计"
+  default_prompt: "使用 $grilling 对这个设计进行逐项压力测试。"
+
+policy:
+  allow_implicit_invocation: true

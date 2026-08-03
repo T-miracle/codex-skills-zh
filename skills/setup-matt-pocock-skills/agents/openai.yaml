@@ -1,0 +1,7 @@
+interface:
+  display_name: "工程技能初始化"
+  short_description: "配置 issue tracker、triage labels 与领域文档布局"
+  default_prompt: "使用 $setup-matt-pocock-skills 初始化当前仓库的工程技能配置。"
+
+policy:
+  allow_implicit_invocation: false

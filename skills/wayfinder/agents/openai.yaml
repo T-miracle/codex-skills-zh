@@ -1,0 +1,7 @@
+interface:
+  display_name: "大型工作导航"
+  short_description: "将超长工作规划为 investigation tickets 地图并逐项澄清"
+  default_prompt: "使用 $wayfinder 为这个大型目标建立调查工单地图。"
+
+policy:
+  allow_implicit_invocation: false

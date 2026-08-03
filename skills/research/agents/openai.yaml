@@ -1,0 +1,7 @@
+interface:
+  display_name: "一手资料研究"
+  short_description: "调查可信 primary sources 并生成带引用的 Markdown 研究记录"
+  default_prompt: "使用 $research 调查这个问题并记录一手资料结论。"
+
+policy:
+  allow_implicit_invocation: true

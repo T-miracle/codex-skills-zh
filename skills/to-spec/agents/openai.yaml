@@ -1,0 +1,7 @@
+interface:
+  display_name: "对话转规格"
+  short_description: "把已有讨论综合为 spec 并发布到项目 issue tracker"
+  default_prompt: "使用 $to-spec 把我们已经讨论的内容整理成规格。"
+
+policy:
+  allow_implicit_invocation: false

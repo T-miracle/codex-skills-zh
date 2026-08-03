@@ -1,0 +1,7 @@
+interface:
+  display_name: "会话交接"
+  short_description: "将长对话压缩为可供另一个 agent 继续工作的交接文档"
+  default_prompt: "使用 $handoff 为下一次会话生成交接文档，下一次会话将用于……"
+
+policy:
+  allow_implicit_invocation: false

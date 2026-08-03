@@ -1,0 +1,7 @@
+interface:
+  display_name: "技能路由"
+  short_description: "根据当前任务推荐最合适的 skill 与工作流程入口"
+  default_prompt: "使用 $ask-matt 帮我判断当前任务应该采用哪个 skill 或工作流。"
+
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,7 @@
+interface:
+  display_name: "双轴代码审查"
+  short_description: "沿 Standards 与 Spec 两条轴并行审查代码变更"
+  default_prompt: "使用 $code-review 审查从 main 到当前分支的变更。"
+
+policy:
+  allow_implicit_invocation: true

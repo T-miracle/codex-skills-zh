@@ -1,0 +1,7 @@
+interface:
+  display_name: "规格驱动实现"
+  short_description: "按照既定 spec 或 tickets 实现、测试并审查工作"
+  default_prompt: "使用 $implement 按照已经确认的 spec 完成实现。"
+
+policy:
+  allow_implicit_invocation: false

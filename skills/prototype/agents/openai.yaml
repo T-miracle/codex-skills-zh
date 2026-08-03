@@ -1,0 +1,7 @@
+interface:
+  display_name: "一次性原型验证"
+  short_description: "用 throwaway prototype 验证状态、逻辑或 UI 设计问题"
+  default_prompt: "使用 $prototype 构建一次性原型来验证这个状态模型。"
+
+policy:
+  allow_implicit_invocation: true

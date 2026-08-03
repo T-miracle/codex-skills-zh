@@ -1,0 +1,7 @@
+interface:
+  display_name: "合并冲突处理"
+  short_description: "基于冲突双方意图解决正在进行的 Git merge 或 rebase"
+  default_prompt: "使用 $resolving-merge-conflicts 解决当前 rebase 冲突。"
+
+policy:
+  allow_implicit_invocation: true

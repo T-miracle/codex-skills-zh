@@ -1,0 +1,22 @@
+name: Validate skills
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    # Windows is the primary supported platform for the Junction-based installer.
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate repository
+        shell: powershell
+        run: |
+          # Keep CI behavior identical to local validation.
+          .\scripts\verify.ps1

@@ -1,0 +1,7 @@
+interface:
+  display_name: "深度方案访谈"
+  short_description: "通过 relentless interview 逐项打磨计划或设计"
+  default_prompt: "使用 $grill-me 逐项追问并打磨我的实施计划。"
+
+policy:
+  allow_implicit_invocation: false

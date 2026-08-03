@@ -1,0 +1,7 @@
+interface:
+  display_name: "技能编写规范"
+  short_description: "使用可预测性原则编写、审查和改进 Codex skills"
+  default_prompt: "使用 $writing-great-skills 审查并改进这个 skill。"
+
+policy:
+  allow_implicit_invocation: false
