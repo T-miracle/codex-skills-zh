@@ -192,6 +192,9 @@ function Get-TranslationContractElements {
         [string]$Body
     )
 
+    # Git may check out text as CRLF on Windows runners; contracts are LF-based.
+    $Body = $Body -replace "`r`n", "`n"
+
     $fencedMatches = [regex]::Matches(
         $Body,
         '(?ms)^[ \t]{0,3}```[^\r\n]*\r?\n.*?^[ \t]{0,3}```[ \t]*$'
