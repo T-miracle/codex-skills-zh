@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "repository": "T-miracle/codex-skills-zh",
   "collection": {
     "purpose": "A personal, Chinese-first collection of self-authored and externally sourced Codex skills.",
@@ -31,6 +31,7 @@
   "skills": [
     {
       "name": "ask-matt",
+      "category": "workflow",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/ask-matt",
       "translation_contract": true,
@@ -40,6 +41,7 @@
     },
     {
       "name": "codebase-design",
+      "category": "planning",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/codebase-design",
       "translation_contract": true,
@@ -49,6 +51,7 @@
     },
     {
       "name": "code-review",
+      "category": "quality",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/code-review",
       "translation_contract": true,
@@ -58,6 +61,7 @@
     },
     {
       "name": "diagnosing-bugs",
+      "category": "quality",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/diagnosing-bugs",
       "translation_contract": true,
@@ -67,6 +71,7 @@
     },
     {
       "name": "domain-modeling",
+      "category": "planning",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/domain-modeling",
       "translation_contract": true,
@@ -76,6 +81,7 @@
     },
     {
       "name": "grilling",
+      "category": "workflow",
       "source_id": "mattpocock-skills",
       "source_path": "skills/productivity/grilling",
       "translation_contract": true,
@@ -85,6 +91,7 @@
     },
     {
       "name": "grill-me",
+      "category": "workflow",
       "source_id": "mattpocock-skills",
       "source_path": "skills/productivity/grill-me",
       "translation_contract": true,
@@ -94,6 +101,7 @@
     },
     {
       "name": "grill-with-docs",
+      "category": "planning",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/grill-with-docs",
       "translation_contract": true,
@@ -103,6 +111,7 @@
     },
     {
       "name": "handoff",
+      "category": "workflow",
       "source_id": "mattpocock-skills",
       "source_path": "skills/productivity/handoff",
       "translation_contract": true,
@@ -112,6 +121,7 @@
     },
     {
       "name": "implement",
+      "category": "development",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/implement",
       "translation_contract": true,
@@ -121,6 +131,7 @@
     },
     {
       "name": "improve-codebase-architecture",
+      "category": "quality",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/improve-codebase-architecture",
       "translation_contract": true,
@@ -130,6 +141,7 @@
     },
     {
       "name": "prototype",
+      "category": "development",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/prototype",
       "translation_contract": true,
@@ -139,6 +151,7 @@
     },
     {
       "name": "research",
+      "category": "knowledge",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/research",
       "translation_contract": true,
@@ -148,6 +161,7 @@
     },
     {
       "name": "resolving-merge-conflicts",
+      "category": "quality",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/resolving-merge-conflicts",
       "translation_contract": true,
@@ -157,6 +171,7 @@
     },
     {
       "name": "setup-matt-pocock-skills",
+      "category": "workflow",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/setup-matt-pocock-skills",
       "translation_contract": true,
@@ -166,6 +181,7 @@
     },
     {
       "name": "tdd",
+      "category": "development",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/tdd",
       "translation_contract": true,
@@ -175,6 +191,7 @@
     },
     {
       "name": "teach",
+      "category": "knowledge",
       "source_id": "mattpocock-skills",
       "source_path": "skills/productivity/teach",
       "translation_contract": true,
@@ -184,6 +201,7 @@
     },
     {
       "name": "to-spec",
+      "category": "planning",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/to-spec",
       "translation_contract": true,
@@ -193,6 +211,7 @@
     },
     {
       "name": "to-tickets",
+      "category": "planning",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/to-tickets",
       "translation_contract": true,
@@ -202,6 +221,7 @@
     },
     {
       "name": "triage",
+      "category": "workflow",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/triage",
       "translation_contract": true,
@@ -211,6 +231,7 @@
     },
     {
       "name": "wayfinder",
+      "category": "workflow",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/wayfinder",
       "translation_contract": true,
@@ -220,6 +241,7 @@
     },
     {
       "name": "writing-great-skills",
+      "category": "knowledge",
       "source_id": "mattpocock-skills",
       "source_path": "skills/productivity/writing-great-skills",
       "translation_contract": true,

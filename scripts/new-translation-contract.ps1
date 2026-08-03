@@ -198,7 +198,8 @@ $translatedManifestSkills = @(
 $capturedContractSkills = @(
     foreach ($manifestSkill in $translatedManifestSkills) {
         $skillName = [string]$manifestSkill.name
-        $skillPath = Join-Path $sourceRoot "$skillName\SKILL.md"
+        $sourcePath = ([string]$manifestSkill.source_path).Replace('/', '\\')
+        $skillPath = Join-Path $sourceRoot "$sourcePath\SKILL.md"
         if (-not (Test-Path -LiteralPath $skillPath -PathType Leaf)) {
             throw "Source SKILL.md is missing: $skillPath"
         }
@@ -232,7 +233,9 @@ $capturedContractSkills = @(
 $capturedReferenceFiles = @(
     foreach ($manifestSkill in $translatedManifestSkills) {
         $skillName = [string]$manifestSkill.name
-        $sourceSkillRoot = Join-Path $sourceRoot $skillName
+        $category = [string]$manifestSkill.category
+        $sourcePath = ([string]$manifestSkill.source_path).Replace('/', '\\')
+        $sourceSkillRoot = Join-Path $sourceRoot $sourcePath
         $referenceFiles = @(
             Get-ChildItem `
                 -LiteralPath $sourceSkillRoot `
@@ -253,7 +256,7 @@ $capturedReferenceFiles = @(
                 [System.IO.Path]::DirectorySeparatorChar,
                 '/'
             )
-            $repositoryRelativePath = "$skillName/$relativeWithinSkill"
+            $repositoryRelativePath = "$category/$skillName/$relativeWithinSkill"
             $referenceText = [System.IO.File]::ReadAllText(
                 $referenceFile.FullName,
                 [System.Text.UTF8Encoding]::new($false)
@@ -325,7 +328,7 @@ if ($isIncrementalUpdate) {
     $preservedReferenceFiles = @(
         $existingContract.reference_files |
             Where-Object {
-                ([string]$_.path).Split('/')[0] -notin $requestedSkillNames
+                ([string]$_.path).Split('/')[1] -notin $requestedSkillNames
             }
     )
     $contractReferenceFiles = @(

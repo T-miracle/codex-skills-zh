@@ -20,7 +20,7 @@
 2. 检查来源许可证是否允许复制和修改，并把许可证保存到
    `THIRD_PARTY_LICENSES/`，同时在 `THIRD_PARTY_NOTICES.md` 增加来源小节。
 3. 在 `sources` 中登记新的来源；同一来源只登记一次。
-4. 将技能复制到 `skills/<skill-name>/`，并在该技能清单项中记录来源和路径。
+4. 将技能复制到 `skills/<category>/<skill-name>/`，并在该技能清单项中记录来源、路径和 `category`。
 5. 如果需要中文本地化，设置 `translation_contract: true`，保留重要英文触发词和
    行为锚点，并从审阅过的源语言文件生成翻译契约。
 6. 补充 `agents/openai.yaml`、调用用例和必要的英文行为锚点。
@@ -153,10 +153,10 @@ policy:
 
 ## 目录与分类约束
 
-当前安装、卸载和验证脚本把 `skills/<skill-name>/` 当作稳定的安装命名空间，因此
-Skill 目录保持扁平；不要直接改成 `skills/<分类>/<skill-name>/`。来源、用途或主题
-分类应放在清单元数据或展示文档中，它们不必与物理安装路径耦合。将来如果确实要改为
-嵌套目录，应同时升级清单路径字段以及安装、卸载、验证脚本。
+仓库按 `skills/<category>/<skill-name>/` 组织，以使用场景帮助维护者浏览。安装、卸载
+和验证脚本从 `config/skills.json` 的 `category` 解析仓库路径，但安装到 Codex 的用户
+目录时始终保持 `.agents/skills/<skill-name>/` 的扁平命名空间。不要在 `skills/` 根目录
+创建旧路径兼容链接；分类、目录与 README 索引均由清单驱动。
 
 ## 检查外部来源
 

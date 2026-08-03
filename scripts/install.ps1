@@ -56,9 +56,10 @@ if (-not (Test-Path -LiteralPath $normalizedDestinationRoot -PathType Container)
 
 foreach ($manifestSkill in @($repositoryContext.Manifest.skills)) {
     $skillName = [string]$manifestSkill.name
-    $sourceSkillPath = Get-NormalizedSkillPath -Path (
-        Join-Path $repositoryContext.SkillsRoot $skillName
-    )
+    # The repository is categorized; Codex's user installation remains flat.
+    $sourceSkillPath = Get-RepositorySkillPath `
+        -ManifestSkill $manifestSkill `
+        -SkillsRoot $repositoryContext.SkillsRoot
     $installedSkillPath = Join-Path $normalizedDestinationRoot $skillName
 
     if (-not (Test-Path -LiteralPath (
@@ -85,17 +86,26 @@ foreach ($manifestSkill in @($repositoryContext.Manifest.skills)) {
             $unchangedCount++
             continue
         }
-        if (-not $Repair) {
+        $legacyTarget = Get-NormalizedSkillPath -Path (
+            Join-Path $repositoryContext.SkillsRoot $skillName
+        )
+        $isKnownLegacyTarget = $existingTarget -eq $legacyTarget
+        if (-not $Repair -and -not $isKnownLegacyTarget) {
             $conflicts.Add(
-                "Link points elsewhere; rerun with -Repair after review: " +
+            "Link points elsewhere; rerun with -Repair after review: " +
                 "$installedSkillPath -> $existingTarget"
             )
             continue
         }
 
+        $migrationVerb = if ($isKnownLegacyTarget) {
+            'Migrate known legacy link'
+        } else {
+            'Replace link target'
+        }
         if ($PSCmdlet.ShouldProcess(
             $installedSkillPath,
-            "Replace link target '$existingTarget' with '$sourceSkillPath'"
+            "$migrationVerb '$existingTarget' with '$sourceSkillPath'"
         )) {
             # LinkType was verified, so removing this item cannot delete source contents.
             Remove-SkillDirectoryLink -Item $existingItem

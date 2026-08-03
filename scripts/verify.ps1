@@ -32,6 +32,9 @@ $invocationCasesPath = Join-Path $repositoryRoot 'tests\invocation-cases.json'
 $translationContractsPath = Join-Path `
     $repositoryRoot `
     'tests\translation-contracts.json'
+$readmePath = Join-Path $repositoryRoot 'README.md'
+# Shared helpers resolve categorized repository paths and flat installation links.
+Import-Module (Join-Path $PSScriptRoot 'SkillLinks.psm1') -Force
 $validationErrors = [System.Collections.Generic.List[string]]::new()
 $validationWarnings = [System.Collections.Generic.List[string]]::new()
 
@@ -638,9 +641,10 @@ function Test-SkillInstallation {
 
     foreach ($manifestSkill in $ManifestSkills) {
         $skillName = [string]$manifestSkill.name
-        $expectedTarget = Get-NormalizedSkillPath -Path (
-            Join-Path $repositorySkillsRoot $skillName
-        )
+        # User installations stay flat even though repository skills are categorized.
+        $expectedTarget = Get-RepositorySkillPath `
+            -ManifestSkill $manifestSkill `
+            -SkillsRoot $repositorySkillsRoot
         $installedPath = Join-Path $installationRoot $skillName
         $installedItem = Get-Item `
             -LiteralPath $installedPath `
@@ -718,9 +722,15 @@ $translationContractNames = @(
     $translationContractSkills |
         ForEach-Object { [string]$_.name }
 )
+# The README is the human-facing projection of the manifest's category metadata.
+$readmeCategorySection = if (Test-Path -LiteralPath $readmePath -PathType Leaf) {
+    [System.IO.File]::ReadAllText($readmePath)
+} else {
+    ''
+}
 
-if ($null -ne $skillManifest -and [int]$skillManifest.schema_version -ne 2) {
-    Add-ValidationError 'Skill manifest schema_version must be 2'
+if ($null -ne $skillManifest -and [int]$skillManifest.schema_version -ne 3) {
+    Add-ValidationError 'Skill manifest schema_version must be 3'
 }
 if ($manifestNames.Count -lt 1) {
     Add-ValidationError 'Skill manifest must contain at least one skill'
@@ -829,6 +839,18 @@ if (
 
 foreach ($manifestSkill in $manifestSkills) {
     $skillName = [string]$manifestSkill.name
+    $category = [string]$manifestSkill.category
+    if ($category -notin @(
+        'development',
+        'planning',
+        'quality',
+        'knowledge',
+        'workflow'
+    )) {
+        Add-ValidationError (
+            "Skill '$skillName' must define a supported category"
+        )
+    }
     $sourceId = [string]$manifestSkill.source_id
     $sourceDefinition = @(
         $manifestSources |
@@ -864,7 +886,9 @@ foreach ($manifestSkill in $manifestSkills) {
             )
         }
     }
-    $skillDirectory = Join-Path $repositorySkillsRoot $skillName
+    $skillDirectory = Get-RepositorySkillPath `
+        -ManifestSkill $manifestSkill `
+        -SkillsRoot $repositorySkillsRoot
     $skillPath = Join-Path $skillDirectory 'SKILL.md'
 
     if (-not (Test-Path -LiteralPath $skillPath -PathType Leaf)) {
@@ -932,17 +956,47 @@ foreach ($manifestSkill in $manifestSkills) {
     }
 }
 
+foreach ($category in @(
+    'development',
+    'planning',
+    'quality',
+    'knowledge',
+    'workflow'
+)) {
+    if ($readmeCategorySection -notlike ('*' + $category + '*')) {
+        Add-ValidationError "README category index is missing: $category"
+    }
+}
+foreach ($manifestSkill in $manifestSkills) {
+    $skillName = [string]$manifestSkill.name
+    if ($readmeCategorySection -notlike ('*' + $skillName + '*')) {
+        Add-ValidationError (
+            "README category index is missing skill: $skillName"
+        )
+    }
+}
+
 if (Test-Path -LiteralPath $repositorySkillsRoot -PathType Container) {
-    $directoryNames = @(
-        Get-ChildItem -LiteralPath $repositorySkillsRoot -Directory |
+    $manifestRelativeSkillPaths = @(
+        $manifestSkills | ForEach-Object {
+            "{0}/{1}" -f ([string]$_.category), ([string]$_.name)
+        }
+    )
+    $directoryPaths = @(
+        Get-ChildItem -LiteralPath $repositorySkillsRoot -Directory -Recurse |
             Where-Object {
                 Test-Path -LiteralPath (Join-Path $_.FullName 'SKILL.md')
             } |
-            ForEach-Object { $_.Name }
+            ForEach-Object {
+                $_.FullName.Substring($repositorySkillsRoot.Length).TrimStart(
+                    [System.IO.Path]::DirectorySeparatorChar,
+                    [System.IO.Path]::AltDirectorySeparatorChar
+                ).Replace([System.IO.Path]::DirectorySeparatorChar, '/')
+            }
     )
-    foreach ($directoryName in $directoryNames) {
-        if ($directoryName -notin $manifestNames) {
-            Add-ValidationError "Unmanifested skill directory: $directoryName"
+    foreach ($directoryPath in $directoryPaths) {
+        if ($directoryPath -notin $manifestRelativeSkillPaths) {
+            Add-ValidationError "Unmanifested skill directory: $directoryPath"
         }
     }
 }
@@ -969,10 +1023,10 @@ $referenceTermPaths = @(
 )
 $repositoryReferencePaths = @(
     if (Test-Path -LiteralPath $repositorySkillsRoot -PathType Container) {
-        foreach ($translatedSkillName in $translatedManifestNames) {
-            $translatedSkillDirectory = Join-Path `
-                $repositorySkillsRoot `
-                $translatedSkillName
+        foreach ($translatedManifestSkill in $translatedManifestSkills) {
+            $translatedSkillDirectory = Get-RepositorySkillPath `
+                -ManifestSkill $translatedManifestSkill `
+                -SkillsRoot $repositorySkillsRoot
             Get-ChildItem `
                 -LiteralPath $translatedSkillDirectory `
                 -Recurse `

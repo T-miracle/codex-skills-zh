@@ -35,9 +35,10 @@ $conflicts = [System.Collections.Generic.List[string]]::new()
 
 foreach ($manifestSkill in @($repositoryContext.Manifest.skills)) {
     $skillName = [string]$manifestSkill.name
-    $expectedTarget = Get-NormalizedSkillPath -Path (
-        Join-Path $repositoryContext.SkillsRoot $skillName
-    )
+    # Resolve the categorized repository target while retaining a flat install name.
+    $expectedTarget = Get-RepositorySkillPath `
+        -ManifestSkill $manifestSkill `
+        -SkillsRoot $repositoryContext.SkillsRoot
     $installedSkillPath = Join-Path $normalizedDestinationRoot $skillName
     $existingItem = Get-Item `
         -LiteralPath $installedSkillPath `

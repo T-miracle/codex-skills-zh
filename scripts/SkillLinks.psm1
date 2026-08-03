@@ -95,6 +95,31 @@ function Get-SkillRepositoryContext {
     }
 }
 
+function Get-RepositorySkillPath {
+    <#
+    .SYNOPSIS
+    Resolves a manifested skill's categorized path within this repository.
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
+        [object]$ManifestSkill,
+        [Parameter(Mandatory)]
+        [string]$SkillsRoot
+    )
+
+    $skillName = [string]$ManifestSkill.name
+    $category = [string]$ManifestSkill.category
+    if ([string]::IsNullOrWhiteSpace($skillName) -or
+        [string]::IsNullOrWhiteSpace($category)) {
+        throw 'Manifest skill must define non-empty name and category.'
+    }
+
+    return Get-NormalizedSkillPath -Path (
+        Join-Path (Join-Path $SkillsRoot $category) $skillName
+    )
+}
+
 function Get-DefaultSkillDestination {
     [CmdletBinding()]
     param()
@@ -111,5 +136,6 @@ Export-ModuleMember -Function @(
     'Get-SkillLinkTarget',
     'Remove-SkillDirectoryLink',
     'Get-SkillRepositoryContext',
+    'Get-RepositorySkillPath',
     'Get-DefaultSkillDestination'
 )

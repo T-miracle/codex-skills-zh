@@ -1475,7 +1475,7 @@
                ],
     "reference_files":  [
                             {
-                                "path":  "codebase-design/DEEPENING.md",
+                                "path":  "planning/codebase-design/DEEPENING.md",
                                 "source_body_sha256":  "125e6b77413ad2bc7cf7a772bc74336d580a50f9e797db2178ed133d62333d06",
                                 "fenced_code_sha256":  [
 
@@ -1518,7 +1518,7 @@
                                 "italic_asterisk_count":  1
                             },
                             {
-                                "path":  "codebase-design/DESIGN-IT-TWICE.md",
+                                "path":  "planning/codebase-design/DESIGN-IT-TWICE.md",
                                 "source_body_sha256":  "21c3264953bd30ee87b181a3ccaf0e70649f461e5ffd7dc654acee4ba1788b31",
                                 "fenced_code_sha256":  [
 
@@ -1568,7 +1568,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "domain-modeling/ADR-FORMAT.md",
+                                "path":  "planning/domain-modeling/ADR-FORMAT.md",
                                 "source_body_sha256":  "f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2",
                                 "fenced_code_sha256":  [
                                                            "e3d34c5babc6b1bf126af37ad7928e2c3183ed1ea37445f49fddec52f0c328d0"
@@ -1621,7 +1621,7 @@
                                 "italic_asterisk_count":  2
                             },
                             {
-                                "path":  "domain-modeling/CONTEXT-FORMAT.md",
+                                "path":  "planning/domain-modeling/CONTEXT-FORMAT.md",
                                 "source_body_sha256":  "b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597",
                                 "fenced_code_sha256":  [
                                                            "e6192b2fe1ce792ed40d9830e04d97c643d1311577b96046d01fc596b826561b",
@@ -1667,7 +1667,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "improve-codebase-architecture/HTML-REPORT.md",
+                                "path":  "quality/improve-codebase-architecture/HTML-REPORT.md",
                                 "source_body_sha256":  "0b0936104158abeef7246ff6cbabefa4dc055f17589f2833f2d93001421910a1",
                                 "fenced_code_sha256":  [
                                                            "1b52b8a8f91e89ee1e2ec4fe2f534f9b9278b17f1f0549ab8c3a1d0dddb01aa7",
@@ -1751,7 +1751,7 @@
                                 "italic_asterisk_count":  5
                             },
                             {
-                                "path":  "prototype/LOGIC.md",
+                                "path":  "development/prototype/LOGIC.md",
                                 "source_body_sha256":  "cf372862bccd3db7f18ea57abd76d6c32e6adf65b9e7f46c73d433e107567a5c",
                                 "fenced_code_sha256":  [
 
@@ -1824,7 +1824,7 @@
                                 "italic_asterisk_count":  1
                             },
                             {
-                                "path":  "prototype/UI.md",
+                                "path":  "development/prototype/UI.md",
                                 "source_body_sha256":  "e2ca04434be54acdee2f5df582ef8038fadf582bbcc99be0d2e27737ff8ed096",
                                 "fenced_code_sha256":  [
                                                            "3d9cd7f3637cbbdc7eee7e6c711fedebf930da01cf8b14d4517f85541e4dd046"
@@ -1912,7 +1912,7 @@
                                 "italic_asterisk_count":  1
                             },
                             {
-                                "path":  "setup-matt-pocock-skills/domain.md",
+                                "path":  "workflow/setup-matt-pocock-skills/domain.md",
                                 "source_body_sha256":  "25be404b58798b3cb2d51c93dba2ab052fc3a425632185726ac3f5fcff193b99",
                                 "fenced_code_sha256":  [
                                                            "bc86cbf714e37a042afeb95dab9679e59d427aa18a618b6f621c7a461e6fc430",
@@ -1964,7 +1964,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "setup-matt-pocock-skills/issue-tracker-github.md",
+                                "path":  "workflow/setup-matt-pocock-skills/issue-tracker-github.md",
                                 "source_body_sha256":  "52e9f9f1ec0f6d47c6785ac500708ac0521f34abb4cc5475b5dc747165dab17e",
                                 "fenced_code_sha256":  [
 
@@ -2097,7 +2097,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "setup-matt-pocock-skills/issue-tracker-gitlab.md",
+                                "path":  "workflow/setup-matt-pocock-skills/issue-tracker-gitlab.md",
                                 "source_body_sha256":  "4470f2f64d015fba01af877233296b401bb0d44b5acb9572ffc3ff6b30e8de88",
                                 "fenced_code_sha256":  [
 
@@ -2225,7 +2225,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "setup-matt-pocock-skills/issue-tracker-local.md",
+                                "path":  "workflow/setup-matt-pocock-skills/issue-tracker-local.md",
                                 "source_body_sha256":  "ed6add9fe3cdcd2d1ebb2a463cf0eb6a1a86df500f4922b31a1ab50f15b3a705",
                                 "fenced_code_sha256":  [
 
@@ -2311,7 +2311,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "setup-matt-pocock-skills/triage-labels.md",
+                                "path":  "workflow/setup-matt-pocock-skills/triage-labels.md",
                                 "source_body_sha256":  "4f53c9b40ce2651e3611aa090eaedbd6dbc9b71ef8c5f7e65eac0d8263190d0d",
                                 "fenced_code_sha256":  [
 
@@ -2351,7 +2351,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "tdd/mocking.md",
+                                "path":  "development/tdd/mocking.md",
                                 "source_body_sha256":  "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
                                 "fenced_code_sha256":  [
                                                            "dd465351e0c8491617982d40a34a85eaa6f11fe20cd5aed77e69a6e847c77801",
@@ -2394,7 +2394,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "tdd/tests.md",
+                                "path":  "development/tdd/tests.md",
                                 "source_body_sha256":  "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a",
                                 "fenced_code_sha256":  [
                                                            "026088f68ddf333d9fdb908f92b0e660d548fd34b5ba2447b9648dacd99fb735",
@@ -2440,7 +2440,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "teach/GLOSSARY-FORMAT.md",
+                                "path":  "knowledge/teach/GLOSSARY-FORMAT.md",
                                 "source_body_sha256":  "d177def491519d97873291f2e860d8f1d60ead78feecb82eee022177958069c6",
                                 "fenced_code_sha256":  [
                                                            "1a709538c29f6b32da9de3dae80449c44eb38d0ee66a33d699cd32533975fe84"
@@ -2481,7 +2481,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "teach/LEARNING-RECORD-FORMAT.md",
+                                "path":  "knowledge/teach/LEARNING-RECORD-FORMAT.md",
                                 "source_body_sha256":  "855f81017625256584bbf62bd5edb9b0c86605c4cc1139c56acc36b802595d17",
                                 "fenced_code_sha256":  [
                                                            "761079940528f401b280dbc95305fe97a77ee35993f1bee790da65306558e369"
@@ -2533,7 +2533,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "teach/MISSION-FORMAT.md",
+                                "path":  "knowledge/teach/MISSION-FORMAT.md",
                                 "source_body_sha256":  "8da6d3ac84eb2eb19f17c260b6acf01c560d3ac7a4501c415eea0e985602f4d7",
                                 "fenced_code_sha256":  [
                                                            "1985df23502717f5391367cfa59bf55961af01b9960c90701a4636cd73090e07"
@@ -2571,7 +2571,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "teach/RESOURCES-FORMAT.md",
+                                "path":  "knowledge/teach/RESOURCES-FORMAT.md",
                                 "source_body_sha256":  "2bc634a64b0d0daa10904f9222e7aa0d361420dfacabbf092fbe3a72222edc08",
                                 "fenced_code_sha256":  [
                                                            "f023079733f27c8fabd33cece1c7278fade345cbf73a9b9b1162d5a4b2ff8fde"
@@ -2610,7 +2610,7 @@
                                 "italic_asterisk_count":  0
                             },
                             {
-                                "path":  "triage/AGENT-BRIEF.md",
+                                "path":  "workflow/triage/AGENT-BRIEF.md",
                                 "source_body_sha256":  "5b78d347cc53f6bcf7b875106005ccf5315055fa4cf75eb28d41e96ee426d27b",
                                 "fenced_code_sha256":  [
                                                            "5ed0d937d89c44076ba2123dda0079ca749b905389213e12c744cdac58f94455",
@@ -2678,7 +2678,7 @@
                                 "italic_asterisk_count":  1
                             },
                             {
-                                "path":  "triage/OUT-OF-SCOPE.md",
+                                "path":  "workflow/triage/OUT-OF-SCOPE.md",
                                 "source_body_sha256":  "2526f998fd7ca5e956d3f6f234bcc2431a5971ee769f1148ddc60b92f04d5914",
                                 "fenced_code_sha256":  [
                                                            "cbe96f613b28a837b5d7423ab619bd8ec9e70c0bc14d53ea6e8be1e346a166be",
@@ -2754,7 +2754,7 @@
                                 "italic_asterisk_count":  1
                             },
                             {
-                                "path":  "writing-great-skills/GLOSSARY.md",
+                                "path":  "knowledge/writing-great-skills/GLOSSARY.md",
                                 "source_body_sha256":  "cccd684c73fb7a06f523497b0121765f92d2b33d6ef9c51602294849233451d6",
                                 "fenced_code_sha256":  [
 

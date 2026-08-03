@@ -2,87 +2,87 @@
   "schema_version": 1,
   "files": [
     {
-      "path": "codebase-design/DEEPENING.md",
+      "path": "planning/codebase-design/DEEPENING.md",
       "required_english_terms": ["Deepening", "shallow modules", "seam", "Local-substitutable", "Ports & Adapters", "test surface"]
     },
     {
-      "path": "codebase-design/DESIGN-IT-TWICE.md",
+      "path": "planning/codebase-design/DESIGN-IT-TWICE.md",
       "required_english_terms": ["Design It Twice", "parallel sub-agent", "depth", "locality", "seam placement"]
     },
     {
-      "path": "domain-modeling/ADR-FORMAT.md",
+      "path": "planning/domain-modeling/ADR-FORMAT.md",
       "required_english_terms": ["ADR", "Hard to reverse", "Surprising without context", "real trade-off"]
     },
     {
-      "path": "domain-modeling/CONTEXT-FORMAT.md",
+      "path": "planning/domain-modeling/CONTEXT-FORMAT.md",
       "required_english_terms": ["CONTEXT.md", "CONTEXT-MAP.md", "Structure", "Rules"]
     },
     {
-      "path": "improve-codebase-architecture/HTML-REPORT.md",
+      "path": "quality/improve-codebase-architecture/HTML-REPORT.md",
       "required_english_terms": ["Candidate card", "Mermaid", "module", "interface", "implementation", "depth", "deep", "shallow", "seam", "adapter", "leverage", "locality"]
     },
     {
-      "path": "prototype/LOGIC.md",
+      "path": "development/prototype/LOGIC.md",
       "required_english_terms": ["Logic Prototype", "state machine", "pure reducer", "lightweight TUI", "Anti-patterns"]
     },
     {
-      "path": "prototype/UI.md",
+      "path": "development/prototype/UI.md",
       "required_english_terms": ["UI Prototype", "throwaway route", "structurally different", "variant", "Anti-patterns"]
     },
     {
-      "path": "setup-matt-pocock-skills/domain.md",
+      "path": "workflow/setup-matt-pocock-skills/domain.md",
       "required_english_terms": ["Domain Docs", "CONTEXT.md", "ADR", "proceed silently"]
     },
     {
-      "path": "setup-matt-pocock-skills/issue-tracker-github.md",
+      "path": "workflow/setup-matt-pocock-skills/issue-tracker-github.md",
       "required_english_terms": ["Conventions", "Wayfinding operations", "native issue dependencies", "Frontier query", "Claim", "Resolve"]
     },
     {
-      "path": "setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "path": "workflow/setup-matt-pocock-skills/issue-tracker-gitlab.md",
       "required_english_terms": ["Conventions", "Wayfinding operations", "native blocking link", "Frontier query", "Claim", "Resolve"]
     },
     {
-      "path": "setup-matt-pocock-skills/issue-tracker-local.md",
+      "path": "workflow/setup-matt-pocock-skills/issue-tracker-local.md",
       "required_english_terms": ["Conventions", "Wayfinding operations", "Frontier", "Claim", "Resolve"]
     },
     {
-      "path": "setup-matt-pocock-skills/triage-labels.md",
+      "path": "workflow/setup-matt-pocock-skills/triage-labels.md",
       "required_english_terms": ["Triage Labels", "triage roles", "AFK agent"]
     },
     {
-      "path": "tdd/mocking.md",
+      "path": "development/tdd/mocking.md",
       "required_english_terms": ["Mock", "system boundaries", "dependency injection", "SDK"]
     },
     {
-      "path": "tdd/tests.md",
+      "path": "development/tdd/tests.md",
       "required_english_terms": ["Good and Bad Tests", "Integration-style", "Implementation-detail tests", "Tautological tests", "Red flags"]
     },
     {
-      "path": "teach/GLOSSARY-FORMAT.md",
+      "path": "knowledge/teach/GLOSSARY-FORMAT.md",
       "required_english_terms": ["GLOSSARY.md", "Structure", "Rules", "Avoid"]
     },
     {
-      "path": "teach/LEARNING-RECORD-FORMAT.md",
+      "path": "knowledge/teach/LEARNING-RECORD-FORMAT.md",
       "required_english_terms": ["Learning Record Format", "zone of proximal development", "Evidence", "Implications", "Supersession"]
     },
     {
-      "path": "teach/MISSION-FORMAT.md",
+      "path": "knowledge/teach/MISSION-FORMAT.md",
       "required_english_terms": ["MISSION.md", "Template", "Rules", "Mission"]
     },
     {
-      "path": "teach/RESOURCES-FORMAT.md",
+      "path": "knowledge/teach/RESOURCES-FORMAT.md",
       "required_english_terms": ["RESOURCES.md", "Knowledge", "Wisdom", "Gaps"]
     },
     {
-      "path": "triage/AGENT-BRIEF.md",
+      "path": "workflow/triage/AGENT-BRIEF.md",
       "required_english_terms": ["Agent Brief", "ready-for-agent", "Current behavior", "Acceptance criteria"]
     },
     {
-      "path": "triage/OUT-OF-SCOPE.md",
+      "path": "workflow/triage/OUT-OF-SCOPE.md",
       "required_english_terms": ["Out-of-Scope Knowledge Base", "Institutional memory", "Deduplication", "enhancement", "wontfix"]
     },
     {
-      "path": "writing-great-skills/GLOSSARY.md",
+      "path": "knowledge/writing-great-skills/GLOSSARY.md",
       "required_english_terms": ["Predictability", "Invocation", "Information Hierarchy", "Steering", "Pruning", "Leading Word", "Completion Criterion", "Single Source of Truth", "No-Op"]
     }
   ]

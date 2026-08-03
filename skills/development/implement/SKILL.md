@@ -1,9 +1,9 @@
 ---
 name: implement
-description: "根据 spec 或一组 tickets 实现一项工作。"
+description: "根据规格说明（spec）或一组工单（tickets）实现一项工作。"
 ---
 
-实现用户在规格（spec）或工单（tickets）中描述的工作。
+实现用户在规格说明（spec）或工单（tickets）中描述的工作。
 
 尽可能在预先约定的接缝（seams）处使用 /tdd。
 

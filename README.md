@@ -4,6 +4,20 @@
 以及从不同仓库挑选、审阅并调整后适合自己工作方式的技能。每个技能独立记录来源，
 整个集合不绑定任何单一上游。
 
+## 按使用场景分类
+
+仓库中的技能按主要使用场景存放在 `skills/<category>/<skill-name>/`。分类以用户
+何时会寻找该 skill 为准；每个 skill 仅归入一个主场景。安装到 Codex 后仍会保持
+扁平的 skill 名称入口，详见下方安装说明。
+
+| 目录 | 中文含义 | Skills |
+| --- | --- | --- |
+| `development` | 开发实施：直接实现、试验或测试代码 | `implement`、`prototype`、`tdd` |
+| `planning` | 需求与方案：形成模型、规格、工单或设计决策 | `codebase-design`、`domain-modeling`、`grill-with-docs`、`to-spec`、`to-tickets` |
+| `quality` | 质量保障：审查、诊断、架构评估与冲突解决 | `code-review`、`diagnosing-bugs`、`improve-codebase-architecture`、`resolving-merge-conflicts` |
+| `knowledge` | 研究与学习：沉淀事实、知识和技能写作方法 | `research`、`teach`、`writing-great-skills` |
+| `workflow` | 协作与流程：选择工作流、追问、交接、初始化与分流 | `ask-matt`、`grilling`、`grill-me`、`handoff`、`setup-matt-pocock-skills`、`triage`、`wayfinder` |
+
 元数据和本地化正文采用“中文主描述 + 英文关键触发词／行为锚点”的写法；固定模板、
 代码和工具协议则保留原始语义。
 
@@ -37,7 +51,9 @@
 `.codex/skills/.system`。
 
 仓库本身可以放在任意绝对路径。安装脚本从自己的 `$PSScriptRoot` 动态推导仓库位置，
-再为每个技能创建 NTFS Junction。因此下面两台电脑都能使用同一套脚本：
+再为每个技能创建 NTFS Junction。仓库内的场景目录不会出现在安装目标中：例如
+`skills/development/tdd` 会安装为 `.agents/skills/tdd`，以保持 Codex 的稳定发现
+入口。因此下面两台电脑都能使用同一套脚本：
 
 - 笔记本：`C:\Project\Me\skills`
 - 台式机：`C:\项目\Me\skills`
@@ -78,7 +94,7 @@
 ```bash
 # 在仓库根目录执行；仓库路径可以包含空格或中文。
 mkdir -p "$HOME/.agents/skills"
-for skill_dir in "$PWD"/skills/*; do
+for skill_dir in "$PWD"/skills/*/*; do
   ln -sfn "$skill_dir" "$HOME/.agents/skills/$(basename "$skill_dir")"
 done
 ```
