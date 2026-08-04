@@ -208,7 +208,7 @@
         "Refactor this React page using component colocation and clear ownership boundaries."
       ],
       "positive_mixed": [
-        "帮我设计 Vue 页面统一 index.vue 入口和递归 components 子组件目录。"
+        "先判断这个 Vue 项目原生是 TS 还是 JS，再设计统一 index.vue 和递归 components 目录。"
       ],
       "negative": [
         "修复这个组件点击保存后没有提示的问题。"

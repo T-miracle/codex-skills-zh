@@ -3,6 +3,7 @@
 ## 目录
 
 - [统一目录不变量](#统一目录不变量)
+- [自动选择扩展名](#自动选择扩展名)
 - [所有权层级](#所有权层级)
 - [文件放置矩阵](#文件放置矩阵)
 - [React 范式](#react-范式)
@@ -18,9 +19,9 @@
 ```text
 <ComponentName>/
 ├── index.<component-extension>
-├── model.ts
-├── hooks.ts / use<ComponentName>.ts
-├── api.ts
+├── model.<ts|js>
+├── hooks.<ts|js> / use<ComponentName>.<ts|js>
+├── api.<ts|js>
 ├── types.ts
 ├── <styles|rules|tests|stories|mocks|...>
 └── components/
@@ -46,6 +47,28 @@
 
 因此，简单组件也使用目录：`StatusTag/index.tsx` 或 `StatusTag/index.vue`，而不是直接放置 `StatusTag.tsx` 或 `StatusTag.vue`。
 
+## 自动选择扩展名
+
+先在目标应用或 workspace package 内建立**语言画像（language profile）**。按以下优先级收集证据：
+
+1. 目标页面、直接父组件和相邻组件的现有后缀。
+2. `tsconfig.json`、`jsconfig.json`、Vue/Svelte 的 `lang="ts"` 以及构建配置。
+3. 目标 feature 或页面目录中的主流源码后缀。
+4. `package.json` 中的 TypeScript、类型检查和构建工具配置。
+
+最近所有者的现有语言优先于仓库其他区域。monorepo 按目标 package 判断；渐进迁移项目按目标 feature/page 判断。本次结构调整保持原生语言，不同时承担 JS↔TS 迁移。
+
+| 项目原生形态 | 组件入口 | `model` / `api` / hooks / composables | 测试示例 |
+| --- | --- | --- | --- |
+| React + TypeScript | `index.tsx` | `.ts` | `index.test.tsx` |
+| React + JavaScript | 跟随现有 `index.jsx` 或 `index.js` | `.js`，或项目既有 `.mjs/.cjs` | 跟随现有测试后缀 |
+| Vue + TypeScript | `index.vue`，脚本使用 `lang="ts"` | `.ts` | `index.test.ts` |
+| Vue + JavaScript | `index.vue`，脚本使用原生 JS | `.js` | `index.test.js` |
+| Svelte + TypeScript | `index.svelte`，脚本使用 `lang="ts"` | `.ts` | `index.test.ts` |
+| Svelte + JavaScript | `index.svelte`，脚本使用原生 JS | `.js` | `index.test.js` |
+
+在 JavaScript 项目中，让模型和逻辑使用 `model.js`、`api.js`、`useX.js` 等现有命名；用项目既有的 JSDoc 或运行时校验表达类型。仅当仓库已经采用独立类型声明时，沿用其 `.d.ts` 或其他既有方案。
+
 ## 所有权层级
 
 使用“最近共同所有者”确定组件目录位于哪一层；无论位于哪一层，组件内部形态保持不变。
@@ -66,7 +89,7 @@
 | 文件或能力 | 就近放置规则 | 提升信号 |
 | --- | --- | --- |
 | `types.ts` / props | 放在组件 `index.*` 旁 | 多个所有者共同依赖同一契约 |
-| `api.ts` / request adapter | 放在发起用例的页面或组件目录 | 多页面共享稳定领域操作 |
+| `api.ts` / `api.js` / request adapter | 放在发起用例的页面或组件目录 | 多页面共享稳定领域操作 |
 | hooks / composables | 放在拥有状态生命周期的组件目录 | 成为无 UI 的独立领域能力 |
 | store | 放在实际共享状态的最近共同所有者 | 生命周期跨页面或跨 feature |
 | styles / tokens | 私有样式跟随组件目录 | 设计 token 或通用视觉原语稳定复用 |
@@ -78,6 +101,8 @@
 领域 DTO 或自动生成客户端通常属于 feature/领域基础层。页面或组件目录只保存对这些契约的私有适配和展示模型。
 
 ## React 范式
+
+以下目录展示 TypeScript 项目；JavaScript 项目按相邻组件把入口换为 `.jsx` 或 `.js`，并把卫星文件换为项目原生 JS 后缀：
 
 ```text
 OrderList/
@@ -120,6 +145,8 @@ export type { OrderTableProps } from './types'
 ```
 
 ## Vue 范式
+
+以下目录展示 TypeScript 项目；JavaScript 项目保持 `index.vue`，把卫星文件换为 `.js`：
 
 ```text
 OrderList/
@@ -208,6 +235,8 @@ OrderAddDialog/
 | `OrderTable/index.ts` 再转出 `OrderTable.tsx` | 把渲染实现合并到 `OrderTable/index.tsx` |
 | 子组件与父组件平铺在同一 `components/` | 把子组件目录移入直接父组件的 `components/` |
 | 页面目录有 `OrderListPage.tsx` | 把页面入口改为 `OrderList/index.tsx` |
+| JavaScript 页面旁新增 `model.ts`、`api.ts` 或 hook `.ts` | 按最近所有者的原生语言改用 `.js` |
+| TypeScript 页面旁新增 `model.js`、`api.js` 或 hook `.js` | 按最近所有者的原生语言改用 `.ts` |
 | 多处深层导入组件卫星文件 | 通过组件目录或 `index.*` 暴露最小公共表面 |
 | 共享组件包含大量 feature 条件分支 | 按业务所有者拆回各自的完整组件目录 |
 | 父子组件形成循环导入 | 将共同契约提升到最近共同所有者 |

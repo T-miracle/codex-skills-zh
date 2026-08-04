@@ -1,7 +1,7 @@
 interface:
   display_name: "前端组件就近组织"
-  short_description: "用统一 index 入口和递归 components 组织前端组件"
-  default_prompt: "使用 $organizing-frontend-components 按统一 index 入口和递归 components 结构重构这个前端页面。"
+  short_description: "自动识别 TS/JS，并用统一 index 入口递归组织前端组件"
+  default_prompt: "使用 $organizing-frontend-components 检测项目原生 TS/JS，并按统一 index 入口和递归 components 结构重构页面。"
 
 policy:
   allow_implicit_invocation: true
