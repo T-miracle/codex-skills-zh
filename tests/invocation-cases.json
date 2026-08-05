@@ -200,6 +200,24 @@
       ]
     },
     {
+      "name": "integrating-frontend-apis",
+      "positive_zh": [
+        "把这个用户列表页面接到后端接口，响应结构还没有完全确认。"
+      ],
+      "positive_en": [
+        "Integrate this frontend with the API without guessing the request contract."
+      ],
+      "positive_mixed": [
+        "为这个 Vue 页面完成 file upload、Mock 和 response mapping。"
+      ],
+      "negative": [
+        "只调整这个按钮的颜色和圆角，不涉及任何数据请求。"
+      ],
+      "explicit": [
+        "$integrating-frontend-apis 按契约门禁对接这个页面的数据接口。"
+      ]
+    },
+    {
       "name": "organizing-frontend-components",
       "positive_zh": [
         "把这个订单页面统一改成组件名目录、index 入口和递归 components 结构。"

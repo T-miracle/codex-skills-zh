@@ -1,0 +1,7 @@
+interface:
+  display_name: "前端接口对接规范"
+  short_description: "以零推测请求契约完成前端 API 联调、Mock 与响应映射"
+  default_prompt: "使用 $integrating-frontend-apis 安全地完成前端接口对接与响应映射。"
+
+policy:
+  allow_implicit_invocation: true

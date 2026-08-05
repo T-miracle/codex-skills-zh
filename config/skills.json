@@ -140,6 +140,13 @@
       "baseline_skill_sha256": "0026900866ed2a542af0559cef11dd7ae707633b75cc6f668c2e7c0a33e35032"
     },
     {
+      "name": "integrating-frontend-apis",
+      "category": "development",
+      "source_id": "local",
+      "translation_contract": false,
+      "allow_implicit_invocation": true
+    },
+    {
       "name": "organizing-frontend-components",
       "category": "development",
       "source_id": "local",
