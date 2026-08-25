@@ -1,0 +1,7 @@
+interface:
+  display_name: "ADHD 行动优先输出"
+  short_description: "为 ADHD 读者提供行动优先、易执行且便于持续跟进的输出"
+  default_prompt: "使用 $i-have-adhd 将本次回复改为行动优先、易执行的形式。"
+
+policy:
+  allow_implicit_invocation: true

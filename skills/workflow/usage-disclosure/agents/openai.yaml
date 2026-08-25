@@ -1,0 +1,7 @@
+interface:
+  display_name: "Skill 与插件使用披露"
+  short_description: "在每条回复顶部简洁披露实际使用的 Skill 与插件"
+  default_prompt: "使用 $usage-disclosure 在本轮回复顶部披露已实际使用的 Skill 与插件。"
+
+policy:
+  allow_implicit_invocation: true
