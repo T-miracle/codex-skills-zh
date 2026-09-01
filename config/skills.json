@@ -26,21 +26,6 @@
         "commit": null,
         "note": "The initial import was translated without upgrading the captured source-language snapshot."
       }
-    },
-    {
-      "id": "ayghri-i-have-adhd",
-      "kind": "github",
-      "repository": "ayghri/i-have-adhd",
-      "url": "https://github.com/ayghri/i-have-adhd",
-      "default_ref": "main",
-      "license": "MIT",
-      "license_file": "THIRD_PARTY_LICENSES/ayghri-i-have-adhd-LICENSE",
-      "baseline": {
-        "type": "github-main",
-        "captured_on": "2026-08-25",
-        "commit": "b42a45a068e080294924bfba19a7a2e8944c48ff",
-        "note": "The upstream skill was adapted for Chinese project-code conversations and automatic invocation."
-      }
     }
   ],
   "skills": [
@@ -133,15 +118,6 @@
       "allow_implicit_invocation": false,
       "required_english_terms": ["handoff document", "fresh agent", "artifacts", "redact"],
       "baseline_skill_sha256": "57c9f1f392d7352cdc85b1e39ca49eddc70ce1dc278bd9653fb4f23dfc2560fc"
-    },
-    {
-      "name": "i-have-adhd",
-      "category": "workflow",
-      "source_id": "ayghri-i-have-adhd",
-      "source_path": "skills/i-have-adhd",
-      "translation_contract": false,
-      "allow_implicit_invocation": true,
-      "baseline_skill_sha256": "938d0e350a0c2b0e2e6c3a9032542e062846d108e0f89dd27c798ba5b436397e"
     },
     {
       "name": "implement",

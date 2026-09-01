@@ -164,24 +164,6 @@
       ]
     },
     {
-      "name": "i-have-adhd",
-      "positive_zh": [
-        "修改订单列表页的筛选组件：状态标签单行省略，并验证窄屏显示。"
-      ],
-      "positive_en": [
-        "In this project, fix the checkout form validation and verify the error state."
-      ],
-      "positive_mixed": [
-        "调整这个 Vue 页面：将 API response 的 coverUrl 映射到视频封面，并处理加载失败。"
-      ],
-      "negative": [
-        "比较这个 Vue 项目的三种权限架构方案，并说明各自取舍。"
-      ],
-      "explicit": [
-        "$i-have-adhd 用行动优先的方式带我完成这次代码修改。"
-      ]
-    },
-    {
       "name": "implement",
       "positive_zh": [
         "按照已经确认的规格和工单完成实现。"

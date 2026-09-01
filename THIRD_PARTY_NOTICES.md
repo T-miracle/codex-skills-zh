@@ -21,13 +21,3 @@
 
 该来源的完整许可证见
 [`THIRD_PARTY_LICENSES/mattpocock-skills-LICENSE`](THIRD_PARTY_LICENSES/mattpocock-skills-LICENSE)。
-
-## ayghri/i-have-adhd
-
-[`ayghri/i-have-adhd`](https://github.com/ayghri/i-have-adhd) 中的 `i-have-adhd`
-Skill 以 MIT License 发布。本仓库保留其“行动优先、易扫读”的目标，并针对项目代码
-变更场景、自动调用边界和中文输出进行了本地适配；具体来源与审阅基线记录在
-[`config/skills.json`](config/skills.json) 中。
-
-该来源的完整许可证见
-[`THIRD_PARTY_LICENSES/ayghri-i-have-adhd-LICENSE`](THIRD_PARTY_LICENSES/ayghri-i-have-adhd-LICENSE)。
