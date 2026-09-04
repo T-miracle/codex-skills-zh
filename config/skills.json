@@ -70,6 +70,13 @@
       "baseline_skill_sha256": "7a0779480f323a66d109404646bcc1a14bf0232b45b3e3ea93b652a035718acb"
     },
     {
+      "name": "documenting-frontend-code",
+      "category": "development",
+      "source_id": "local",
+      "translation_contract": false,
+      "allow_implicit_invocation": true
+    },
+    {
       "name": "domain-modeling",
       "category": "planning",
       "source_id": "mattpocock-skills",

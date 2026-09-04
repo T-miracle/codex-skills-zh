@@ -1,0 +1,7 @@
+interface:
+  display_name: "前端代码注释"
+  short_description: "为前端函数、数据类与复杂流程生成并维护完整可验证注释"
+  default_prompt: "使用 $documenting-frontend-code 为当前前端代码生成或同步准确的函数、实体类、字段与复杂流程注释。"
+
+policy:
+  allow_implicit_invocation: true

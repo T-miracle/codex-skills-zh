@@ -74,6 +74,24 @@
       ]
     },
     {
+      "name": "documenting-frontend-code",
+      "positive_zh": [
+        "为这次新增的前端函数和数据实体补全参数、返回值与字段注释。"
+      ],
+      "positive_en": [
+        "Add JSDoc or TSDoc comments to these new frontend functions and model classes."
+      ],
+      "positive_mixed": [
+        "检查这些 Vue/TypeScript methods 的 comments 是否覆盖 params、returns 和字段语义。"
+      ],
+      "negative": [
+        "把产品说明文档翻译成英文，不需要查看代码。"
+      ],
+      "explicit": [
+        "$documenting-frontend-code 为这些前端函数、实体类和复杂流程生成准确注释。"
+      ]
+    },
+    {
       "name": "domain-modeling",
       "positive_zh": [
         "帮我统一订单领域里的术语并补充架构决策。"

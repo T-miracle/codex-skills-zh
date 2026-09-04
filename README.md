@@ -12,7 +12,7 @@
 
 | 目录 | 中文含义 | Skills |
 | --- | --- | --- |
-| `development` | 开发实施：直接实现、试验或测试代码 | `implement`、`integrating-frontend-apis`、`organizing-frontend-components`、`prototype`、`tdd`、`writing-vue-components` |
+| `development` | 开发实施：直接实现、试验或测试代码 | `documenting-frontend-code`、`implement`、`integrating-frontend-apis`、`organizing-frontend-components`、`prototype`、`tdd`、`writing-vue-components` |
 | `planning` | 需求与方案：形成模型、规格、工单或设计决策 | `codebase-design`、`domain-modeling`、`grill-with-docs`、`to-spec`、`to-tickets` |
 | `quality` | 质量保障：审查、诊断、架构评估与冲突解决 | `code-review`、`diagnosing-bugs`、`improve-codebase-architecture`、`resolving-merge-conflicts` |
 | `knowledge` | 研究与学习：沉淀事实、知识和技能写作方法 | `research`、`teach`、`writing-great-skills` |

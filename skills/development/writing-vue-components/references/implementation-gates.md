@@ -46,6 +46,40 @@
 
 任一环节使用不同字段名、类型或空值语义，表单都没有完成。日期范围、级联选择等复合控件在表单内部保持控件原生形态，在适配器边界做拆装；由组件库承担的必填标识、标签格式、尺寸与错误位置跟随项目配置。
 
+## 缺省值门禁
+
+把“尚未提供”与有效空值分开。组件内部和数据 class 的可选标量字段以 `void 0` 为统一缺省值；裸 `undefined`、`null` 和空字符串仅在外部契约赋予它们独立语义时出现。
+
+| 字段语义 | 内部初始值 | 说明 |
+| --- | --- | --- |
+| 未提供的可选字符串、ID、日期或对象引用 | `void 0` | 默认选择；重置后也恢复为 `void 0` |
+| 集合且控件始终消费数组 | `[]` | 表示已知为空的集合，不等同于未提供 |
+| 字典或结构体且组件需要完整对象 | `{}` 或完整默认结构 | 每个实例创建新对象 |
+| 布尔或数值存在有效零值 | `false` / `0` | 保留业务值，不能折叠为缺省 |
+| 组件库明确规定的清空值 | 该版本规定的值 | 例如某些控件可能输出 `null` 或空字符串 |
+| API 明确要求的空值 | 契约规定的值 | 只在请求/响应适配器边界转换 |
+
+脚本构建支持空值合并运算符时，可用统一归一化函数把输入中的空字符串、`null` 和 `undefined` 收敛到 `void 0`，而不把 `0`、`false` 误判为空：
+
+```js
+const normalizeOptional = value =>
+  value === '' ? void 0 : value ?? void 0
+
+export default class ExampleForm {
+  constructor(data = {}) {
+    this.id = normalizeOptional(data?.id)
+    this.name = normalizeOptional(data?.name)
+    this.validityRange = Array.isArray(data?.validityRange)
+      ? [...data.validityRange]
+      : []
+  }
+}
+```
+
+`void 0` 在 JSON 序列化时与 `undefined` 一样会使对象属性被省略。请求适配器必须依据已确认契约决定保持省略，还是显式映射为 `null`、空字符串或其他哨兵值；组件库清空事件也在进入 class 时先按其真实协议归一化。
+
+通过标准：每个新增字段都能说明 `void 0`、有效空集合、零值或外部空值中的哪一种语义；内部代码没有把 `null`、裸 `undefined` 或空字符串当作无依据的通用默认值。
+
 ## 第三方组件库门禁
 
 本门禁覆盖 Element UI、Element Plus、Ant Design Vue、Naive UI、Vuetify、Quasar 及其他 Vue 组件库；列举仅用于说明范围，实际实现以项目依赖为准。
@@ -57,6 +91,62 @@
 5. 运行页面并检查控制台警告；验证输入、清空、校验、键盘/焦点、开关弹层及销毁重开后的状态。
 
 通过标准：本次使用的每个第三方组件 API 都能定位到当前项目版本的证据，运行时无未知 prop/event/slot 警告，交互和主题结果与视觉契约一致。
+
+## 模板紧凑性门禁
+
+以项目 formatter 的 `printWidth`、lint 的 `max-len` 和相邻模板格式作为单行边界。formatter 会拆行，或必须横向滚动才能理解完整计算时，即视为过长。
+
+### 插值
+
+每个插值必须完整位于一个物理行内。短字段访问可以直接保留：
+
+```vue
+<span>{{ displayName }}</span>
+```
+
+插值包含条件组合、空值回退、格式化链或超过单行边界时，将结果提取为 computed：
+
+```js
+computed: {
+  displayValidity() {
+    return this.formatValidity(this.form.validityRange)
+  }
+}
+```
+
+```vue
+<span>{{ displayValidity }}</span>
+```
+
+### 属性计算
+
+属性值只保留短属性访问或短调用。派生值仅依赖当前响应式状态且不接收参数时使用 computed；需要 `row`、`item`、索引或事件参数时使用 method：
+
+```vue
+<DataTable :disabled="isTableDisabled" :row-class-name="resolveRowClass" />
+```
+
+多层三元表达式、多个逻辑运算或长格式化链进入 computed/method；`v-if`、`:class`、`:style`、`:label` 和第三方组件 props 同样适用。
+
+### class 与 style
+
+静态 class 列表或内联 style 超过单行边界时，创建表达职责的本地 CSS 类，把展示声明放入当前 SFC 的 `<style>` 域：
+
+```vue
+<div class="editor-validity-row">...</div>
+
+<style scoped>
+.editor-validity-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+</style>
+```
+
+保留第三方组件识别所必需的 class hook。动态值确有运行时含义时使用短 computed/method 或 CSS 自定义属性绑定；可静态表达的部分仍放进 CSS 类。
+
+通过标准：每个插值都在一行内；模板属性不承载长计算；过长静态 `class`/`style` 已转换为 `<style>` 域中的语义化 CSS 类；formatter 不会把这些表达式重新拆成多行。
 
 ## 模板与脚本运算符门禁
 
@@ -96,9 +186,10 @@
 | 门禁 | 必查内容 | 通过证据 |
 | --- | --- | --- |
 | 目录 | `index.vue`、递归 `components/`、JS/TS 卫星后缀、跨边界导入 | 文件树与结构搜索 |
-| 模板 | 全部受影响 SFC 的表达式与编译结果 | 项目 SFC 编译器零错误 |
+| 格式化 | 全部生成或修改文件 | formatter 写入后检查模式零差异 |
+| 模板 | 单行插值、短属性表达式、CSS 类收敛及全部受影响 SFC 编译结果 | formatter 保持稳定且项目 SFC 编译器零错误 |
 | 脚本 | lint、typecheck、构建目标兼容性 | 项目原生命令通过 |
-| 表单 | 默认、绑定、字段关联/校验、回填、重置、提交映射 | 逐字段闭环或相关测试 |
+| 表单 | 默认、缺省值、绑定、字段关联/校验、回填、重置、提交映射 | 逐字段闭环或相关测试 |
 | 组件库 | 版本、props/events/slots、弹层、主题与控制台警告 | 锁文件、项目用例及运行验证 |
 | 数据 | 加载、空态、分页/筛选、增删改、错误反馈 | 测试或可复现的运行结果 |
 | 接口 | 每个 URL/method/字段的契约来源 | 来源可定位；未知部分明确 Mock |
