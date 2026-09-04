@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vue 页面组件编写"
+  short_description: "按仓库证据一次闭环实现 Vue 页面、组件、表单与数据交互"
+  default_prompt: "使用 $writing-vue-components 按项目惯例一次闭环实现这个 Vue 页面或组件。"
+
+policy:
+  allow_implicit_invocation: true

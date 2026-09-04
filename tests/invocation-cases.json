@@ -450,6 +450,26 @@
       "explicit": [
         "$writing-great-skills 审查并改进这个skill。"
       ]
+    },
+    {
+      "name": "writing-vue-components",
+      "positive_zh": [
+        "参照现有门禁页面和原型新增一个 Vue 2 人员白名单弹窗，接口没确认就先用 Mock。",
+        "使用项目现有的 Naive UI 组件库实现这个新增编辑表单。"
+      ],
+      "positive_en": [
+        "Implement this Vue form in one pass while matching the reference component and template compiler constraints.",
+        "Build this Vue page with the third-party UI component library already installed in the project."
+      ],
+      "positive_mixed": [
+        "按 Element UI 原型编写 Vue 页面，拆出 form.js，并验证 template syntax 和 Mock data flow。"
+      ],
+      "negative": [
+        "解释 Vue 响应式原理，不需要创建或修改页面组件。"
+      ],
+      "explicit": [
+        "$writing-vue-components 按仓库证据一次闭环实现这个 Vue 表单。"
+      ]
     }
   ]
 }
