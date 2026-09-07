@@ -1,0 +1,7 @@
+interface:
+  display_name: "Git 提交规范"
+  short_description: "按实际变更编写约定式提交，处理原子拆分、破坏性变更与版本提交"
+  default_prompt: "使用 $git-commit 按仓库规范和实际变更编写提交信息，并仅执行我已授权的 Git 操作。"
+
+policy:
+  allow_implicit_invocation: true

@@ -87,6 +87,14 @@
       "baseline_skill_sha256": "152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579"
     },
     {
+      "name": "git-commit",
+      "category": "workflow",
+      "source_id": "local",
+      "translation_contract": false,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["Conventional Commits", "atomic commit", "BREAKING CHANGE", "npm version"]
+    },
+    {
       "name": "grilling",
       "category": "workflow",
       "source_id": "mattpocock-skills",

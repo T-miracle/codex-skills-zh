@@ -110,6 +110,42 @@
       ]
     },
     {
+      "name": "git-commit",
+      "positive_zh": [
+        "根据已暂存的改动写一条提交信息，先不要提交。",
+        "把这次修复和无关文档拆成两次提交并提交到本地。",
+        "同一个文件里有两个功能和一个旧 BUG 修复，请按修改行拆分提交。",
+        "新功能还未提交，把开发中对它的修正和测试一起组织成提交。",
+        "上线仅更改版本号应该用哪个提交前缀？",
+        "这次删除公开接口是否要标记破坏性变更？",
+        "帮我按 GitHub 提交规范检查这条提交信息。"
+      ],
+      "positive_en": [
+        "Write a Conventional Commits message for the staged diff.",
+        "Commit these changes as two atomic commits.",
+        "Split unrelated changes in the same file and validate each staged snapshot independently.",
+        "Check whether this commit message needs a breaking change marker."
+      ],
+      "positive_mixed": [
+        "npm version patch 会自动 commit，怎样符合提交规范？",
+        "这个 CSS 颜色修复该用 style 还是 fix？",
+        "两个 BUG 来自同一根因，请判断应该合为一个 fix 还是拆分提交。",
+        "请提交 feature、独立 cleanup 和公共依赖，拆分明确就直接执行。",
+        "请修改最后一次 commit message，注意已有 release tag。"
+      ],
+      "negative": [
+        "查看 git status 并解释当前分支状态。",
+        "修复这个表单提交失败的问题。",
+        "帮我解决当前 Git merge conflict。",
+        "在 GitHub 搜索一个 Vue 组件库。",
+        "查看当前安装的 npm 版本号。",
+        "检查这个 PR 的实现是否符合需求。"
+      ],
+      "explicit": [
+        "$git-commit 根据当前改动生成约定式提交信息。"
+      ]
+    },
+    {
       "name": "grilling",
       "positive_zh": [
         "在开始开发前，逐项压力测试我的设计方案。"
