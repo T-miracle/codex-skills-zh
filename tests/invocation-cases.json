@@ -113,6 +113,7 @@
       "name": "git-commit",
       "positive_zh": [
         "根据已暂存的改动写一条提交信息，先不要提交。",
+        "我用中文提问，但这个项目的人工提交和主文档是英文，请按项目语言写提交信息。",
         "把这次修复和无关文档拆成两次提交并提交到本地。",
         "同一个文件里有两个功能和一个旧 BUG 修复，请按修改行拆分提交。",
         "新功能还未提交，把开发中对它的修正和测试一起组织成提交。",
@@ -122,12 +123,14 @@
       ],
       "positive_en": [
         "Write a Conventional Commits message for the staged diff.",
+        "Infer the project's language from its Chinese documentation and human commits, then write the commit message in that language.",
         "Commit these changes as two atomic commits.",
         "Split unrelated changes in the same file and validate each staged snapshot independently.",
         "Check whether this commit message needs a breaking change marker."
       ],
       "positive_mixed": [
         "npm version patch 会自动 commit，怎样符合提交规范？",
+        "先判断项目主要语言，再写 commit message，保留 feat 和 BREAKING CHANGE 等协议词。",
         "这个 CSS 颜色修复该用 style 还是 fix？",
         "两个 BUG 来自同一根因，请判断应该合为一个 fix 还是拆分提交。",
         "请提交 feature、独立 cleanup 和公共依赖，拆分明确就直接执行。",

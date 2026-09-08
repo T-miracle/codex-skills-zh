@@ -2,6 +2,8 @@
 
 本 Skill 为本仓库自编内容，`source_id: local`、`translation_contract: false`。没有复制外部 Skill，不设置外部 Skill 哈希或翻译契约。
 
+2026-09-08 用户要求先分析项目主要自然语言，再以该语言描述提交信息；语言推断优先采用提交历史和项目文档证据，协议词保持原文。
+
 需求来自用户指定的 ChatGPT 对话“GitHub 提交规范”（对话 ID：`68e85b65-601c-8323-bd40-45a8bdeda498`），于 2026-09-07 读取全部三轮。提炼范围：提交类型与字段、破坏性变更、仅版本变化的 `chore(release)`、`npm version` 自动提交和 tag。
 
 同日核对的一手资料：
