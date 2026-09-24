@@ -24,6 +24,10 @@
 | 为修模板语法而连脚本中的 `?.` 一起移除 | 混淆模板与脚本编译通道 | 分开检查 `<template>` 与 `<script>`；脚本能力由 Babel/TS 证据决定 |
 | 表单逻辑先堆在 `index.vue`，后续才拆 `form.js` | 把目录规范推迟到“功能可运行之后” | 编辑前冻结卫星文件；模型、规则、重置和映射先归位再写视图 |
 | 最近参考使用 class，生成实现却换成函数 | 读取了参考但没有提取抽象惯例 | 在证据账本中明确 class/factory/composable，并原样沿用最近同类模式 |
+| class 实例被展开成普通对象，提交前又重新构造实例 | 把“新对象”和“Vue 响应性”混为一谈，丢失了模型原型方法 | `data()` 直接保存 `new Model()`；字段在构造阶段声明，重置、回填和请求映射使用实例方法 |
+| API 参数转换先写成独立函数，后又改成 static | 没有确定模型是否拥有当前表单状态 | 依赖当前字段的转换使用非静态实例方法；网络请求仍由 API adapter 负责 |
+| 为单个弹窗增加无 `scoped` 样式或修改共享 SCSS | 用全局覆盖规避弹层选择器问题 | 所有 SFC 局部样式必须 `scoped`；通过挂载方式、语义类和已验证的深度选择器解决弹层覆盖 |
+| lint 和构建通过，但弹窗样式没有变化 | 没检查编译选择器与实际 DOM 是否匹配 | 弹层样式同时验证源码、编译产物、实际 DOM 和浏览器渲染 |
 | 弹窗尺寸、分组、日期控件和对齐被多轮纠正 | 没把原型转成完整视觉约束，也未检查全局样式 | 编辑前列出全部布局约束；渲染后与原型比对实际像素与控件语义 |
 | 验证通过仍不能代表页面完成 | 检查只覆盖格式与静态语法 | 验证同时覆盖结构、模板编译、数据流、接口来源与实际视觉 |
 
@@ -45,6 +49,93 @@
 ```
 
 任一环节使用不同字段名、类型或空值语义，表单都没有完成。日期范围、级联选择等复合控件在表单内部保持控件原生形态，在适配器边界做拆装；由组件库承担的必填标识、标签格式、尺寸与错误位置跟随项目配置。
+
+## class 模型门禁
+
+当项目或最近同类实现采用 class 作为表单/数据模型时，保持实例身份贯穿组件生命周期：
+
+```js
+/**
+ * 示例表单模型；集中管理字段、重置、回填和请求映射。
+ * @property {string|number|undefined} id 业务记录标识；新增时未提供。
+ * @property {string|undefined} name 名称；提交前由表单完成校验。
+ * @property {Array<string|number>} roleIds 已选择的角色标识。
+ */
+export class ExampleForm {
+  /** @param {object} data 已确认的表单回填数据。 */
+  constructor(data = {}) {
+    this.id = data.id === null || data.id === '' ? void 0 : data.id
+    this.name = data.name === null || data.name === '' ? void 0 : data.name
+    this.roleIds = Array.isArray(data.roleIds) ? [...data.roleIds] : []
+  }
+
+  /** @returns {void} 将全部字段恢复为新增表单默认值。 */
+  reset() {
+    this.id = void 0
+    this.name = void 0
+    this.roleIds = []
+  }
+
+  /**
+   * 使用已确认数据回填当前实例。
+   * @param {object} data 表单回填数据。
+   * @returns {void} 无返回值。
+   */
+  fill(data = {}) {
+    this.id = data.id === null || data.id === '' ? void 0 : data.id
+    this.name = data.name === null || data.name === '' ? void 0 : data.name
+    this.roleIds = Array.isArray(data.roleIds) ? [...data.roleIds] : []
+  }
+
+  /**
+   * 将当前表单实例转换为已确认的请求参数。
+   * @param {string|number} operatorId 当前操作人标识。
+   * @returns {object} API 请求参数。
+   */
+  toPayload(operatorId) {
+    return {
+      id: this.id,
+      name: this.name,
+      roleIds: this.roleIds.join(','),
+      operatorId
+    }
+  }
+}
+```
+
+组件直接持有并调用实例：
+
+```js
+data() {
+  return {
+    form: new ExampleForm()
+  }
+},
+methods: {
+  /** @returns {Promise<object>} 提交当前表单实例生成的请求参数。 */
+  submit() {
+    return submitExample(this.form.toPayload(this.operatorId))
+  },
+  /** @returns {void} 重置当前表单实例。 */
+  reset() {
+    this.form.reset()
+  }
+}
+```
+
+禁止以下降级写法：
+
+```js
+form: { ...new ExampleForm() }
+form: Object.assign({}, new ExampleForm())
+form: JSON.parse(JSON.stringify(new ExampleForm()))
+```
+
+这些写法虽然会生成新对象，但会丢失模型原型及其实例方法，迫使提交时重新构造模型。Vue 2 可以观察在 `data()` 返回前已经存在的实例字段；所有双向绑定字段必须在构造函数内预先声明。运行期间确实需要动态字段时，优先修正模型定义；只有字段本身确属动态结构时才使用 `this.$set`。
+
+模型负责纯数据行为：默认值、重置、回填、归一化、校验所需字段形态，以及向已确认 API 契约的请求参数转换。依赖当前实例状态的转换必须是非静态实例方法。模型不得发送请求；请求函数继续位于 `api.<ts|js>`，从而保持数据语义与 I/O 副作用分离。
+
+通过标准：组件状态是实际模型实例；所有绑定字段在观察前存在；重置和回填不破坏实例原型；提交直接调用当前实例的非静态转换方法；不存在为了响应性而展开实例或提交前重新构造实例的绕行。
 
 ## 缺省值门禁
 
@@ -146,7 +237,32 @@ computed: {
 
 保留第三方组件识别所必需的 class hook。动态值确有运行时含义时使用短 computed/method 或 CSS 自定义属性绑定；可静态表达的部分仍放进 CSS 类。
 
-通过标准：每个插值都在一行内；模板属性不承载长计算；过长静态 `class`/`style` 已转换为 `<style>` 域中的语义化 CSS 类；formatter 不会把这些表达式重新拆成多行。
+通过标准：每个插值都在一行内；模板属性不承载长计算；过长静态 `class`/`style` 已转换为 `<style scoped>` 域中的语义化 CSS 类；formatter 不会把这些表达式重新拆成多行。
+
+## scoped 样式门禁
+
+所有 Vue SFC 的组件局部样式块必须声明 `scoped`：
+
+```vue
+<style lang="scss" scoped>
+.example-dialog {
+  display: flex;
+}
+</style>
+```
+
+不得为一个页面、弹窗或组件新增无 `scoped` 的 `<style>`，也不得把局部修复写进全局样式、共享主题或应用入口。可以读取并复用项目已有的全局变量、主题和组件库 class，但差异化覆盖必须放在当前 SFC 的 scoped 样式中，并以组件语义根类限制范围。
+
+第三方组件内部节点和挂载到 `body` 的弹层按以下顺序处理：
+
+1. 使用组件库提供的 `custom-class`、`popper-class`、overlay class、挂载目标或关闭 `append-to-body`/Teleport 的能力，把稳定语义类放到目标 DOM。
+2. 在 `<style scoped>` 内使用当前项目 SFC 编译器已经验证支持的深度选择器；Vue 2 与 Vue 3 的写法不能互相猜测。
+3. 构建后检查最终选择器，确认没有残留字面量 `::v-deep`、错误的 `data-v` 条件或脱离语义根类的规则。
+4. 在实际页面打开弹层，核对命中规则、计算样式和关闭重开后的表现。lint、Stylelint 与构建通过不能替代此检查。
+
+若现有 Portal/Teleport 挂载方式使 scoped 规则无法命中，调整挂载方式、包装结构或组件库配置；不得静默退回无作用域样式或修改全局 SCSS。确实无法在 scoped 约束下实现时，应报告具体阻塞，不以全局污染换取表面完成。
+
+通过标准：每个 SFC 样式块均带 `scoped`；局部需求没有修改全局样式；第三方弹层的编译选择器与实际 DOM 匹配；组件外相同 class 不受本组件覆盖影响。
 
 ## 模板与脚本运算符门禁
 
@@ -190,7 +306,9 @@ computed: {
 | 模板 | 单行插值、短属性表达式、CSS 类收敛及全部受影响 SFC 编译结果 | formatter 保持稳定且项目 SFC 编译器零错误 |
 | 脚本 | lint、typecheck、构建目标兼容性 | 项目原生命令通过 |
 | 表单 | 默认、缺省值、绑定、字段关联/校验、回填、重置、提交映射 | 逐字段闭环或相关测试 |
+| class 模型 | 实例身份、预声明字段、实例重置/回填、非静态请求映射 | 运行断言或组件测试证明未展开实例且原型方法可直接调用 |
 | 组件库 | 版本、props/events/slots、弹层、主题与控制台警告 | 锁文件、项目用例及运行验证 |
+| 样式作用域 | 全部 `<style>` 带 `scoped`、无局部需求引发的全局修改、弹层选择器实际命中 | 源码搜索、编译 CSS、实际 DOM 与浏览器渲染 |
 | 数据 | 加载、空态、分页/筛选、增删改、错误反馈 | 测试或可复现的运行结果 |
 | 接口 | 每个 URL/method/字段的契约来源 | 来源可定位；未知部分明确 Mock |
 | 视觉 | 原型的布局、控件、尺寸、对齐；全局样式影响 | 页面渲染或截图比对 |

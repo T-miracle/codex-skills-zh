@@ -27,9 +27,11 @@ description: "一次闭环编写或修改基于 Vue 及其 UI component library 
 参考组件的证明范围限于它实际展示的结构和项目惯例；新功能的接口、字段和业务规则分别寻找自身证据。按当前任务读取对应参考：
 
 - 表单或数据模型：[表单与模型门禁](references/implementation-gates.md#表单与模型门禁)
+- class 表单实例、实例方法与 Vue 2 响应性：[class-模型门禁](references/implementation-gates.md#class-模型门禁)
 - 数据 class、默认值或清空语义：[缺省值门禁](references/implementation-gates.md#缺省值门禁)
 - Element UI、Element Plus 或其他第三方组件库：[第三方组件库门禁](references/implementation-gates.md#第三方组件库门禁)
 - 模板插值、属性计算或 `class`/`style` 过长：[模板紧凑性门禁](references/implementation-gates.md#模板紧凑性门禁)
+- SFC 局部样式、弹层和第三方组件覆盖：[scoped-样式门禁](references/implementation-gates.md#scoped-样式门禁)
 - Vue 2 或运算符兼容：[模板与脚本运算符门禁](references/implementation-gates.md#模板与脚本运算符门禁)
 - API 不完整或需要 Mock：[API 证据状态](references/implementation-gates.md#api-证据状态)
 - 原型、截图或指定参考页：[视觉契约](references/implementation-gates.md#视觉契约)
@@ -44,6 +46,10 @@ description: "一次闭环编写或修改基于 Vue 及其 UI component library 
 - 表单默认值、规则、重置以及提交/回填映射进入同级 `form.<ts|js>`；独立于表单的领域或视图模型进入 `model.<ts|js>`。
 - 请求适配进入 `api.<ts|js>`；契约缺失时改用同级 `mock.<ts|js>`，并保持与未来真实适配器相同的调用边界。
 - class、factory、composable 和文件命名跟随最近的同类参考；参考采用 class 时继续使用 class。
+
+采用 class 作为表单或数据模型时，组件状态直接保存 `new Model()` 实例，不得为了所谓“Vue 响应性”使用 `{ ...new Model() }`、JSON 克隆或 `Object.assign({}, instance)` 将其降级为普通对象。所有响应式字段必须在构造函数返回前完成初始化；Vue 2 运行期间不得直接新增未声明字段。
+
+默认值、重置、回填以及 UI 模型到 API 请求参数的转换由模型实例拥有；转换方法使用依赖当前实例状态的非静态方法，例如 `form.toPayload(contextId)`。实际网络请求仍留在 `api.<ts|js>`，不得放进模型。这样组件可以直接调用当前表单实例，不需要在提交前重新 `new Model(form)` 恢复原型方法。
 
 表单字段以模型为单一事实来源。每个字段都要同时核对默认值、组件库实际使用的双向绑定协议、字段关联键、校验规则、编辑回填、重置和提交映射；范围控件在表单中保持一个范围值，只在 I/O 边界拆装开始与结束字段。
 
@@ -65,11 +71,15 @@ description: "一次闭环编写或修改基于 Vue 及其 UI component library 
 
 模板保持**一行一意**：每个 `{{ ... }}` 插值写在一个物理行内；插值或属性值中的计算超过项目 `printWidth`/`max-len`、被 formatter 拆行，或包含多步逻辑时，将无参数的响应式派生值提取为 computed，将需要行项目或其他参数的转换提取为 method。模板只保留短调用或属性访问。
 
-静态 `class` 或 `style` 在单行中过长时，把对应展示声明收敛为语义化 CSS 类，写入当前 SFC 的 `<style>` 域并在模板中引用；预处理器、`scoped` 和第三方样式穿透方式跟随当前文件。动态样式保留最短必要绑定，稳定部分仍归入 CSS 类。
+静态 `class` 或 `style` 在单行中过长时，把对应展示声明收敛为语义化 CSS 类，写入当前 SFC 的 `<style scoped>` 域并在模板中引用；预处理器和第三方样式穿透语法跟随当前项目，`scoped` 始终为必需项。动态样式保留最短必要绑定，稳定部分仍归入 CSS 类。
+
+Vue SFC 中的组件局部样式必须写在带 `scoped` 的 `<style>` 中；不得新增无 `scoped` 的样式块，也不得为单个页面或组件修改全局样式文件。可以复用既有全局主题、变量和组件库样式，但本组件的差异化覆盖必须由语义化根类约束在自身作用域内。
+
+Dialog、Drawer、Popover、Select 下拉层等会挂载到 `body` 的节点，仍不得通过全局样式绕过作用域。优先使用组件库提供的 `custom-class`、`popper-class`、挂载目标或关闭 `append-to-body` 等能力，并在 `scoped` 块内使用当前 SFC 编译器已经证明支持的深度选择器。若现有挂载方式无法在 scoped 条件下可靠命中，应调整挂载或组件结构；不要静默改成全局覆盖。必须检查编译后的选择器和实际 DOM，确认没有残留字面量 `::v-deep`、错误的 `data-v` 条件或未命中的规则。
 
 对上传、日期范围、分页、选择、增删改和弹窗开关同时实现初始、成功、空值、取消/重置与编辑回填路径。Mock 应模拟异步边界和业务状态，并以明确命名和说明保持其未接后端的身份。
 
-完成标准：实现契约中的每个文件、字段、状态和视觉约束均已落地；每个接口事实都有证据或明确 Mock 状态；模型职责全部位于冻结的所有者中。
+完成标准：实现契约中的每个文件、字段、状态和视觉约束均已落地；每个接口事实都有证据或明确 Mock 状态；class 模型保持实例身份和实例方法；每个 SFC 局部样式块均带 `scoped`，且没有为局部需求污染全局样式。
 
 ## 4. 运行契约级验证
 
@@ -77,10 +87,10 @@ description: "一次闭环编写或修改基于 Vue 及其 UI component library 
 
 1. 使用 `$documenting-frontend-code` 检查新增函数、class、实体字段及已修改契约的注释，再对全部生成或修改的文件运行项目原生 formatter 和格式化检查；使用写入模式修复时，随后以检查模式确认零差异。缺少专用检查命令时，重新运行 formatter 并确认它不再产生变更。
 2. 用项目实际 SFC 编译器编译每个受影响模板；对旧编译器额外确认模板中没有不支持的运算符。
-3. 检查每个模板插值均位于一行，长计算已进入 computed/method，过长静态 `class`/`style` 已收敛到 `<style>` 中的 CSS 类。
+3. 检查每个模板插值均位于一行，长计算已进入 computed/method，过长静态 `class`/`style` 已收敛到 `<style scoped>` 中的 CSS 类；确认不存在无 `scoped` 的 SFC 样式块和为局部组件产生的全局样式改动。
 4. 运行项目原生的 lint、typecheck、相关测试与可行的构建；区分代码失败和既有环境失败。
-5. 逐字段核对新增、编辑回填、校验、重置、提交/Mock 映射；逐状态核对加载、空态、错误与操作反馈。
-6. 有原型或截图时启动页面做视觉比对，检查全局样式后的实际结果；仅通过 ESLint 不等于视觉完成。
+5. 逐字段核对新增、编辑回填、校验、重置、提交/Mock 映射；采用 class 时确认 `data()` 直接保存实例、字段在构造阶段完整声明、请求映射由非静态实例方法完成；逐状态核对加载、空态、错误与操作反馈。
+6. 有原型或截图时启动页面做视觉比对，检查既有全局主题作用后的实际结果；弹层额外核对实际 DOM 与编译选择器。仅通过 ESLint、Stylelint 或构建不等于视觉完成。
 7. 搜索请求模块、URL 和调用点，证明每个网络契约都有来源；未确认接口只能指向明确的 Mock。
 8. 复查 `$organizing-frontend-components` 给出的目录与后缀不变量。
 
