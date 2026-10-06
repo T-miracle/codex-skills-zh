@@ -14,8 +14,8 @@
       "required_english_terms": ["ADR", "Hard to reverse", "Surprising without context", "real trade-off"]
     },
     {
-      "path": "planning/domain-modeling/CONTEXT-FORMAT.md",
-      "required_english_terms": ["CONTEXT.md", "CONTEXT-MAP.md", "Structure", "Rules"]
+      "path": "planning/domain-modeling/GLOSSARY-FORMAT.md",
+      "required_english_terms": ["GLOSSARY.md", "GLOSSARY-MAP.md", "Structure", "Rules"]
     },
     {
       "path": "quality/improve-codebase-architecture/HTML-REPORT.md",
@@ -23,7 +23,7 @@
     },
     {
       "path": "development/prototype/LOGIC.md",
-      "required_english_terms": ["Logic Prototype", "state machine", "pure reducer", "lightweight TUI", "Anti-patterns"]
+      "required_english_terms": ["Logic Prototype", "state machine", "pure reducer", "shareable demo", "Anti-patterns"]
     },
     {
       "path": "development/prototype/UI.md",
@@ -31,7 +31,7 @@
     },
     {
       "path": "workflow/setup-matt-pocock-skills/domain.md",
-      "required_english_terms": ["Domain Docs", "CONTEXT.md", "ADR", "proceed silently"]
+      "required_english_terms": ["Domain Docs", "GLOSSARY.md", "ADR", "proceed silently"]
     },
     {
       "path": "workflow/setup-matt-pocock-skills/issue-tracker-github.md",
@@ -82,8 +82,12 @@
       "required_english_terms": ["Out-of-Scope Knowledge Base", "Institutional memory", "Deduplication", "enhancement", "wontfix"]
     },
     {
-      "path": "knowledge/writing-great-skills/GLOSSARY.md",
-      "required_english_terms": ["Predictability", "Invocation", "Information Hierarchy", "Steering", "Pruning", "Leading Word", "Completion Criterion", "Single Source of Truth", "No-Op"]
+      "path": "knowledge/writing-for-agents/SKILL-MECHANICS.md",
+      "required_english_terms": ["Skill mechanics", "Invocation", "model-invoked", "user-invoked", "Splitting by invocation", "Router skills"]
+    },
+    {
+      "path": "workflow/pr/CREDITS.md",
+      "required_english_terms": ["Credits", "Summary", "standalone installs"]
     }
   ]
 }

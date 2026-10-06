@@ -1,0 +1,7 @@
+interface:
+  display_name: "智能体文档编写规范"
+  short_description: "编写供 agents 阅读的 skills、AGENTS.md 与参考文档"
+  default_prompt: "使用 $writing-for-agents 审查并改进这份智能体文档。"
+
+policy:
+  allow_implicit_invocation: true

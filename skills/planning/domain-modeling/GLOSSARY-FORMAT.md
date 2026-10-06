@@ -1,4 +1,4 @@
-# CONTEXT.md 格式
+# GLOSSARY.md 格式
 
 ## 结构（Structure）
 
@@ -31,18 +31,18 @@ _Avoid_: Client, buyer, account
 
 ## 单上下文与多上下文仓库
 
-**单上下文（大多数仓库）：**仓库根目录只有一个 `CONTEXT.md`。
+**单上下文（大多数仓库）：**仓库根目录只有一个 `GLOSSARY.md`。
 
-**多上下文：**仓库根目录的 `CONTEXT-MAP.md` 列出各上下文、所在位置及其相互关系：
+**多上下文：**仓库根目录的 `GLOSSARY-MAP.md` 列出各上下文、所在位置及其相互关系：
 
 ```md
-# Context Map
+# Glossary Map
 
 ## Contexts
 
-- [Ordering](./src/ordering/CONTEXT.md) — receives and tracks customer orders
-- [Billing](./src/billing/CONTEXT.md) — generates invoices and processes payments
-- [Fulfillment](./src/fulfillment/CONTEXT.md) — manages warehouse picking and shipping
+- [Ordering](./src/ordering/GLOSSARY.md): receives and tracks customer orders
+- [Billing](./src/billing/GLOSSARY.md): generates invoices and processes payments
+- [Fulfillment](./src/fulfillment/GLOSSARY.md): manages warehouse picking and shipping
 
 ## Relationships
 
@@ -53,8 +53,8 @@ _Avoid_: Client, buyer, account
 
 技能会推断应采用哪种结构：
 
-- 如果存在 `CONTEXT-MAP.md`，读取它以找到各上下文
-- 如果只有根目录的 `CONTEXT.md`，则为单上下文
-- 如果两者都不存在，在第一个术语得到解决时按需创建根目录 `CONTEXT.md`
+- 如果存在 `GLOSSARY-MAP.md`，读取它以找到各上下文
+- 如果只有根目录的 `GLOSSARY.md`，则为单上下文
+- 如果两者都不存在，在第一个术语得到解决时按需创建根目录 `GLOSSARY.md`
 
 存在多个上下文时，推断当前主题属于哪一个；如果无法确定，就询问用户。

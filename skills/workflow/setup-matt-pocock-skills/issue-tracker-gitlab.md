@@ -1,6 +1,6 @@
 # 问题跟踪器：GitLab
 
-此仓库的问题和 PRD 都以 GitLab issue 的形式存在。所有操作都使用 [`glab`](https://gitlab.com/gitlab-org/cli) CLI。
+此仓库的议题和规格（specs）都以 GitLab issue 的形式存在。所有操作都使用 [`glab`](https://gitlab.com/gitlab-org/cli) CLI。
 
 ## 约定（Conventions）
 
@@ -10,9 +10,9 @@
 - **评论问题（Comment on an issue）**：`glab issue note <number> --message "..."`。GitLab 把评论称为“notes”。
 - **应用／移除标签（Apply / remove labels）**：`glab issue update <number> --label "..."` / `--unlabel "..."`。多个标签可以逗号分隔，也可以重复传入标志。
 - **关闭（Close）**：`glab issue close <number>`。`glab issue close` 不接受关闭评论，因此先用 `glab issue note <number> --message "..."` 发布说明，再关闭问题。
-- **合并请求（Merge requests）**：GitLab 把 PR 称为“merge requests”。使用 `glab mr create`、`glab mr view`、`glab mr note` 等——形式与 `gh pr ...` 相同，只是用 `mr` 代替 `pr`，用 `note`/`--message` 代替 `comment`/`--body`。
+- **合并请求（Merge requests）**：GitLab 把 PR 称为“merge requests”。使用 `glab mr create`、`glab mr view`、`glab mr note` 等：形式与 `gh pr ...` 相同，只是用 `mr` 代替 `pr`，用 `note`/`--message` 代替 `comment`/`--body`。
 
-从 `git remote -v` 推断仓库——在克隆目录内运行时，`glab` 会自动完成这一步。
+从 `git remote -v` 推断仓库：在克隆目录内运行时，`glab` 会自动完成这一步。
 
 ## 将合并请求作为分流入口
 
@@ -40,7 +40,7 @@
 
 - **地图（Map）**：带有 `wayfinder:map` 标签的单个 issue，正文包含 Notes / Decisions-so-far / Fog。使用 `glab issue create --label wayfinder:map`。（在支持原生 epic 的 GitLab 层级中，也可由 epic 承载地图；带标签的 issue 在所有层级都可用。）
 - **子工单（Child ticket）**：说明顶部包含 `Part of #<map>`，并带有 `wayfinder:<type>` 标签（`research`/`prototype`/`grilling`/`task`）的 issue。认领后，将工单分配给负责推进的开发者。
-- **阻塞（Blocking）**：使用 GitLab 的**原生阻塞链接（native blocking link）**——这是规范且在 UI 中可见的表示。把 `/blocked_by #<n>` 快捷操作作为 note 发布（`glab issue note <child> --message "/blocked_by #<blocker>"`），即可添加链接。原生阻塞链接属于 Premium/Ultimate 功能；在免费层级（或功能不可用时），回退到说明顶部的 `Blocked by: #<n>, #<n>` 行。所有阻塞项关闭后，工单即解除阻塞。
-- **前沿查询（Frontier query）**：运行 `glab issue list -F json` 并把范围限定为地图子项；排除存在开放阻塞项——指向开放 issue 的原生 `blocked_by` 链接（`glab api projects/:id/issues/:iid/links`），或 `Blocked by` 行中的开放 issue——或已有受理人的条目；按地图顺序取第一个。
-- **认领（Claim）**：`glab issue update <n> --assignee @me`——这是会话中的第一次写操作。
+- **阻塞（Blocking）**：使用 GitLab 的**原生阻塞链接（native blocking link）**：这是规范且在 UI 中可见的表示。把 `/blocked_by #<n>` 快捷操作作为 note 发布（`glab issue note <child> --message "/blocked_by #<blocker>"`），即可添加链接。原生阻塞链接属于 Premium/Ultimate 功能；在免费层级（或功能不可用时），回退到说明顶部的 `Blocked by: #<n>, #<n>` 行。所有阻塞项关闭后，工单即解除阻塞。
+- **前沿查询（Frontier query）**：运行 `glab issue list -F json` 并把范围限定为地图子项；排除存在开放阻塞项：指向开放 issue 的原生 `blocked_by` 链接（`glab api projects/:id/issues/:iid/links`），或 `Blocked by` 行中的开放 issue：或已有受理人的条目；按地图顺序取第一个。
+- **认领（Claim）**：`glab issue update <n> --assignee @me`：这是会话中的第一次写操作。
 - **解决（Resolve）**：先运行 `glab issue note <n> --message "<answer>"`，再运行 `glab issue close <n>`，随后把上下文指针（摘要 + 链接）追加到地图的 Decisions-so-far。

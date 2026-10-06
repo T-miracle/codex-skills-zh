@@ -1,0 +1,7 @@
+interface:
+  display_name: "重新解释上一条回复"
+  short_description: "补充必要背景，以简明语言和项目领域术语重新解释上一条回复"
+  default_prompt: "使用 $wait-what 补充背景并重新解释上一条回复。"
+
+policy:
+  allow_implicit_invocation: false

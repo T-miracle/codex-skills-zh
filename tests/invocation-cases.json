@@ -46,7 +46,7 @@
         "Review this branch since main against both standards and spec."
       ],
       "positive_mixed": [
-        "请 review 当前 PR 是否符合原始 PRD。"
+        "请 review 当前 PR 是否符合原始 spec。"
       ],
       "negative": [
         "按照这个需求直接实现一个新页面。"
@@ -94,16 +94,20 @@
     {
       "name": "domain-modeling",
       "positive_zh": [
-        "帮我统一订单领域里的术语并补充架构决策。"
+        "帮我统一订单领域里的术语并补充架构决策。",
+        "为项目编写 GLOSSARY.md，澄清多义领域术语并记录 ADR。"
       ],
       "positive_en": [
-        "Sharpen the ubiquitous language for this domain model."
+        "Sharpen the ubiquitous language for this domain model.",
+        "Update the domain glossary and document this hard-to-reverse decision as an ADR."
       ],
       "positive_mixed": [
-        "为支付 domain 补充 ADR 和领域术语。"
+        "为支付 domain 补充 ADR 和领域术语。",
+        "修订 GLOSSARY.md 中的 canonical term，并完善这份 ADR。"
       ],
       "negative": [
-        "运行项目现有的单元测试。"
+        "运行项目现有的单元测试。",
+        "只读取 GLOSSARY.md 中已定义的术语，用于修改按钮文字。"
       ],
       "explicit": [
         "$domain-modeling 帮我完善这个项目的领域模型。"
@@ -151,10 +155,12 @@
     {
       "name": "grilling",
       "positive_zh": [
-        "在开始开发前，逐项压力测试我的设计方案。"
+        "在开始开发前，逐项压力测试我的设计方案。",
+        "按当前可回答的问题前沿分轮追问这个决策，并给出推荐答案。"
       ],
       "positive_en": [
-        "Grill this plan relentlessly before we build it."
+        "Grill this plan relentlessly before we build it.",
+        "Grill my thinking about this decision in frontier-based rounds."
       ],
       "positive_mixed": [
         "请对这个 architecture plan 做 stress-test。"
@@ -239,6 +245,25 @@
       ]
     },
     {
+      "name": "implement-spec",
+      "positive_zh": [
+        "把这份规格及全部依赖工单并行实施，最后汇入一个集成分支。"
+      ],
+      "positive_en": [
+        "Implement the entire spec by scheduling ready tickets across worktrees."
+      ],
+      "positive_mixed": [
+        "按 task graph 的 frontier 并行推进工单并合入 integration branch。"
+      ],
+      "negative": [
+        "只改这个按钮的颜色。",
+        "把需求拆成工单，先不要实施。"
+      ],
+      "explicit": [
+        "$implement-spec 实施这份规格及其全部工单。"
+      ]
+    },
+    {
       "name": "improve-codebase-architecture",
       "positive_zh": [
         "扫描整个代码库，找出可以深化模块边界的机会。"
@@ -293,12 +318,33 @@
       ]
     },
     {
-      "name": "prototype",
+      "name": "pr",
       "positive_zh": [
-        "做一个一次性原型验证这个状态模型是否可行。"
+        "为这次变更编写 PR 正文，附前后证据和影响范围。"
       ],
       "positive_en": [
-        "Build a throwaway prototype to test this interaction model."
+        "Write the PR body with a visual summary, evidence, and merge danger."
+      ],
+      "positive_mixed": [
+        "帮我写 PR body，说明 one-way door 和 blast radius。"
+      ],
+      "negative": [
+        "按 Conventional Commits 写提交消息。",
+        "审查 PR 的代码是否符合规格。"
+      ],
+      "explicit": [
+        "$pr 编写这次变更的拉取请求正文。"
+      ]
+    },
+    {
+      "name": "prototype",
+      "positive_zh": [
+        "做一个一次性原型验证这个状态模型是否可行。",
+        "制作一个可双击运行的 HTML 逻辑演示，让产品经理点击按钮验证状态转换。"
+      ],
+      "positive_en": [
+        "Build a throwaway prototype to test this interaction model.",
+        "Build a shareable HTML demo to explore this state machine with a non-developer."
       ],
       "positive_mixed": [
         "用 prototype 快速探索这个 UI 应该长什么样。"
@@ -329,21 +375,22 @@
       ]
     },
     {
-      "name": "resolving-merge-conflicts",
+      "name": "retro",
       "positive_zh": [
-        "当前rebase发生冲突，请理解双方意图后解决。"
+        "复盘刚才的编码会话，看看导航、检查和规范如何改进。"
       ],
       "positive_en": [
-        "Resolve the in-progress Git merge conflicts."
+        "Conduct a retrospective on this coding session and suggest environment improvements."
       ],
       "positive_mixed": [
-        "这个 merge conflict 应该怎样合并双方修改？"
+        "对这次 agent session 做 retro，优先找 guardrail 和工具改进机会。"
       ],
       "negative": [
-        "比较两个普通文本文件的差异。"
+        "诊断当前测试为什么失败。",
+        "直接实施这张功能工单。"
       ],
       "explicit": [
-        "$resolving-merge-conflicts 解决当前rebase冲突。"
+        "$retro 复盘当前编码会话。"
       ]
     },
     {
@@ -473,15 +520,34 @@
       ]
     },
     {
+      "name": "wait-what",
+      "positive_zh": [
+        "没听懂你刚才说的，补充背景并用领域术语重新解释。"
+      ],
+      "positive_en": [
+        "Wait, what? Re-pitch your last message with the missing context."
+      ],
+      "positive_mixed": [
+        "刚才的解释没懂，请 re-pitch，并沿用 GLOSSARY.md 的术语。"
+      ],
+      "negative": [
+        "把整篇英文文章翻译成中文。",
+        "请系统地教我状态机并记录学习进度。"
+      ],
+      "explicit": [
+        "$wait-what 用简明中文重新解释上一条回复。"
+      ]
+    },
+    {
       "name": "wayfinder",
       "positive_zh": [
         "这个目标超过单次会话容量，请建立调查工单地图。"
       ],
       "positive_en": [
-        "Map this multi-session effort into investigation tickets."
+        "Map this multi-session effort into decision tickets and resolve them until the destination is clear."
       ],
       "positive_mixed": [
-        "为这个 huge project 建立 investigation map。"
+        "为这个超长项目建立 decision tickets 地图，并逐步驱散 fog of war。"
       ],
       "negative": [
         "修复一个已经定位的单行错误。"
@@ -491,21 +557,24 @@
       ]
     },
     {
-      "name": "writing-great-skills",
+      "name": "writing-for-agents",
       "positive_zh": [
-        "用可预测性原则审查这个技能的描述和工作流。"
+        "帮我编写一个技能，并检查指令是否清晰可预测。",
+        "帮我精简 AGENTS.md，保留指向必要文档的导航指针。"
       ],
       "positive_en": [
-        "Review this skill for predictable invocation and execution."
+        "Review this skill for predictable behavior.",
+        "Edit CLAUDE.md and improve its context pointers."
       ],
       "positive_mixed": [
-        "检查这个 skill 的 context load 和 leading words。"
+        "用 leading words 改进这份 agent 文档的 completion criteria。"
       ],
       "negative": [
-        "使用这个技能去完成它定义的业务任务。"
+        "给同事写一封普通的项目进度邮件。",
+        "阅读 AGENTS.md 后，按现有规范修复按钮样式。"
       ],
       "explicit": [
-        "$writing-great-skills 审查并改进这个skill。"
+        "$writing-for-agents 审查并改进这份智能体文档。"
       ]
     },
     {

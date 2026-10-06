@@ -1,0 +1,7 @@
+interface:
+  display_name: "PR 正文编写"
+  short_description: "用最小图示、前后证据与风险说明编写可审阅的 PR body"
+  default_prompt: "使用 $pr 为这次变更编写拉取请求正文。"
+
+policy:
+  allow_implicit_invocation: true

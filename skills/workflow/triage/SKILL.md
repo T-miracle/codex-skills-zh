@@ -7,7 +7,7 @@ description: "通过 triage roles 状态机处理 issues 和外部 PR：分类�
 
 让项目议题跟踪器中的议题通过一个由分诊角色（triage roles）组成的小型状态机。
 
-如果本仓库将外部拉取请求视为请求入口（request surface，参见议题跟踪器配置），分诊也涵盖它们：**PR 是附带代码的议题**——使用相同角色、相同状态、相同状态机，只有少数差异会在下文标记为“适用于 PR”。按照跟踪器配置，将单独出现的 `#42` 解析为议题或 PR。
+如果本仓库将外部拉取请求视为请求入口（request surface，参见议题跟踪器配置），分诊也涵盖它们：**PR 是附带代码的议题**：使用相同角色、相同状态、相同状态机，只有少数差异会在下文标记为“适用于 PR”。按照跟踪器配置，将单独出现的 `#42` 解析为议题或 PR。
 
 分诊期间发布到议题跟踪器的每条评论或议题都**必须**以以下免责声明开头：
 
@@ -17,31 +17,31 @@ description: "通过 triage roles 状态机处理 issues 和外部 PR：分类�
 
 ## 参考文档（Reference docs）
 
-- [AGENT-BRIEF.md](AGENT-BRIEF.md)——如何编写持久有效的智能体简报（agent briefs）
-- [OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)——`.out-of-scope/` 知识库的工作方式
+- [AGENT-BRIEF.md](AGENT-BRIEF.md)：如何编写持久有效的智能体简报（agent briefs）
+- [OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)：`.out-of-scope/` 知识库的工作方式
 
 ## 角色（Roles）
 
 两个**类别（category）**角色：
 
-- `bug`——某项内容发生故障
-- `enhancement`——新功能或改进
+- `bug`：某项内容发生故障
+- `enhancement`：新功能或改进
 
 五个**状态（state）**角色：
 
-- `needs-triage`——需要维护者评估
-- `needs-info`——等待报告者提供更多信息
-- `ready-for-agent`——规格完整，可在用户离席（AFK）时由智能体独立处理
-- `ready-for-human`——需要人类实现
-- `wontfix`——不会采取行动
+- `needs-triage`：需要维护者评估
+- `needs-info`：等待报告者提供更多信息
+- `ready-for-agent`：规格完整，可在用户离席（AFK）时由智能体独立处理
+- `ready-for-human`：需要人类实现
+- `wontfix`：不会采取行动
 
 对于 PR，相同状态要结合附带代码理解：`ready-for-agent` 表示已经附上简报，应由智能体对差异执行下一步；`ready-for-human` 表示已经准备好由人类合并。
 
 每个完成分诊的议题都应当恰好带有一个类别角色和一个状态角色。如果状态角色冲突，先标记冲突并询问维护者，再执行任何其他操作。
 
-这些是规范角色名称（canonical role names）——议题跟踪器实际使用的标签字符串可能不同。你应当已经获得映射；如果没有，请运行 `/setup-matt-pocock-skills`。
+这些是规范角色名称（canonical role names）：议题跟踪器实际使用的标签字符串可能不同。你应当已经获得映射；如果没有，提醒用户运行 `/setup-matt-pocock-skills`。
 
-状态转换（state transitions）：没有标签的议题通常先进入 `needs-triage`；随后转入 `needs-info`、`ready-for-agent`、`ready-for-human` 或 `wontfix`。报告者回复后，`needs-info` 返回 `needs-triage`。维护者随时可以覆盖状态——发现看起来异常的转换时，先标记并询问，再继续。
+状态转换（state transitions）：没有标签的议题通常先进入 `needs-triage`；随后转入 `needs-info`、`ready-for-agent`、`ready-for-human` 或 `wontfix`。报告者回复后，`needs-info` 返回 `needs-triage`。维护者随时可以覆盖状态：发现看起来异常的转换时，先标记并询问，再继续。
 
 ## 调用方式（Invocation）
 
@@ -56,33 +56,33 @@ description: "通过 triage roles 状态机处理 issues 和外部 PR：分类�
 
 查询议题跟踪器，并按最早优先的顺序呈现三个分组（buckets）：
 
-1. **无标签（Unlabeled）**——从未分诊。
-2. **`needs-triage`**——正在评估。
-3. **自上次分诊笔记以来报告者有新活动的 `needs-info`**——需要重新评估。
+1. **无标签（Unlabeled）**：从未分诊。
+2. **`needs-triage`**：正在评估。
+3. **自上次分诊笔记以来报告者有新活动的 `needs-info`**：需要重新评估。
 
-当 PR 在范围内时，把外部 PR 纳入这些分组，并为每一行添加 `[PR]` 或 `[issue]` 标签。发现过程只呈现*外部* PR（跟踪器配置定义谁属于外部人员）——协作者正在进行的 PR 不属于分诊工作。该筛选器只适用于发现过程；显式指定的 PR 无论作者是谁都必须分诊。
+当 PR 在范围内时，把外部 PR 纳入这些分组，并为每一行添加 `[PR]` 或 `[issue]` 标签。发现过程只呈现*外部* PR（跟踪器配置定义谁属于外部人员）：协作者正在进行的 PR 不属于分诊工作。该筛选器只适用于发现过程；显式指定的 PR 无论作者是谁都必须分诊。
 
 显示数量，并为每项提供一行摘要。让维护者选择。
 
 ## 分诊特定议题或 PR
 
-1. **收集上下文（Gather context）。**读取完整议题或 PR（正文、评论、标签、作者、日期；对于 PR 还要读取差异）。解析之前的所有分诊笔记，避免重复询问已经解决的问题。使用项目领域词汇表探索代码库，并遵守相关区域的 ADR。针对代码库运行两项检查：(a) **冗余检查（redundancy）**——按领域概念（而不只是请求中的措辞）搜索请求行为的现有实现，并报告搜索位置。如果找到，它就是“已经实现”的 `wontfix`（第 5 步）。(b) **之前拒绝（prior rejection）**——读取 `.out-of-scope/*.md`，并呈现与本请求相似的内容。
+1. **收集上下文（Gather context）。**读取完整议题或 PR（正文、评论、标签、作者、日期；对于 PR 还要读取差异）。解析之前的所有分诊笔记，避免重复询问已经解决的问题。使用项目领域词汇表探索代码库，并遵守相关区域的 ADR。针对代码库运行两项检查：(a) **冗余检查（redundancy）**：按领域概念（而不只是请求中的措辞）搜索请求行为的现有实现，并报告搜索位置。如果找到，它就是“已经实现”的 `wontfix`（第 5 步）。(b) **之前拒绝（prior rejection）**：读取 `.out-of-scope/*.md`，并呈现与本请求相似的内容。
 
-2. **提出建议（Recommend）。**向维护者说明推荐的类别和状态及其理由，并提供与请求有关的简短代码库摘要——包括是否已经实现。等待指示。
+2. **提出建议（Recommend）。**向维护者说明推荐的类别和状态及其理由，并提供与请求有关的简短代码库摘要：包括是否已经实现。等待指示。
 
-3. **验证主张（Verify the claim）。**进行任何追问之前，先检查该主张是否成立。对于缺陷，按照报告者的步骤复现。对于 PR，确认差异确实实现了所声明的行为——检出代码，并运行相关测试或命令。报告结果：已确认（附代码路径）、失败，或者细节不足（强烈的 `needs-info` 信号）。经过确认的验证会产生更有力的智能体简报。
+3. **验证主张（Verify the claim）。**进行任何追问之前，先检查该主张是否成立。对于缺陷，按照报告者的步骤复现。对于 PR，确认差异确实实现了所声明的行为：检出代码，并运行相关测试或命令。报告结果：已确认（附代码路径）、失败，或者细节不足（强烈的 `needs-info` 信号）。经过确认的验证会产生更有力的智能体简报。
 
-4. **追问（如有需要）（Grill if needed）。**如果请求需要进一步充实，同时运行 `/grilling` 和 `/domain-modeling` 技能——每次提出一个问题，把请求追问成形；随着决策形成，磨砺领域术语并就地更新 `CONTEXT.md`/ADR。
+4. **追问（如有需要）（Grill if needed）。**如果请求需要进一步充实，分别调用两次 Skill 工具，加载“grilling”和“domain-modeling”：按轮次提出问题，把请求追问成形；随着决策形成，磨砺领域术语并就地更新 `GLOSSARY.md`/ADR。
 
 5. **应用结果（Apply the outcome）：**
-   - `ready-for-agent`——发布智能体简报评论（[AGENT-BRIEF.md](AGENT-BRIEF.md)）。
-   - `ready-for-human`——使用与智能体简报相同的结构，但注明无法委派的原因（判断性决策、外部访问、设计决策、手工测试）。
-   - `needs-info`——发布分诊笔记（使用下方模板）。
-   - `wontfix`——关闭，并根据具体*原因*决定评论内容：
-     - **已经实现（Already implemented）**——变更已经存在于代码库中。指出所在位置；**不要**写入 `.out-of-scope/`（该知识库用于*被拒绝*的请求，而不是已经构建的请求）。
-     - **拒绝（缺陷）（Rejected bug）**——礼貌解释，然后关闭。
-     - **拒绝（增强）（Rejected enhancement）**——写入 `.out-of-scope/`，在评论中链接该记录，然后关闭（[OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)）。
-   - `needs-triage`——应用该角色。如果已有部分进展，可以选择添加评论。
+   - `ready-for-agent`：发布智能体简报评论（[AGENT-BRIEF.md](AGENT-BRIEF.md)）。
+   - `ready-for-human`：使用与智能体简报相同的结构，但注明无法委派的原因（判断性决策、外部访问、设计决策、手工测试）。
+   - `needs-info`：发布分诊笔记（使用下方模板）。
+   - `wontfix`：关闭，并根据具体*原因*决定评论内容：
+     - **已经实现（Already implemented）**：变更已经存在于代码库中。指出所在位置；**不要**写入 `.out-of-scope/`（该知识库用于*被拒绝*的请求，而不是已经构建的请求）。
+     - **拒绝（缺陷）（Rejected bug）**：礼貌解释，然后关闭。
+     - **拒绝（增强）（Rejected enhancement）**：写入 `.out-of-scope/`，在评论中链接该记录，然后关闭（[OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)）。
+   - `needs-triage`：应用该角色。如果已有部分进展，可以选择添加评论。
 
 ## 快速状态覆盖（Quick state override）
 

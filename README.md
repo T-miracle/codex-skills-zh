@@ -12,11 +12,32 @@
 
 | 目录 | 中文含义 | Skills |
 | --- | --- | --- |
-| `development` | 开发实施：直接实现、试验或测试代码 | `documenting-frontend-code`、`implement`、`integrating-frontend-apis`、`organizing-frontend-components`、`prototype`、`tdd`、`writing-vue-components` |
+| `development` | 开发实施：直接实现、试验或测试代码 | `documenting-frontend-code`、`implement`、`implement-spec`、`integrating-frontend-apis`、`organizing-frontend-components`、`prototype`、`tdd`、`writing-vue-components` |
 | `planning` | 需求与方案：形成模型、规格、工单或设计决策 | `codebase-design`、`domain-modeling`、`grill-with-docs`、`to-spec`、`to-tickets` |
-| `quality` | 质量保障：审查、诊断、架构评估与冲突解决 | `code-review`、`diagnosing-bugs`、`improve-codebase-architecture`、`resolving-merge-conflicts` |
-| `knowledge` | 研究与学习：沉淀事实、知识和技能写作方法 | `research`、`teach`、`writing-great-skills` |
-| `workflow` | 协作与流程：提交、选择工作流、追问、交接、初始化与分流 | `ask-matt`、`git-commit`、`grilling`、`grill-me`、`handoff`、`setup-matt-pocock-skills`、`triage`、`usage-disclosure`、`wayfinder` |
+| `quality` | 质量保障：审查、诊断、架构评估与会话复盘 | `code-review`、`diagnosing-bugs`、`improve-codebase-architecture`、`retro` |
+| `knowledge` | 研究与学习：沉淀事实、知识和智能体文档写作方法 | `research`、`teach`、`writing-for-agents` |
+| `workflow` | 协作与流程：提交、选择工作流、追问、交接、初始化与分流 | `ask-matt`、`git-commit`、`grilling`、`grill-me`、`handoff`、`pr`、`setup-matt-pocock-skills`、`triage`、`usage-disclosure`、`wait-what`、`wayfinder` |
+
+## 2026-10-06 上游同步
+
+`mattpocock/skills` 来源已审阅并同步至
+[`4588b32`](https://github.com/mattpocock/skills/commit/4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d)。
+`writing-great-skills` 改名为 `writing-for-agents`，适用于 skills、AGENTS.md 和参考文档，并允许隐式调用。
+移除上游已删除的 `resolving-merge-conflicts`；领域文档统一使用 `GLOSSARY.md` 和 `GLOSSARY-MAP.md`。
+
+本次新增四个技能，与现有流程对应如下：
+
+| 技能 | 用途 | 关联入口 | 调用方式 |
+| --- | --- | --- | --- |
+| [`implement-spec`](skills/development/implement-spec/SKILL.md) | 按工单依赖并行实施整份规格，汇入集成分支 | `to-spec` → `to-tickets`；使用 `tdd`、`code-review` | 显式 |
+| [`retro`](skills/quality/retro/SKILL.md) | 复盘会话，提出环境、检查与规范改进建议 | 实现或诊断结束后；使用 `writing-for-agents` | 显式 |
+| [`pr`](skills/workflow/pr/SKILL.md) | 用图示、前后证据和影响说明编写 PR 正文 | 实现、审查与提交之后 | 可隐式 |
+| [`wait-what`](skills/workflow/wait-what/SKILL.md) | 补充背景，用简明语言和领域术语重新解释 | 任意会话中；使用词汇表术语 | 显式 |
+
+`ask-matt` 已连接这些入口。`wizard`、`to-questionnaire` 本次未引入。
+`ask-matt` 的本地路由与 `wait-what` 的中文语言行为属于显式适配，未启用忠实翻译契约。
+具体差异与许可范围见 [上游更新调查](docs/research/mattpocock-skills-upstream-2026-10-06.md)
+和 [第三方说明](THIRD_PARTY_NOTICES.md)。
 
 元数据和本地化正文采用“中文主描述 + 英文关键触发词／行为锚点”的写法；固定模板、
 代码和工具协议则保留原始语义。

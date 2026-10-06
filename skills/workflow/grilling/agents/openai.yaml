@@ -1,6 +1,6 @@
 interface:
   display_name: "方案压力追问"
-  short_description: "逐项追问并 stress-test 尚未实施的计划或设计"
+  short_description: "按问题前沿分轮追问计划、设计或决策，逐步形成共享理解"
   default_prompt: "使用 $grilling 对这个设计进行逐项压力测试。"
 
 policy:

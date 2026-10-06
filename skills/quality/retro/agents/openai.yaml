@@ -1,0 +1,7 @@
+interface:
+  display_name: "编码会话复盘"
+  short_description: "复盘编码会话，将问题转化为自动检查、导航和规范改进建议"
+  default_prompt: "使用 $retro 复盘当前编码会话并提出环境改进建议。"
+
+policy:
+  allow_implicit_invocation: false
