@@ -198,7 +198,11 @@ $translatedManifestSkills = @(
 $capturedContractSkills = @(
     foreach ($manifestSkill in $translatedManifestSkills) {
         $skillName = [string]$manifestSkill.name
-        $sourcePath = ([string]$manifestSkill.source_path).Replace('/', '\\')
+        # Use one native separator so substring-based relative paths stay intact.
+        $sourcePath = ([string]$manifestSkill.source_path).Replace(
+            '/',
+            [System.IO.Path]::DirectorySeparatorChar
+        )
         $skillPath = Join-Path $sourceRoot "$sourcePath\SKILL.md"
         if (-not (Test-Path -LiteralPath $skillPath -PathType Leaf)) {
             throw "Source SKILL.md is missing: $skillPath"
@@ -234,7 +238,11 @@ $capturedReferenceFiles = @(
     foreach ($manifestSkill in $translatedManifestSkills) {
         $skillName = [string]$manifestSkill.name
         $category = [string]$manifestSkill.category
-        $sourcePath = ([string]$manifestSkill.source_path).Replace('/', '\\')
+        # Keep the source-root length equal to the enumerated absolute paths.
+        $sourcePath = ([string]$manifestSkill.source_path).Replace(
+            '/',
+            [System.IO.Path]::DirectorySeparatorChar
+        )
         $sourceSkillRoot = Join-Path $sourceRoot $sourcePath
         $referenceFiles = @(
             Get-ChildItem `
