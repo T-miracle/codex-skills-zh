@@ -1,5 +1,5 @@
 interface:
-  display_name: "方案压力追问"
+  display_name: "方案追问与验证"
   short_description: "按问题前沿分轮追问计划、设计或决策，逐步形成共享理解"
   default_prompt: "使用 $grilling 对这个设计进行逐项压力测试。"
 
