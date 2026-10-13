@@ -114,6 +114,35 @@
       ]
     },
     {
+      "name": "execute-plan",
+      "positive_zh": [
+        "计划已经讨论清楚，请自动判断是否需要规格和工单，选择实施方式并开始执行。",
+        "刚才的访谈已收敛，项目已有打开能力，请按合适的流程实现启动时的项目选择界面。",
+        "需求已经确认，三个交付项只能依次完成，请决定如何拆分并推进实现。",
+        "访谈结论已有规格和工单，依赖解除后可以并行，请复用它们并开始实施。",
+        "按已经讨论清楚的计划开始实施，自动选择流程；本轮不允许 Git 提交。"
+      ],
+      "positive_en": [
+        "The grill-me discussion is settled. Choose whether we need a spec or tickets, then execute the appropriate implementation workflow.",
+        "After the interview converges, automatically choose and execute the plan based on requirement clarity, dependencies, and parallelism benefits."
+      ],
+      "positive_mixed": [
+        "grill-me 已确认方案，请按 task dependencies 和并行收益选择 to-spec、to-tickets、implement 或 implement-spec，然后执行。",
+        "我们已有 approved spec，访谈也结束了，请判断 tickets 是否必要并开始实现。"
+      ],
+      "negative": [
+        "解释 to-spec 和 to-tickets 的区别，不需要操作项目。",
+        "只推荐计划结束后该用哪个 Skill，先不要执行。",
+        "继续追问我的方案，关键状态规则还没有确定。",
+        "计划已经讨论结束，今天先到这里，不要实施。",
+        "只把讨论整理成规格，暂时不要写代码。",
+        "只把规格拆成工单，不要进入实施。"
+      ],
+      "explicit": [
+        "$execute-plan 根据刚才确认的计划自动选择流程，简短解释后执行。"
+      ]
+    },
+    {
       "name": "git-commit",
       "positive_zh": [
         "根据已暂存的改动写一条提交信息，先不要提交。",

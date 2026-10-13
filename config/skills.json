@@ -87,6 +87,14 @@
       "baseline_skill_sha256": "7b925d7b1e341a2eeae33ad68a8a8c0ab889a38ddd22a7598e4c240e5a7556a3"
     },
     {
+      "name": "execute-plan",
+      "category": "workflow",
+      "source_id": "local",
+      "translation_contract": false,
+      "allow_implicit_invocation": true,
+      "required_english_terms": ["plan execution", "grill-me", "to-spec", "to-tickets", "implement", "implement-spec"]
+    },
+    {
       "name": "git-commit",
       "category": "workflow",
       "source_id": "local",

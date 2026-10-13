@@ -1,0 +1,7 @@
+interface:
+  display_name: "计划自动实施"
+  short_description: "讨论收敛后按需求、依赖和并行收益选择规格、工单与实施流程并执行"
+  default_prompt: "使用 $execute-plan 接续已收敛的 grill-me 讨论，自动判断是否需要规格和工单、选择实施方式，简短说明原因后开始执行。"
+
+policy:
+  allow_implicit_invocation: true

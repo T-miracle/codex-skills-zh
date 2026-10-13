@@ -16,7 +16,7 @@
 | `planning` | 需求与方案：形成模型、规格、工单或设计决策 | `codebase-design`、`domain-modeling`、`grill-with-docs`、`to-spec`、`to-tickets` |
 | `quality` | 质量保障：审查、诊断、架构评估与会话复盘 | `code-review`、`diagnosing-bugs`、`improve-codebase-architecture`、`retro` |
 | `knowledge` | 研究与学习：沉淀事实、知识和智能体文档写作方法 | `research`、`teach`、`writing-for-agents` |
-| `workflow` | 协作与流程：提交、选择工作流、追问、交接、初始化与分流 | `ask-matt`、`git-commit`、`grilling`、`grill-me`、`handoff`、`pr`、`setup-matt-pocock-skills`、`triage`、`usage-disclosure`、`wait-what`、`wayfinder` |
+| `workflow` | 协作与流程：提交、选择工作流、追问、交接、初始化与分流 | `ask-matt`、`execute-plan`、`git-commit`、`grilling`、`grill-me`、`handoff`、`pr`、`setup-matt-pocock-skills`、`triage`、`usage-disclosure`、`wait-what`、`wayfinder` |
 
 ## 2026-10-06 上游同步
 
