@@ -150,6 +150,7 @@
         "把这次修复和无关文档拆成两次提交并提交到本地。",
         "同一个文件里有两个功能和一个旧 BUG 修复，请按修改行拆分提交。",
         "新功能还未提交，把开发中对它的修正和测试一起组织成提交。",
+        "这轮完善已有台账的详情展示，也调整分页并修复滚动，请组织提交并用一行说明主要变化和相关小改动。",
         "上线仅更改版本号应该用哪个提交前缀？",
         "这次删除公开接口是否要标记破坏性变更？",
         "帮我按 GitHub 提交规范检查这条提交信息。"
@@ -159,6 +160,7 @@
         "Infer the project's language from its Chinese documentation and human commits, then write the commit message in that language.",
         "Commit these changes as two atomic commits.",
         "Split unrelated changes in the same file and validate each staged snapshot independently.",
+        "Write a single-line commit message for this delivery, leading with the main change and briefly mentioning related fixes.",
         "Check whether this commit message needs a breaking change marker."
       ],
       "positive_mixed": [
@@ -166,6 +168,7 @@
         "先判断项目主要语言，再写 commit message，保留 feat 和 BREAKING CHANGE 等协议词。",
         "这个 CSS 颜色修复该用 style 还是 fix？",
         "两个 BUG 来自同一根因，请判断应该合为一个 fix 还是拆分提交。",
+        "这轮台账体验完善有不同根因的小 BUG，请按 delivery goal 判断 commit 分组，不要仅因技术上可拆就拆分。",
         "请提交 feature、独立 cleanup 和公共依赖，拆分明确就直接执行。",
         "请修改最后一次 commit message，注意已有 release tag。"
       ],
