@@ -47,6 +47,8 @@ description: "一次闭环编写或修改基于 Vue 及其 UI component library 
 - 请求适配进入 `api.<ts|js>`；契约缺失时改用同级 `mock.<ts|js>`，并保持与未来真实适配器相同的调用边界。
 - class、factory、composable 和文件命名跟随最近的同类参考；参考采用 class 时继续使用 class。
 
+发生组件拆分时，按 `$organizing-frontend-components` 的职责所有权规则，为每个子组件列出专属的 `data`/`ref`/`reactive` 状态、computed、watch、处理函数和请求响应数据，并连同初始化、重置及清理迁入对应的 `index.vue` 或同级卫星文件。父级保留共享数据、受控值和整体编排，通过 props/事件保持单一事实来源；仅展示父级数据的子组件继续通过 props 消费。Vue 具体检查见 [组件拆分与状态归属门禁](references/implementation-gates.md#组件拆分与状态归属门禁)。
+
 采用 class 作为表单或数据模型时，组件状态直接保存 `new Model()` 实例，不得为了所谓“Vue 响应性”使用 `{ ...new Model() }`、JSON 克隆或 `Object.assign({}, instance)` 将其降级为普通对象。所有响应式字段必须在构造函数返回前完成初始化；Vue 2 运行期间不得直接新增未声明字段。
 
 默认值、重置、回填以及 UI 模型到 API 请求参数的转换由模型实例拥有；转换方法使用依赖当前实例状态的非静态方法，例如 `form.toPayload(contextId)`。实际网络请求仍留在 `api.<ts|js>`，不得放进模型。这样组件可以直接调用当前表单实例，不需要在提交前重新 `new Model(form)` 恢复原型方法。
@@ -92,7 +94,7 @@ Dialog、Drawer、Popover、Select 下拉层等会挂载到 `body` 的节点，�
 5. 逐字段核对新增、编辑回填、校验、重置、提交/Mock 映射；采用 class 时确认 `data()` 直接保存实例、字段在构造阶段完整声明、请求映射由非静态实例方法完成；逐状态核对加载、空态、错误与操作反馈。
 6. 有原型或截图时启动页面做视觉比对，检查既有全局主题作用后的实际结果；弹层额外核对实际 DOM 与编译选择器。仅通过 ESLint、Stylelint 或构建不等于视觉完成。
 7. 搜索请求模块、URL 和调用点，证明每个网络契约都有来源；未确认接口只能指向明确的 Mock。
-8. 复查 `$organizing-frontend-components` 给出的目录与后缀不变量。
+8. 复查 `$organizing-frontend-components` 给出的目录、后缀和职责所有权不变量；发生拆分时，逐项检查父级残留的状态、computed、watch、函数与请求响应数据，以及子组件 props/事件，确认子组件专属逻辑和生命周期处理已归位，保留的共享或受控状态有明确依据，且没有重复事实来源。
 
 完整检查矩阵见 [验证矩阵](references/implementation-gates.md#验证矩阵)。
 

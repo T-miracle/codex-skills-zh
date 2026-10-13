@@ -334,16 +334,20 @@
     {
       "name": "organizing-frontend-components",
       "positive_zh": [
-        "把这个订单页面统一改成组件名目录、index 入口和递归 components 结构。"
+        "把这个订单页面统一改成组件名目录、index 入口和递归 components 结构。",
+        "拆出产品选择器，把它专属的搜索变量、处理函数和响应列表一起迁入组件，订单表单的受控选中值保留在父级。"
       ],
       "positive_en": [
-        "Refactor this React page using component colocation and clear ownership boundaries."
+        "Refactor this React page using component colocation and clear ownership boundaries.",
+        "Extract the selector together with its private state, handlers, and request results while keeping shared data with the common owner."
       ],
       "positive_mixed": [
-        "先判断这个 Vue 项目原生是 TS 还是 JS，再设计统一 index.vue 和递归 components 目录。"
+        "先判断这个 Vue 项目原生是 TS 还是 JS，再设计统一 index.vue 和递归 components 目录。",
+        "重构这个组件树，将 child-owned state 和 API response data 与子组件共置，通过 props/events 保留共享边界。"
       ],
       "negative": [
-        "修复这个组件点击保存后没有提示的问题。"
+        "修复这个组件点击保存后没有提示的问题。",
+        "只解释组件状态提升与 props 的概念，不调整任何组件或目录。"
       ],
       "explicit": [
         "$organizing-frontend-components 重构这个页面的组件目录与共享边界。"
@@ -613,17 +617,21 @@
       "name": "writing-vue-components",
       "positive_zh": [
         "参照现有门禁页面和原型新增一个 Vue 2 人员白名单弹窗，接口没确认就先用 Mock。",
-        "使用项目现有的 Naive UI 组件库实现这个新增编辑表单。"
+        "使用项目现有的 Naive UI 组件库实现这个新增编辑表单。",
+        "拆分这个 Vue 页面，把子组件专属的变量、函数、响应数据和重置清理一起迁走，共享表单值继续由父组件控制。"
       ],
       "positive_en": [
         "Implement this Vue form in one pass while matching the reference component and template compiler constraints.",
-        "Build this Vue page with the third-party UI component library already installed in the project."
+        "Build this Vue page with the third-party UI component library already installed in the project.",
+        "Split this Vue component and move its child-owned reactive state, computed values, watchers, handlers, and request results into the child."
       ],
       "positive_mixed": [
-        "按 Element UI 原型编写 Vue 页面，拆出 form.js，并验证 template syntax 和 Mock data flow。"
+        "按 Element UI 原型编写 Vue 页面，拆出 form.js，并验证 template syntax 和 Mock data flow。",
+        "拆出 ProductSelector/index.vue，同步迁移私有 ref/reactive、computed、watch 和 API 响应状态，父级保留 v-model 受控值。"
       ],
       "negative": [
-        "解释 Vue 响应式原理，不需要创建或修改页面组件。"
+        "解释 Vue 响应式原理，不需要创建或修改页面组件。",
+        "只分析这个 Vue 组件的状态归属并给出建议，暂时不要实现或修改组件。"
       ],
       "explicit": [
         "$writing-vue-components 按仓库证据一次闭环实现这个 Vue 表单。"
