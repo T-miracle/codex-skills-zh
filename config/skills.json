@@ -22,9 +22,9 @@
       "license_file": "THIRD_PARTY_LICENSES/mattpocock-skills-LICENSE",
       "baseline": {
         "type": "reviewed-github-commit",
-        "captured_on": "2026-10-06",
-        "commit": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d",
-        "note": "Reviewed main at this commit; raw Git UTF-8/LF source bytes underpin hashes and translation contracts. The local router and wait-what language behavior are explicitly adapted."
+        "captured_on": "2026-10-15",
+        "commit": "49dd158d1076134a641b33efb035946536778336",
+        "note": "Reviewed included skills and reference files on main at this commit; raw Git UTF-8/LF bytes underpin hashes and translation contracts. Local ask-matt routing, to-tickets mode selection and wait-what language behavior are retained; upstream distribution policies and uncollected skills are outside this adoption."
       }
     }
   ],
@@ -37,7 +37,7 @@
       "translation_contract": false,
       "allow_implicit_invocation": false,
       "required_english_terms": ["flow", "main flow", "on-ramps", "smart zone", "blocking edges", "decision tickets"],
-      "baseline_skill_sha256": "32b3c71d6dbb5a7c15147e8a503a9df28e9a567f45eba6a6bb42aa903225c6ff"
+      "baseline_skill_sha256": "1371f5ce005de0992a44b137748bfb960a56948aa9871b405fe9d90b24332e3c"
     },
     {
       "name": "codebase-design",
@@ -57,7 +57,7 @@
       "translation_contract": true,
       "allow_implicit_invocation": true,
       "required_english_terms": ["fixed point", "Standards", "Spec", "parallel sub-agents", "smell baseline"],
-      "baseline_skill_sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50"
+      "baseline_skill_sha256": "09eb147f793e4647949edd32dbad278f0554dfb56e0d46b699cd4c2c55bf0357"
     },
     {
       "name": "diagnosing-bugs",
@@ -67,7 +67,7 @@
       "translation_contract": true,
       "allow_implicit_invocation": true,
       "required_english_terms": ["feedback loop", "red-capable", "falsifiable", "regression test", "Redact"],
-      "baseline_skill_sha256": "9168404abda0967a5d32977e3498cd95fda6807018852f3de736a78357c82b40"
+      "baseline_skill_sha256": "849198df88cdb65fd0d97236604c1fca7ff2f22d2f705f9724a800d0266b118d"
     },
     {
       "name": "documenting-frontend-code",
@@ -110,7 +110,7 @@
       "translation_contract": true,
       "allow_implicit_invocation": true,
       "required_english_terms": ["interview", "shared understanding", "design tree", "facts", "decisions", "rounds", "frontier"],
-      "baseline_skill_sha256": "10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2"
+      "baseline_skill_sha256": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15"
     },
     {
       "name": "grill-me",
@@ -140,7 +140,7 @@
       "translation_contract": true,
       "allow_implicit_invocation": false,
       "required_english_terms": ["handoff document", "fresh agent", "artifacts", "redact"],
-      "baseline_skill_sha256": "7c62de979fdc7ac32fb5ddb2146156c917f80ee070d30fadc9d40343c4b6ed25"
+      "baseline_skill_sha256": "4cbb043950dad2ffd3662ff1a5a0b51ae676004b5cae10e3787e8ee7a4ee69d3"
     },
     {
       "name": "implement",
@@ -150,7 +150,7 @@
       "translation_contract": true,
       "allow_implicit_invocation": false,
       "required_english_terms": ["spec", "tickets", "seams", "typechecking", "full test suite", "code review", "commit"],
-      "baseline_skill_sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3"
+      "baseline_skill_sha256": "483bdc4ccf4ac31d86ac7beeaa0d0db80313e71e120bb8c59b3196ae5decd53d"
     },
     {
       "name": "implement-spec",
@@ -234,7 +234,7 @@
       "translation_contract": true,
       "allow_implicit_invocation": false,
       "required_english_terms": ["per-repo configuration", "Issue tracker", "Triage labels", "Domain docs", "single-context", "multi-context"],
-      "baseline_skill_sha256": "9a0c21694be19fa3eefc39343355d3af7414716ba364882c7432c2f821eac3e9"
+      "baseline_skill_sha256": "f148858ffb7f63c03c06fca06e6fdb1d91a35c6b293244b8fdfacd5f4cc028c4"
     },
     {
       "name": "tdd",
@@ -244,7 +244,7 @@
       "translation_contract": true,
       "allow_implicit_invocation": true,
       "required_english_terms": ["Test-Driven Development", "red → green loop", "seam", "anti-patterns", "vertical slices", "tracer bullet"],
-      "baseline_skill_sha256": "93ea419b76e9caaf26153b828e984f7c3fb136f4caa67b14af95f32ea965a1cc"
+      "baseline_skill_sha256": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0"
     },
     {
       "name": "teach",
@@ -254,7 +254,7 @@
       "translation_contract": true,
       "allow_implicit_invocation": false,
       "required_english_terms": ["stateful request", "Knowledge", "Skills", "Wisdom", "zone of proximal development", "feedback loop"],
-      "baseline_skill_sha256": "a32df9dcdfc0c4fdc1c98e1ed3940c5f56b84c1aa90ff60346f32b8b53915b43"
+      "baseline_skill_sha256": "550482c2d674b085c9043b87bfdc14a8f2ec453c736119e7fcbb1e9332bffeba"
     },
     {
       "name": "to-spec",
@@ -271,10 +271,10 @@
       "category": "planning",
       "source_id": "mattpocock-skills",
       "source_path": "skills/engineering/to-tickets",
-      "translation_contract": true,
+      "translation_contract": false,
       "allow_implicit_invocation": false,
-      "required_english_terms": ["tracer-bullet vertical slices", "blocking edges", "wide refactors", "expand–contract", "frontier"],
-      "baseline_skill_sha256": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae"
+      "required_english_terms": ["user scenarios", "tracer-bullet vertical slices", "blocking edges", "wide refactors", "expand–contract", "frontier"],
+      "baseline_skill_sha256": "56ec23c5b2782785d4e65bff9e315b6d3aeb4ef977c174a219e99489fada1995"
     },
     {
       "name": "triage",
@@ -311,7 +311,7 @@
       "translation_contract": true,
       "allow_implicit_invocation": false,
       "required_english_terms": ["destination", "wayfinding", "shared map", "decision tickets", "frontier", "fog of war", "HITL", "AFK"],
-      "baseline_skill_sha256": "fee6e1d0c50f0e736b4ef8a599060c959afae904c9a97d82c97f049fcc3aa0f1"
+      "baseline_skill_sha256": "9be7b478c389605a24517d27752f278933588da97a1b5921b165f455edf4c5b7"
     },
     {
       "name": "writing-for-agents",
