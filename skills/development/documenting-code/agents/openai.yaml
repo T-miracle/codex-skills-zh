@@ -1,0 +1,7 @@
+interface:
+  display_name: "通用代码注释规范"
+  short_description: "为各语言的函数、类型、字段与复杂流程维护简明准确的定义处注释"
+  default_prompt: "使用 $documenting-code 为本次变更中的声明与复杂流程补充或同步简明准确的注释，只修改注释，保持现有代码实现与结构。"
+
+policy:
+  allow_implicit_invocation: true

@@ -12,7 +12,7 @@ description: "一次闭环编写或修改基于 Vue 及其 UI component library 
 - 从 `$organizing-frontend-components` 进入时，直接复用其目标所有者、组件树和 TS/JS 后缀判断；本 Skill 继续完成 Vue 实现质量门禁。
 - 单独调用且任务会新增、拆分或移动页面/组件时，先使用 `$organizing-frontend-components` 确定统一 `index.vue` 与递归 `components/` 树，再继续本流程。
 - 涉及真实后端对接时使用 `$integrating-frontend-apis` 完成契约门禁。契约未通过时保持显式 Mock 边界；URL、方法、参数和响应字段只取自可定位的契约证据。
-- 新增或修改函数、method、composable、class、实体字段或复杂流程时，在格式化前使用 `$documenting-frontend-code` 生成或同步注释；注释不得猜测接口或字段语义。
+- 新增或实质修改函数、类型、字段、共享变量或复杂流程时，在格式化前使用 `$documenting-code` 生成或同步注释；该阶段只处理注释，不重构代码或猜测接口与字段语义。
 
 ## 1. 建立证据账本
 
@@ -87,7 +87,7 @@ Dialog、Drawer、Popover、Select 下拉层等会挂载到 `body` 的节点，�
 
 验证范围覆盖所有新增或修改的 SFC 与卫星文件，而不是只检查报错文件：
 
-1. 使用 `$documenting-frontend-code` 检查新增函数、class、实体字段及已修改契约的注释，再对全部生成或修改的文件运行项目原生 formatter 和格式化检查；使用写入模式修复时，随后以检查模式确认零差异。缺少专用检查命令时，重新运行 formatter 并确认它不再产生变更。
+1. 使用 `$documenting-code` 检查本轮新增或实质修改的函数、类型、字段、共享变量及相关契约注释，再对全部生成或修改的文件运行项目原生 formatter 和格式化检查；使用写入模式修复时，随后以检查模式确认零差异。缺少专用检查命令时，重新运行 formatter 并确认它不再产生变更。
 2. 用项目实际 SFC 编译器编译每个受影响模板；对旧编译器额外确认模板中没有不支持的运算符。
 3. 检查每个模板插值均位于一行，长计算已进入 computed/method，过长静态 `class`/`style` 已收敛到 `<style scoped>` 中的 CSS 类；确认不存在无 `scoped` 的 SFC 样式块和为局部组件产生的全局样式改动。
 4. 运行项目原生的 lint、typecheck、相关测试与可行的构建；区分代码失败和既有环境失败。

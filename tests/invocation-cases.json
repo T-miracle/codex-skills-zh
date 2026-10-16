@@ -74,21 +74,27 @@
       ]
     },
     {
-      "name": "documenting-frontend-code",
+      "name": "documenting-code",
       "positive_zh": [
-        "为这次新增的前端函数和数据实体补全参数、返回值与字段注释。"
+        "为本次新增的后端函数、类型、模型字段及模块级变量补充简明注释。",
+        "保留实现，在这段难以理解的事务流程前补充分步注释。"
       ],
       "positive_en": [
-        "Add JSDoc or TSDoc comments to these new frontend functions and model classes."
+        "Add concise code comments and Python docstrings to changed functions, parameters, model fields, and shared constants.",
+        "Maintain JSDoc or TSDoc comments for these new frontend functions and model classes."
       ],
       "positive_mixed": [
-        "检查这些 Vue/TypeScript methods 的 comments 是否覆盖 params、returns 和字段语义。"
+        "检查这些 Vue/TypeScript methods 的 comments 是否覆盖 params、returns 和字段语义，避免重复声明类型。",
+        "为这些 Go service 方法和结构体字段补充 comments，只修改注释。"
       ],
       "negative": [
-        "把产品说明文档翻译成英文，不需要查看代码。"
+        "把产品说明文档翻译成英文，不需要查看代码。",
+        "将这个复杂匿名回调提取为具名函数并优化算法。",
+        "调整 ESLint 配置并安装文档生成依赖。"
       ],
       "explicit": [
-        "$documenting-frontend-code 为这些前端函数、实体类和复杂流程生成准确注释。"
+        "$documenting-code 为本次变更补充类型、字段、函数参数和有意义的返回值注释，只修改注释。",
+        "$documenting-code 为这段复杂逻辑补充分阶段说明，保持现有实现。"
       ]
     },
     {

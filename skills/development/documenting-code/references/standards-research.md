@@ -1,13 +1,15 @@
 # 前端代码注释规范调研
 
-调研日期：2026-09-04。本文只采用 JSDoc、TypeScript、TSDoc 与 Google 工程规范等一手来源，供 `documenting-frontend-code` Skill 制定规则时参考。
+调研日期：2026-09-04。本文只采用 JSDoc、TypeScript、TSDoc 与 Google 工程规范等一手来源，供 `documenting-code` Skill 的前端细则参考。其他语言沿用项目原生约定；本记录不构成其他语言的标准调研。
+
+2026-10-16 的用户确认扩展了适用范围，并调整了本地覆盖、简洁性与职责边界；当前执行规则以 [主规范](../SKILL.md) 和 [注释写法与前端细则](comment-rules.md) 为准。
 
 ## 结论摘要
 
 ### 1. 区分 API 文档注释与实现注释
 
 - 用 `/** ... */` 文档注释描述 class、函数、方法、字段等符号的用途、用法和可观察行为；用 `// ...` 描述仅与内部实现有关的原因、约束或步骤。Google TypeScript Style Guide 明确区分这两类注释，并指出文档注释可被编辑器和文档工具理解。[Google TypeScript Style Guide：Comments and documentation](https://google.github.io/styleguide/tsguide.html#comments-documentation)
-- 流程注释应优先解释“为什么存在”“必须维持什么约束”，不应逐行复述“代码正在做什么”。如果实现难以读懂，应先简化代码；正则表达式、复杂算法等确有必要时再补充实现说明。[Google Engineering Practices：Comments](https://google.github.io/eng-practices/review/reviewer/looking-for.html#comments)
+- 流程注释应优先解释“为什么存在”“必须维持什么约束”，不应逐行复述“代码正在做什么”。原指南同时讨论了简化难读实现；本 Skill 仅在原结构上说明，结构改进交由其他 Skill。正则表达式、复杂算法等确有必要时补充实现说明。[Google Engineering Practices：Comments](https://google.github.io/eng-practices/review/reviewer/looking-for.html#comments)
 - 文档注释与实现注释承担不同职责：class、module、function 的文档应说明目的、如何使用以及使用时的行为；内部注释则保存代码本身无法表达的决策背景。[Google Engineering Practices：Comments](https://google.github.io/eng-practices/review/reviewer/looking-for.html#comments)
 
 ### 2. JavaScript 函数使用带类型的 JSDoc
@@ -63,17 +65,14 @@ function createUserPayload(form: UserForm): UserPayload {
 - Google TypeScript Style Guide 不要求仅为采用新风格而重写全部旧代码，并建议避免把与当前变更无关的大量样式调整混入同一改动。[Google TypeScript Style Guide：Consistency](https://google.github.io/styleguide/tsguide.html)
 - 因此，修改函数签名、返回语义、字段含义、副作用、异常、边界条件或关键流程时，必须在同一变更中同步注释；仅做不影响契约的小型内部调整，且原注释仍完全准确时，可以保持不变。此条是对上述维护原则的直接实施化。
 
-## 建议写入 Skill 的本地规则
+## 本地规则的调整记录
 
-以下规则有意比通用指南更严格，以满足本仓库“新生成函数和实体必须有注释”的要求，同时用“信息增量”避免无意义注释：
+2026-10-16 经用户确认，原有前端实践保留，并作以下本地调整。这些是用户选择，不宣称为所有语言或外部标准的统一要求：
 
-1. 新增的具名函数、方法、class 和实体模型必须有文档注释；函数注释覆盖全部参数与返回值，构造函数无需虚构返回值。
-2. JavaScript 在 `@param`、`@returns`、`@type`/`@property` 中写类型；TypeScript 以签名类型为准，标签只写名称与有信息量的说明。
-3. 实体 class 先说明整体用途和不变量；每个业务字段至少能从声明与注释组合中读出类型和含义，必要时再说明单位、范围、默认值、敏感性或接口映射。
-4. 对无返回值函数也明确说明“不返回有意义值”；具体写成 `@returns {void}` 还是省略类型，应服从项目现有 JSDoc/TSDoc 工具约定。
-5. 复杂流程用邻近的 `//` 注释解释阶段、原因、不变量和容易误改的边界；不逐行翻译代码，不保留被注释掉的旧实现。
-6. 修改代码时先审查相邻注释。只要契约或语义变化就同步更新；微小且不影响原说明的修改不制造注释噪声。
-7. 优先沿用仓库已有语言、标签、换行和 lint 规则；新增注释后运行项目已有 formatter、lint、typecheck 与相关测试。
+- 扩展为通用代码注释规范，按主规范的覆盖表主动处理定义附近的注释，普通局部变量与简单回调按需。
+- 取消 TypeScript 字段重复类型备注与单纯“无返回值”的强制说明，保留参数和有意义结果的语义。
+- 允许有顺序依赖的复杂流程按阶段编号说明；仅修改注释，不为注释提取函数或调整代码结构。
+- 默认范围为本轮新增或实质修改的声明及直接关联代码，沿用项目已有文档格式和检查工具。
 
 ## 一手来源索引
 
