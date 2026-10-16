@@ -267,7 +267,8 @@
     {
       "name": "implement",
       "positive_zh": [
-        "按照已经确认的规格和工单完成实现。"
+        "按照已经确认的规格和工单完成实现。",
+        "实现跟踪器中的 #42 工单，先获取内容并确认工单标题。"
       ],
       "positive_en": [
         "Implement the work described by these tickets."
@@ -279,7 +280,8 @@
         "帮我判断这个设计是否合理，但不要实施。"
       ],
       "explicit": [
-        "$implement 按照已经确认的spec完成实现。"
+        "$implement 按照已经确认的spec完成实现。",
+        "$implement #42"
       ]
     },
     {
@@ -510,19 +512,28 @@
     {
       "name": "to-tickets",
       "positive_zh": [
-        "把这个规格拆成声明阻塞关系的可执行工单。"
+        "把这个规格按完整用户场景组织成工单，标明阻塞关系和验证方式。",
+        "这个规格用垂直切片拆工单，每张打通一条可独立验证的端到端路径。",
+        "把这个规格拆成工单，先弹窗让我选择场景拆分还是垂直切片。",
+        "将这个已有议题按场景拆成子议题，用原生阻塞关系表达依赖。",
+        "这个小需求只需要一张工单，请保留关键行为、异常路径和回归验收。"
       ],
       "positive_en": [
-        "Break this plan into tracer-bullet tickets with blocking edges."
+        "Organize this plan into user-scenario tickets with blocking edges and verification for each acceptance criterion.",
+        "Break this spec into tracer-bullet vertical slices with blocking edges and verification for each acceptance criterion."
       ],
       "positive_mixed": [
-        "把 spec 拆成 tickets，并标记 blocking dependencies。"
+        "把 spec 按完整用户场景拆成 tickets，减少重复 context，保留异常和 regression coverage。",
+        "继续本次已选的 vertical slices 模式调整 tickets，保持 regression coverage。"
       ],
       "negative": [
-        "把所有需求合并成一个大工单。"
+        "直接实现这张已确认的工单并运行测试，不需要重新拆单。",
+        "只分析现有测试的回归覆盖缺口，不创建工单。"
       ],
       "explicit": [
-        "$to-tickets 把这个spec拆成tracer-bullet工单。"
+        "$to-tickets 按完整用户场景组织这个 spec，仅在有明确理由时继续拆分，并列出验收与验证要求。",
+        "$to-tickets 这个 spec 使用垂直切片，列出验收与验证要求。",
+        "$to-tickets 为这个新需求规划工单，先让我选择拆单模式。"
       ]
     },
     {

@@ -3,7 +3,7 @@ name: handoff
 description: "将当前对话压缩为 handoff 文档，供另一个 agent 接手。"
 ---
 
-编写一份概括当前对话的交接文档（handoff document），使一个全新的智能体（fresh agent）能够继续这项工作。将文档保存到用户操作系统的临时目录，而不是当前工作区。
+编写一份概括当前对话的交接文档（handoff document），使一个全新的智能体（fresh agent）能够继续这项工作。将文档保存到用户操作系统的临时目录（`$TMPDIR`，否则使用 `/tmp`；Windows 使用 `%TEMP%`），而不是当前工作区。
 
 在文档中加入“建议技能”章节，指明下一位智能体应通过 Skill 工具调用哪些技能。
 

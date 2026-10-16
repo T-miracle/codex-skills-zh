@@ -10,7 +10,7 @@ description: "从固定点（commit、branch、tag 或 merge-base）开始，沿
 
 两个轴都由**并行子智能体（parallel sub-agents）**运行，避免彼此污染上下文；随后由本技能汇总它们的发现。
 
-你应当已经获得议题跟踪器（issue tracker）。如果缺少 `docs/agents/issue-tracker.md`，请提醒用户运行 `/setup-matt-pocock-skills`。
+你应当已经获得议题跟踪器（issue tracker）。如果没有，请提醒用户运行 `/setup-matt-pocock-skills`。
 
 ## 流程
 
@@ -26,14 +26,14 @@ description: "从固定点（commit、branch、tag 或 merge-base）开始，沿
 
 按以下顺序查找原始规格：
 
-1. 提交消息中的议题引用（`#123`、`Closes #45`、GitLab `!67` 等）：通过 `docs/agents/issue-tracker.md` 中的工作流获取。
+1. 提交消息中的议题引用（`#123`、`Closes #45`、GitLab `!67` 等）：通过跟踪器文档中的工作流获取。
 2. 用户作为参数传入的路径。
 3. `docs/`、`specs/` 或 `.scratch/` 下与分支名或功能匹配的规格文件。
 4. 如果找不到，就询问用户规格在哪里。如果用户表示不存在规格，**规格（Spec）**子智能体将跳过审查并报告“没有可用规格（no spec available）”。
 
 ### 3. 确定规范来源
 
-查找仓库中记录代码编写方式的所有内容，例如 `CODING_STANDARDS.md` 或 `CONTRIBUTING.md`。
+搜索仓库中所有记录代码编写方式的文件。只要 `CODING_STANDARDS.md` 或 `CONTRIBUTING.md` 存在，就必须将其列入规范来源。
 
 除仓库自身记录的规范外，规范轴始终携带以下**坏味道基线（smell baseline）**：一组固定的 Fowler 代码坏味道（_Refactoring_ 第 3 章），即使仓库没有任何说明也适用。它受两条规则约束：
 
@@ -56,6 +56,8 @@ description: "从固定点（commit、branch、tag 或 merge-base）开始，沿
 - **被拒绝的遗赠（Refused Bequest）**：子类或实现者忽略或覆盖了所继承内容中的大部分。→ 放弃继承，使用组合。
 
 ### 4. 并行启动两个子智能体
+
+在前台同时发起两个子智能体调用，并汇总它们返回的报告。
 
 **规范子智能体提示（Standards sub-agent prompt）**：包括：
 

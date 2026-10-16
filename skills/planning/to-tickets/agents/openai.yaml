@@ -1,7 +1,7 @@
 interface:
   display_name: "规格拆分为可执行工单"
-  short_description: "把 plan 或 spec 拆成声明 blocking edges 的 tracer-bullet tickets"
-  default_prompt: "使用 $to-tickets 把这个 spec 拆成可执行的 tracer-bullet tickets。"
+  short_description: "由用户选择场景或垂直切片拆单，声明阻塞关系并保留验收与测试覆盖"
+  default_prompt: "使用 $to-tickets 组织这个 spec 的工单；若我尚未明确选择模式，先询问我使用场景拆分还是垂直切片，并保留关键行为、异常路径和回归验证。"
 
 policy:
   allow_implicit_invocation: false

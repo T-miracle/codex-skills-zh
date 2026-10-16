@@ -61,7 +61,7 @@ Wayfinder 默认用于**规划（planning）**：每个工单解决一项决策�
 <the decision or investigation this ticket resolves>
 ```
 
-每个工单都带有 `wayfinder:<type>` 标签：从 `research`、`prototype`、`grilling`、`task` 中选择一项（参见[工单类型](#ticket-types)）。
+每个工单都带有 `wayfinder:<type>` 标签：从 `research`、`prototype`、`grilling`、`task` 中选择一项（参见[工单类型](#ticket-types)）。地图及其工单只能使用 `wayfinder:` 标签，绝不使用 `ready-for-agent` 之类的分诊标签：它们承载决策，而不是实施工作。
 
 会话要**首先**在开展任何工作之前，把工单分配给推动地图的开发者，从而**认领（claim）**该工单，使并发会话能够跳过它。被分配者_就是_认领标记：未结且未分配的工单即为无人认领。
 
@@ -110,8 +110,8 @@ Wayfinder 默认用于**规划（planning）**：每个工单解决一项决策�
 1. **为目的地命名（Name the destination）。**分别调用两次 Skill 工具，加载“grilling”和“domain-modeling”，确定地图正在寻找的目的地：规格、决策或变更。目的地固定范围，因此必须首先确定。
 2. **绘制前沿（Map the frontier）。**再次追问，但这次采用**广度优先（breadth-first）**：向整个空间展开，而不是沿任何一个线索深入，呈现未决决策和现在可以采取的第一步。**如果没有发现迷雾**：通往目的地的道路已经清晰，整个旅程小到一次会话即可完成：就不需要地图。停止并询问用户希望如何继续。
 3. **创建地图**（标签 `wayfinder:map`）：填写 Destination 和 Notes，保持 Decisions-so-far 为空，并把迷雾勾勒到 **Not yet specified** 中。
-4. **创建当前已经可以明确描述的工单**创建为地图的子议题：然后在**第二遍（second pass）**连接阻塞边（议题必须先获得 ID，才能相互引用）。连接会把工单分为前沿和被阻塞项；所有尚无法明确描述的内容继续留在迷雾中：即 **Not yet specified** 章节。
-5. **启动调研子代理（Fire the research subagents）。**为每个刚创建的 `research` 工单启动一个调用 Skill 工具加载“research”的子代理，并行解决这些工单。将发现保留在一次性的 `research/<name>` 分支上，并在工单中留下上下文指针。
+4. **创建当前已经可以明确描述的工单**，作为地图的子议题：然后在**第二遍（second pass）**连接阻塞边（议题必须先获得 ID，才能相互引用）。也在这一遍使用真实 ID 写入交叉引用：占位符 `#<n>` 会自动链接到无关议题。连接会把工单分为前沿和被阻塞项；所有尚无法明确描述的内容继续留在迷雾中：即 **Not yet specified** 章节。
+5. **启动调研子代理（Fire the research subagents）。**为每个刚创建的 `research` 工单启动一个调用 Skill 工具加载“research”的子代理，并行解决这些工单。将发现保留在一次性的 `research/<name>` 分支上，并在工单中留下上下文指针。推送该分支，但不要创建 PR：该分支永不合并。
 6. 停止：绘制地图就是一次会话的全部工作，不手动解决任何工单。
 
 ### Work through the map
@@ -120,7 +120,7 @@ Wayfinder 默认用于**规划（planning）**：每个工单解决一项决策�
 
 1. 加载**地图**：读取低分辨率视图，而不是每个工单的正文。
 2. 选择工单。如果用户指定了工单，就使用该工单；否则按顺序选择第一个前沿工单。**认领工单（Claim it）**：开展任何工作前先把它分配给自己。
-3. 解决工单：**按需放大（zoom as needed）**：按需获取任何相关或已关闭工单的完整正文；调用 Skill 工具加载 `## Notes` 区块中指定的技能。如有疑问，分别调用两次 Skill 工具，加载“grilling”和“domain-modeling”。
+3. 按工单的 `wayfinder:<type>` 标签所指定的类型解决它（参见[工单类型](#ticket-types)）。读取标签，而不只是正文：正文从不声明类型。**按需放大（zoom as needed）**：按需获取任何相关或已关闭工单的完整正文；调用 Skill 工具加载 `## Notes` 区块中指定的技能。如有疑问，分别调用两次 Skill 工具，加载“grilling”和“domain-modeling”。
 4. 记录解决结果：把答案发布为**解决评论（resolution comment）**，**关闭**议题，并向地图的 Decisions-so-far **追加上下文指针（context pointer）**。
 5. 添加新出现的工单（先创建再连接）；把答案所澄清、现在已可明确描述的迷雾提升为工单，并从 **Not yet specified** 中清除每片已提升迷雾，使其只存在于新工单中。如果答案揭示某个工单：当前工单或其他工单：位于目的地之外，就将其**排除在范围外**，而不是作为路线的一部分解决。如果决策使地图的其他部分失效，就更新或删除那些工单。
 
