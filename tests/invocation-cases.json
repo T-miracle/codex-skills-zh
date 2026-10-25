@@ -456,6 +456,36 @@
       ]
     },
     {
+      "name": "task-worktree",
+      "positive_zh": [
+        "在这个 Git 仓库里给用户列表增加导出功能。",
+        "只改一下仓库里的 README 和配置文件，然后运行会更新快照的测试。",
+        "继续刚才的任务，沿用之前选择的独立工作区和自动合并方式。",
+        "新开一项修改任务，先决定是否使用独立工作目录。"
+      ],
+      "positive_en": [
+        "Implement this feature in the Git repository; ask about worktree isolation before editing.",
+        "Resume this task using the worktree and local merge choice I already approved.",
+        "Update the repository documentation and regenerate its checked-in files."
+      ],
+      "positive_mixed": [
+        "先确认新 worktree 和自动 merge 的选择，再修改项目配置。",
+        "就在当前 main 目录修复这个问题，不需要额外 worktree。",
+        "本任务已经选了 worktree，继续实施，只补问还没确定的合并方式。"
+      ],
+      "negative": [
+        "解释 Git worktree 和普通分支有什么区别，不改文件。",
+        "只读审查当前 PR 并指出风险，不要修复。",
+        "只分析这个报错的原因，先别修改代码。",
+        "设计一下首次修改前询问工作区的交互流程，暂不实施。",
+        "在这个不是 Git 仓库的临时目录里写一份笔记。"
+      ],
+      "explicit": [
+        "$task-worktree 开始修改前确认是否使用新 worktree，以及完成后是否自动本地合并到主分支。",
+        "$task-worktree 恢复本任务已有选择，检查阻碍解除后继续自动合并，不要重复询问。"
+      ]
+    },
+    {
       "name": "tdd",
       "positive_zh": [
         "用测试驱动开发的方式修复这个缺陷。"
