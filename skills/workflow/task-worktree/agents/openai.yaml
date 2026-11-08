@@ -1,7 +1,0 @@
-interface:
-  display_name: "任务工作区隔离"
-  short_description: "首次修改前确认独立工作区与自动合并选择，在任务后续执行中持续沿用"
-  default_prompt: "使用 $task-worktree 在修改文件前确认是否使用新 worktree、完成后是否自动本地合并到主分支，并在本任务后续沿用选择。"
-
-policy:
-  allow_implicit_invocation: true

@@ -26,21 +26,6 @@
         "commit": "49dd158d1076134a641b33efb035946536778336",
         "note": "Reviewed included skills and reference files on main at this commit; raw Git UTF-8/LF bytes underpin hashes and translation contracts. Local ask-matt routing, to-tickets mode selection and wait-what language behavior are retained; upstream distribution policies and uncollected skills are outside this adoption."
       }
-    },
-    {
-      "id": "rpamis-comet",
-      "kind": "github",
-      "repository": "rpamis/comet",
-      "url": "https://github.com/rpamis/comet",
-      "default_ref": "master",
-      "license": "MIT",
-      "license_file": "THIRD_PARTY_LICENSES/rpamis-comet-LICENSE",
-      "baseline": {
-        "type": "reviewed-github-commit",
-        "captured_on": "2026-10-25",
-        "commit": "aeb1a6598034e28ce46b8422d4dbd8785e607bd7",
-        "note": "Reviewed the Chinese Native entrypoint, workspace reference and MIT license at this commit. task-worktree selectively rewrites workspace choice and local delivery behavior without the Comet runtime; raw GitHub bytes underpin the recorded hashes."
-      }
     }
   ],
   "skills": [
@@ -250,16 +235,6 @@
       "allow_implicit_invocation": false,
       "required_english_terms": ["per-repo configuration", "Issue tracker", "Triage labels", "Domain docs", "single-context", "multi-context"],
       "baseline_skill_sha256": "f148858ffb7f63c03c06fca06e6fdb1d91a35c6b293244b8fdfacd5f4cc028c4"
-    },
-    {
-      "name": "task-worktree",
-      "category": "workflow",
-      "source_id": "rpamis-comet",
-      "source_path": "assets/skills-zh/comet-native",
-      "translation_contract": false,
-      "allow_implicit_invocation": true,
-      "required_english_terms": ["worktree isolation", "Git", "worktree", "merge"],
-      "baseline_skill_sha256": "a3482db4b019ab05b6dfddf198f64f483f268a38cb114ebb004c86dd0a1e5966"
     },
     {
       "name": "tdd",

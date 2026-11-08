@@ -40,19 +40,3 @@
 完整许可证见 [`THIRD_PARTY_LICENSES/mattpocock-skills-LICENSE`](THIRD_PARTY_LICENSES/mattpocock-skills-LICENSE)。
 历史采纳记录见 [10 月 6 日调查](docs/research/mattpocock-skills-upstream-2026-10-06.md)，
 本次比较及采纳记录见 [10 月 15 日调查](docs/research/mattpocock-skills-upstream-2026-10-15.md)。
-
-## rpamis/comet
-
-`task-worktree` 选择性改写自 [`rpamis/comet`](https://github.com/rpamis/comet) 的中文
-Native 入口及工作区参考。2026-10-25 审阅 `master` 提交
-[`aeb1a6598034e28ce46b8422d4dbd8785e607bd7`](https://github.com/rpamis/comet/commit/aeb1a6598034e28ce46b8422d4dbd8785e607bd7)，
-上游版权为 Copyright (c) 2026 rpamis，使用 MIT License。
-
-本地保留工作区选择、按任务绑定和沿用授权的思路，改为每个新任务首次写入前一次确认
-是否使用新 worktree、是否完成后自动本地合并；增加 Git 元数据中的任务记录、共享协作锁
-和临时集成验证。移除 Comet CLI/SDK/Runtime 依赖及 Shape、Verify、Archive 的完整流程，
-不引入其记忆或 Supervisor。此项是行为重构，`translation_contract` 为 `false`。
-
-入口原始字节基线见 [`config/skills.json`](config/skills.json)，配套参考与许可证哈希、
-具体适配边界见 [来源记录](skills/workflow/task-worktree/references/sources.md)。
-完整许可证保存在 [`THIRD_PARTY_LICENSES/rpamis-comet-LICENSE`](THIRD_PARTY_LICENSES/rpamis-comet-LICENSE)。
